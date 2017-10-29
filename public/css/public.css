@@ -1,0 +1,106 @@
+/* Site Colors:
+  #1A446C - blue grey
+  #D4E6F4 - very light blue
+  #EEE4B9 - light tan
+  #8D0D19 - burgundy
+  #990000 - crimson
+  #EDEBEB - cream
+  #4A3C31 - Mahogany
+*/
+
+html { height: 100%; width: 100%; }
+body {
+  width: 100%; height: 100%; 
+  margin: 0; padding: 0; border: 0;
+  font-family: Verdana, Arial, Helvetica, sans-serif; 
+  font-size: 13px; line-height: 15px;
+  background: #EDEBEB;
+}
+img { border: none; }
+a { color: #8D0D19; }
+a:hover { color: #1A446C; }
+	
+#header { 
+	height: 70px; 
+	margin: 0; padding: 0; text-align: left; 
+  background: #990000; color: #EDEBEB;
+}
+#header h1 { padding: 1em; margin: 0; }
+#main { 
+	height: 600px; width: 100%; 
+	margin: 0; padding: 0; 
+	background: #EDEBEB;
+}
+#footer { 
+	clear: both;
+	height: 2em; margin: 0; padding: 1em; 
+	text-align: center; 
+  background: #990000;  color: #EDEBEB;
+}
+
+/* Navigation */
+#navigation { 
+	float: left;
+	width: 150px; height: 100%; 
+	margin: 0; padding: 0 2em; 
+	color: #EDEBEB; background: #4A3C31;
+}
+#navigation a { color: #EDEBEB; text-decoration: none; }
+#navigation a:hover { color: #FFFFFF; }
+ul.subjects { 
+	margin: 1em 0; padding-left: 0; list-style: none;
+}
+ul.pages { padding-left: 2em; list-style: square; font-weight: normal; }
+.selected { font-weight: bold; }
+
+/* Page Content */
+#page { 
+	float: left; height: 100%;
+	padding-left: 2em; vertical-align: top; 
+	background: #EDEBEB;
+}
+#page h2 { color: #4A3C31; margin-top: 1em;}
+#page h3 { color: #4A3C31; }
+.view-content {
+	margin: 1em; padding: 1em; border: 1px solid #999;
+}
+
+#login-container {
+	max-width: 500px;
+	height: 900px
+	margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 172px;
+}
+
+#login-other-choices {
+    text-align: center;
+}
+
+.button {
+    background-color: #990000; /* Crimson */
+    border: none;
+    color: #EDEBEB;
+    display: flex;
+    margin: 0 auto;
+    width: 50%;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+
+div.message { 
+	border: 2px solid #4A3C31;
+	color: #4A3C31; font-weight: bold;
+	margin: 1em 0 ; padding: 1em; 
+}
+
+/* errors */
+.error {
+	color: #4A3C31; border: 2px solid #4A3C31;
+	margin: 1em 0; padding: 1em;
+}
+.error ul { padding-left: 2em; }

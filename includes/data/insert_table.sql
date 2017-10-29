@@ -1,0 +1,3 @@
+--clean database;
+--initialize database
+--Run queries
