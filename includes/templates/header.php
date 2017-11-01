@@ -8,5 +8,5 @@
 	</head>
 	<body>
     <div id="header">
-      <h1>IULMIA</h1>
+      <div id="logo"><img src="../public/images/IULMIA_Bug04.png"></div>
     </div>

@@ -1,11 +1,8 @@
 /* Site Colors:
-  #1A446C - blue grey
-  #D4E6F4 - very light blue
-  #EEE4B9 - light tan
-  #8D0D19 - burgundy
-  #990000 - crimson
-  #EDEBEB - cream
+  #990000 - Crimson
+  #EDEBEB - Cream
   #4A3C31 - Mahogany
+  #ACA39A - Limestone
 */
 
 html { height: 100%; width: 100%; }
@@ -16,16 +13,14 @@ body {
   font-size: 13px; line-height: 15px;
   background: #EDEBEB;
 }
-img { border: none; }
-a { color: #8D0D19; }
-a:hover { color: #1A446C; }
 	
 #header { 
-	height: 70px; 
+	height: 80px;
+	width: 100%
 	margin: 0; padding: 0; text-align: left; 
-  background: #990000; color: #EDEBEB;
+	background: #990000; color: #EDEBEB;
 }
-#header h1 { padding: 1em; margin: 0; }
+#header h1 {padding: 1em; margin: 0; }
 #main { 
 	height: 600px; width: 100%; 
 	margin: 0; padding: 0; 
@@ -35,39 +30,24 @@ a:hover { color: #1A446C; }
 	clear: both;
 	height: 2em; margin: 0; padding: 1em; 
 	text-align: center; 
-  background: #990000;  color: #EDEBEB;
+	background: #990000;  color: #EDEBEB;
 }
 
-/* Navigation */
-#navigation { 
-	float: left;
-	width: 150px; height: 100%; 
-	margin: 0; padding: 0 2em; 
-	color: #EDEBEB; background: #4A3C31;
-}
-#navigation a { color: #EDEBEB; text-decoration: none; }
-#navigation a:hover { color: #FFFFFF; }
-ul.subjects { 
-	margin: 1em 0; padding-left: 0; list-style: none;
-}
-ul.pages { padding-left: 2em; list-style: square; font-weight: normal; }
-.selected { font-weight: bold; }
 
-/* Page Content */
-#page { 
-	float: left; height: 100%;
-	padding-left: 2em; vertical-align: top; 
-	background: #EDEBEB;
+#logo>img {
+	display: inline-block;
+	width:200px;
+	height: 60px;
+	margin-left: 20px;
+    margin-right: 50px;
+    float: left;
+    padding-top: 10px;
 }
-#page h2 { color: #4A3C31; margin-top: 1em;}
-#page h3 { color: #4A3C31; }
-.view-content {
-	margin: 1em; padding: 1em; border: 1px solid #999;
-}
+
 
 #login-container {
 	max-width: 500px;
-	height: 900px
+	height: 138px;
 	margin: auto;
     margin-left: auto;
     margin-right: auto;
@@ -92,15 +72,51 @@ ul.pages { padding-left: 2em; list-style: square; font-weight: normal; }
     padding: 10px 20px;
 }
 
-div.message { 
-	border: 2px solid #4A3C31;
-	color: #4A3C31; font-weight: bold;
-	margin: 1em 0 ; padding: 1em; 
+/* Page Content */
+#page { 
+	height: 80%;
+	vertical-align: top; 
+	background: #EDEBEB;
+}
+#page h2 { color: #8D0D19; margin-top: 1em;}
+#page h3 { color: #8D0D19; }
+
+/* Admin Navigation Bar - Start */
+
+.navigation-bar {
+    width: 100%;  /* i'm assuming full width */
+    height: 80px; /* change it to desired width */
+    background-color: #990000; /* change to desired color */
+}
+.logo {
+    display: inline-block;
+    width: 200px;
+    height: 60px;
+    margin-left: 20px;
+    margin-right: 50px;
+    float: left;
+    padding-top: 10px;
+}
+.navigation-bar > a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding-top: 30px;
+    width: 200px;
+    text-decoration: none;
+    float: right;
+    height: 50px;
 }
 
-/* errors */
-.error {
-	color: #4A3C31; border: 2px solid #4A3C31;
-	margin: 1em 0; padding: 1em;
+.navigation-bar h1 { padding: 1em; margin: 0; }
+
+.navigation-bar a:hover:not(.active) {background-color: #ACA39A;}
+
+.navigation-bar a.active {background-color: #ACA39A;}
+
+@media screen and (max-width: 600px){
+    .navigation-bar a.right, 
+    .navigation-bar a {float: none;}
 }
-.error ul { padding-left: 2em; }
+
+/* Admin Navigation Bar - End */
