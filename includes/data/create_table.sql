@@ -3,7 +3,7 @@
 CREATE DATABASE IULMIA;
 
 CREATE TABLE BIB_BASIC (
-    Bib_IU_Barcode varchar(14),
+    Bib_IU_Barcode int,
     Bib_Collect varchar(200),
     Bib_Media_Type varchar(15),
     Bib_Series_Name varchar(200),
@@ -33,7 +33,7 @@ CREATE TABLE BIB_BASIC (
 
 CREATE TABLE BIB_IDENT (
     Bib_IU_IDENT_ID int,
-    Bib_IU_Barcode varchar(14),
+    Bib_IU_Barcode int,
     Per_ID varchar(12),
     Bibident_IUCAT_Title_No varchar(7),
     bibident_Date_Created DATE,
@@ -48,7 +48,7 @@ CREATE TABLE BIB_IDENT (
 
 CREATE TABLE BIB_TECH (
     Bib_IU_TECH_ID int,
-    Bib_IU_Barcode varchar(14),
+    Bib_IU_Barcode int,
     BibTech_Multi_Item_Can varchar(3),
     BibTech_Pic_Type varchar(50),
     BibTech_Snd_Form_Type varchar(25),
@@ -65,7 +65,7 @@ CREATE TABLE BIB_TECH (
 
 CREATE TABLE BIB_COND (
     Bib_IU_COND_ID int,
-    Bib_IU_Barcode varchar(14),
+    Bib_IU_Barcode int,
     BibCond_Format_Note varchar(200),
     BibCond_AD varchar(1),
     BibCond_Shrinkage float(2,1),
@@ -83,7 +83,7 @@ CREATE TABLE BIB_COND (
 CREATE TABLE LOAN (
     LOAN_ID int,
     Per_ID int,
-    Bib_IU_Barcode varchar(14),
+    Bib_IU_Barcode int,
     Loan_Date DATE,
     Loan_Return_Date DATE,
     Loan_Returned_Date DATE,
