@@ -8,7 +8,7 @@
 INSERT INTO BIB_BASIC
     (Bib_IU_Barcode, Bib_Collect, Bib_Media_Type, Bib_Series_Name, Bib_Series_Part, Bib_Series_Prod_No, Bib_Title, Bib_Alt_Title, Bib_Version, Bib_Reel_No, Bib_Summary, Bib_Creator, Bib_Producer, Bib_Genre, Bib_Subject, Bib_Date, Bib_Location, Bib_Title_Note, Bib_Orig_Med, Bib_Orig_Gauge, Bib_Generation, Bib_Color, Bib_Sound, Bib_Frame_Rate, Bib_Aspect_Ratio, Bib_Dur, Bib_Dial_Lang)
 VALUES
-    ('value1' , 'value2', 'value3','value4','value5', 'value6', 'value7', 'value8', 'value9', 'value10', 'value11', 'value12', 'value13', 'value14', 'value15', 'value16', 'value17', 'value18', 'value19', 'value20', 'value21', 'value22', 'value24', 'value25', 'value26', 'value27', 'value28'),
+    ('value1', 'value2', 'value3','value4','value5', 'value6', 'value7', 'value8', 'value9', 'value10', 'value11', 'value12', 'value13', 'value14', 'value15', 'value16', 'value17', 'value18', 'value19', 'value20', 'value21', 'value22', 'value24', 'value25', 'value26', 'value27', 'value28'),
     ('value1' , 'value2', 'value3','value4','value5', 'value6', 'value7', 'value8', 'value9', 'value10', 'value11', 'value12', 'value13', 'value14', 'value15', 'value16', 'value17', 'value18', 'value19', 'value20', 'value21', 'value22', 'value24', 'value25', 'value26', 'value27', 'value28'),
     ('value1' , 'value2', 'value3','value4','value5', 'value6', 'value7', 'value8', 'value9', 'value10', 'value11', 'value12', 'value13', 'value14', 'value15', 'value16', 'value17', 'value18', 'value19', 'value20', 'value21', 'value22', 'value24', 'value25', 'value26', 'value27', 'value28');
 

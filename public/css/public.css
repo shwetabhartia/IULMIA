@@ -3,6 +3,8 @@
   #EDEBEB - Cream
   #4A3C31 - Mahogany
   #ACA39A - Limestone
+  #83786F - Dark Limestone
+  #191919 - Black
 */
 
 html { height: 100%; width: 100%; }
@@ -22,10 +24,11 @@ body {
 }
 #header h1 {padding: 1em; margin: 0; }
 #main { 
-	height: 600px; width: 100%; 
-	margin: 0; padding: 0; 
-	background: #EDEBEB;
+    height: 600px; width: 100%; 
+    margin: 0; padding: 0; 
+    background: #EDEBEB;
 }
+
 #footer { 
 	clear: both;
 	height: 2em; margin: 0; padding: 1em; 
@@ -72,21 +75,35 @@ body {
     padding: 10px 20px;
 }
 
-/* Page Content */
-#page { 
-	height: 80%;
-	vertical-align: top; 
-	background: #EDEBEB;
+/* Navigation Pane - Left*/
+#navigation { 
+    float: left;
+    width: 150px; height: 100%; 
+    margin: 0; padding: 0 2em; 
+    color: #191919; background: #ACA39A;
 }
-#page h2 { color: #8D0D19; margin-top: 1em;}
-#page h3 { color: #8D0D19; }
+#navigation a { color: #191919; text-decoration: none; }
+#navigation a:hover { color: #83786F; }
+
+
+/* Page Content */
+
+#page { 
+    float: left; 
+    height: 100%;
+    padding-left: 2em; 
+    vertical-align: top; 
+    background: #EDEBEB;
+}
+#page h2 { color: #191919; margin-top: 1em;}
+#page h3 { color: #191919; }
 
 /* Admin Navigation Bar - Start */
 
 .navigation-bar {
-    width: 100%;  /* i'm assuming full width */
-    height: 80px; /* change it to desired width */
-    background-color: #990000; /* change to desired color */
+    width: 100%;  
+    height: 80px; 
+    background-color: #990000; 
 }
 .logo {
     display: inline-block;

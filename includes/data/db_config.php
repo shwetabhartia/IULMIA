@@ -1,10 +1,11 @@
 <?php
+  define("DB_SERVER", "localhost");
+  define("DB_USER", "root");
+  define("DB_PASS", "ShwetaBhartia");
+  define("DB_NAME", "IULMIA");
+
   // 1. Create a database connection
-  $dbhost = "localhost";
-  $dbuser = "root";
-  $dbpass = "ShwetaBhartia";
-  $dbname = "IULMIA";
-  $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+  $connection = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
   // Test if connection succeeded
   if(mysqli_connect_errno()) {
     die("Database connection failed: " . 
