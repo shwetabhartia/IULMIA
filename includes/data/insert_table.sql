@@ -5,6 +5,13 @@
 
 
 --Run queries
+INSERT INTO PERSON 
+    (Per_ID, Per_Last_Name, Per_First_Name, Per_Organization, Per_Area_Code, Per_Phone_No, Per_Street, Per_City, Per_State, Per_Zip_Code, Per_Region, Per_Country, Per_IUMember)
+VALUES
+    ('value1' , 'value2', 'value3','value4','value5', 'value6', 'value7', 'value8', 'value9', 'value10', 'value11', 'value12', 'value13'),
+    ('value1' , 'value2', 'value3','value4','value5', 'value6', 'value7', 'value8', 'value9', 'value10', 'value11', 'value12', 'value13'),
+    ('value1' , 'value2', 'value3','value4','value5', 'value6', 'value7', 'value8', 'value9', 'value10', 'value11', 'value12', 'value13');
+    
 INSERT INTO BIB_BASIC
     (Bib_IU_Barcode, Bib_Collect, Bib_Media_Type, Bib_Series_Name, Bib_Series_Part, Bib_Series_Prod_No, Bib_Title, Bib_Alt_Title, Bib_Version, Bib_Reel_No, Bib_Summary, Bib_Creator, Bib_Producer, Bib_Genre, Bib_Subject, Bib_Date, Bib_Location, Bib_Title_Note, Bib_Orig_Med, Bib_Orig_Gauge, Bib_Generation, Bib_Color, Bib_Sound, Bib_Frame_Rate, Bib_Aspect_Ratio, Bib_Dur, Bib_Dial_Lang)
 VALUES
@@ -42,9 +49,3 @@ VALUES
     ('value1' , 'value2', 'value3','value4','value5', 'value6', 'value7', 'value8', 'value9', 'value10'),
     ('value1' , 'value2', 'value3','value4','value5', 'value6', 'value7', 'value8', 'value9', 'value10');
 
-INSERT INTO PERSON 
-    (Per_ID, Per_Last_Name, Per_First_Name, Per_Organization, Per_Area_Code, Per_Phone_No, Per_Street, Per_City, Per_State, Per_Zip_Code, Per_Region, Per_Country, Per_IUMember)
-VALUES
-    ('value1' , 'value2', 'value3','value4','value5', 'value6', 'value7', 'value8', 'value9', 'value10', 'value11', 'value12', 'value13'),
-    ('value1' , 'value2', 'value3','value4','value5', 'value6', 'value7', 'value8', 'value9', 'value10', 'value11', 'value12', 'value13'),
-    ('value1' , 'value2', 'value3','value4','value5', 'value6', 'value7', 'value8', 'value9', 'value10', 'value11', 'value12', 'value13');

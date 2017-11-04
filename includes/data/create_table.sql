@@ -3,7 +3,7 @@
 CREATE DATABASE IULMIA;
 
 CREATE TABLE PERSON (
-    Per_ID int not null auto_increment,
+    Per_ID int not null,
     Per_Last_Name varchar(25),
     Per_First_Name varchar(25),
     Per_Organization varchar(200),
@@ -52,12 +52,12 @@ CREATE TABLE BIB_BASIC (
 
 CREATE TABLE BIB_IDENT (
     Bibident_ID int not null auto_increment,
-    Bib_IU_Barcode int,
-    Per_ID int,
+    Bib_IU_Barcode int not null,
+    Per_ID int not null,
     Bibident_IUCAT_Title_No int,
     bibident_Date_Created DATE,
     Bibident_MDPI_Barcode int,
-    Bibident_Current_Loc varchar(50),
+    Bibident_Current_Loc varchar(50) not null,
     Bibident_Alf_Shelf_Loc varchar(30),
     Bibident_Orig_Ident varchar(25),
     Bibident_Accom_Doc_ID varchar(25),
@@ -70,7 +70,7 @@ CREATE TABLE BIB_IDENT (
 
 CREATE TABLE BIB_TECH (
     BibTech_ID int not null auto_increment,
-    Bib_IU_Barcode int,
+    Bib_IU_Barcode int not null,
     BibTech_Multi_Item_Can int,
     BibTech_Pic_Type varchar(50),
     BibTech_Snd_Form_Type varchar(25),
@@ -89,7 +89,7 @@ CREATE TABLE BIB_TECH (
 
 CREATE TABLE BIB_COND (
     Bibcond_ID int not null auto_increment,
-    Bib_IU_Barcode int,
+    Bib_IU_Barcode int not null,
     BibCond_Format_Note varchar(200),
     BibCond_AD smallint,
     BibCond_Shrinkage float(2,1),
@@ -108,14 +108,14 @@ CREATE TABLE BIB_COND (
 
 CREATE TABLE LOAN (
     LOAN_ID int not null auto_increment,
-    Per_ID int,
-    Bib_IU_Barcode int,
+    Per_ID int not null,
+    Bib_IU_Barcode int not null,
     Loan_Date DATE,
     Loan_Return_Date DATE,
     Loan_Returned_Date DATE,
     Loan_Ext_Date DATE,
     Loan_Purpose varchar(200),
-    Bibident_Current_Loc varchar(200),
+    Bibident_Current_Loc varchar(200) not null,
     primary key (LOAN_ID), 
     foreign key (Per_ID) references PERSON on update cascade,
     foreign key (Bib_IU_Barcode) references BIB_BASIC on update cascade,
