@@ -82,7 +82,7 @@ CREATE TABLE BIB_TECH (
     BibTech_Stock varchar(25),
     BibTech_Edgecode_Date year,
     BibTech_Footage int,
-    BibTech_Can_Size smallint,
+    BibTech_Can_Size int,
     primary key (BibTech_ID), 
     foreign key (Bib_IU_Barcode) references BIB_BASIC on update cascade
 );
