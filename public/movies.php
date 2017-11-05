@@ -11,10 +11,12 @@
 		</ul>
 	</div>
 	<div id="page">
+		<div id="wrap">
 		<form id="searchbox" action="">
 		    <input id="search" type="text" placeholder="Search movies here">
-		    <input id="submit" type="submit" value="Search">
+		    <button id="submit" type="submit"><i class="fa fa-search"></i></button>
 		</form>
+		</div>
 	</div>
 </div>
 

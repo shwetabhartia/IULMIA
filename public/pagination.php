@@ -1,6 +1,7 @@
 <?php
 require_once('../includes/data/db_config.php');
 require_once("../includes/functions.php");
+include("../includes/templates/header.php");
 $perpage = 10;
 if(isset($_GET['page']) & !empty($_GET['page'])){
 	$curpage = $_GET['page'];
@@ -101,5 +102,4 @@ $res = mysqli_query($connection, $ReadSql);
 			</nav>
 		</div>
 
-	</body>
-</html>
+<?php include("../includes/templates/footer.php"); ?>
