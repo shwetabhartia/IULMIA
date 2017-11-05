@@ -11,22 +11,10 @@
 		</ul>
 	</div>
 	<div id="page">
-		<h2>PAGE</h1>
-		<form class="search_bar larger">
-			<div class="search_dropdown" style="width: 16px;">
-				<span>All</span>
-				<ul>
-					<li class="selected">All</li>
-					<li>Books</li>
-					<li>Articles</li>
-				</ul>
-			</div>
-
-			<input type="text" placeholder="Search for anything" />
-
-			<button type="submit" value="Search">Search</button>
+		<form id="searchbox" action="">
+		    <input id="search" type="text" placeholder="Search movies here">
+		    <input id="submit" type="submit" value="Search">
 		</form>
-		
 	</div>
 </div>
 

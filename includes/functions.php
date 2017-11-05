@@ -13,24 +13,12 @@
         $columns_list = mysqli_query($connection, $query);
 		confirm_query($columns_list);
 		$output = "";
-        while($col = mysql_fetch_assoc($columns_list)) {
+        while($col = mysqli_fetch_assoc($columns_list)) {
             $output .= "<th>";
             $output .= $col["Field"];
             $output .= "</th>";
         }
         return $output;
-	}
-
-	function find_all_subjects() {
-		global $connection;
-		
-		$query  = "SELECT * ";
-		$query .= "FROM subjects ";
-		$query .= "WHERE visible = 1 ";
-		$query .= "ORDER BY position ASC";
-		$subject_set = mysqli_query($connection, $query);
-		confirm_query($subject_set);
-		return $subject_set;
 	}
 
 	function navigation($subject_id, $page_id) {
