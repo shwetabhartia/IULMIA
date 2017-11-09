@@ -3,16 +3,16 @@
 CREATE DATABASE IULMIA;
 
 CREATE TABLE PERSON (
-    Per_ID int not null,
+    Per_ID bigint not null,
     Per_Last_Name varchar(25),
     Per_First_Name varchar(25),
     Per_Organization varchar(200),
     Per_Area_Code int,
-    Per_Phone_No int,
+    Per_Phone_No varchar(25),
     Per_Street varchar(100),
     Per_City varchar(25),
     Per_State varchar(2),
-    Per_Zip_Code int,
+    Per_Zip_Code bigint,
     Per_Region varchar(25),
     Per_Country varchar(25),
     Per_IUMember tinyint(1),
@@ -20,7 +20,7 @@ CREATE TABLE PERSON (
 );
 
 CREATE TABLE BIB_BASIC (
-    Bib_IU_Barcode int not null,
+    Bib_IU_Barcode bigint not null,
     Bib_Collect varchar(200) not null,
     Bib_Media_Type varchar(20),
     Bib_Series_Name varchar(200),
@@ -51,8 +51,8 @@ CREATE TABLE BIB_BASIC (
 );
 
 CREATE TABLE BIB_IDENT (
-    Bibident_ID int not null auto_increment,
-    Bib_IU_Barcode int not null,
+    Bibident_ID bigint not null auto_increment,
+    Bib_IU_Barcode bigint not null,
     Per_ID int not null,
     Bibident_IUCAT_Title_No int,
     bibident_Date_Created DATE,
@@ -69,8 +69,8 @@ CREATE TABLE BIB_IDENT (
 );
 
 CREATE TABLE BIB_TECH (
-    BibTech_ID int not null auto_increment,
-    Bib_IU_Barcode int not null,
+    BibTech_ID bigint not null auto_increment,
+    Bib_IU_Barcode bigint not null,
     BibTech_Multi_Item_Can int,
     BibTech_Pic_Type varchar(50),
     BibTech_Snd_Form_Type varchar(25),
@@ -88,8 +88,8 @@ CREATE TABLE BIB_TECH (
 );
 
 CREATE TABLE BIB_COND (
-    Bibcond_ID int not null auto_increment,
-    Bib_IU_Barcode int not null,
+    Bibcond_ID bigint not null auto_increment,
+    Bib_IU_Barcode bigint not null,
     BibCond_Format_Note varchar(200),
     BibCond_AD smallint,
     BibCond_Shrinkage float(2,1),
@@ -107,9 +107,9 @@ CREATE TABLE BIB_COND (
 );
 
 CREATE TABLE LOAN (
-    LOAN_ID int not null auto_increment,
-    Per_ID int not null,
-    Bib_IU_Barcode int not null,
+    LOAN_ID bigint not null auto_increment,
+    Per_ID bigint not null,
+    Bib_IU_Barcode bigint not null,
     Loan_Date DATE,
     Loan_Return_Date DATE,
     Loan_Returned_Date DATE,
