@@ -9,5 +9,5 @@
 	</head>
 	<body>
     <div id="header">
-      <div id="logo"><img src="../public/images/IULMIA_Bug04.png"></div>
+      <div id="logo"><img src="../public/images/logo001.png"></div>
     </div>

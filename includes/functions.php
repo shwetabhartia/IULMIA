@@ -21,40 +21,63 @@
         return $output;
 	}
 
-	function navigation($subject_id, $page_id) {
-		$output = "<ul class=\"subjects\">";
-		$subject_set = find_all_subjects();
-		while($subject = mysqli_fetch_assoc($subject_set)) {
-			$output .= "<li";
-			if ($subject["id"] == $subject_id) {
-				$output .= " class=\"selected\"";
-			}
-			$output .= ">";
-			$output .= "<a href=\"manage_content.php?subject=";
-			$output .= urlencode($subject["id"]);
-			$output .= "\">";
-			$output .= $subject["menu_name"];
-			$output .= "</a>";
-			
-			$page_set = find_pages_for_subject($subject["id"]);
-			$output .= "<ul class=\"pages\">";
-			while($page = mysqli_fetch_assoc($page_set)) {
-				$output .= "<li";
-				if ($page["id"] == $page_id) {
-					$output .= " class=\"selected\"";
-				}
-				$output .= ">";
-				$output .= "<a href=\"manage_content.php?page=";
-				$output .= urlencode($page["id"]);
-				$output .= "\">";
-				$output .= $page["menu_name"];
-				$output .= "</a></li>";
-			}
-			mysqli_free_result($page_set);
-			$output .= "</ul></li>";
+
+	function fetch_column_values($column_name) {
+		global $connection;
+		$query = "Select DISTINCT($column_name) from BIB_BASIC";
+		$column_values = mysqli_query($connection, $query);
+		confirm_query($column_values);
+		$output = "";
+		while ($val = mysqli_fetch_assoc($column_values)) {
+			$output .= $val[$column_name];
+			$output .= "<input type=\"checkbox\" ";
+			$output .= "name=\"";
+			$output .= $column_name;
+			$output .= "\" value=\"";
+			$output .= $val[$column_name];
+			$output .= "\"> <br>" ;
 		}
-		mysqli_free_result($subject_set);
-		$output .= "</ul>";
+		return $output;
+
+	}
+
+
+	function search_movie_by_title($movie_title) {
+		global $connection;
+
+		$movie_title = explode(' ', $movie_title);
+
+		$query = 'SELECT Bib_IU_Barcode, Bib_Title, Bib_Creator, Bib_Date, Bib_Summary FROM BIB_BASIC WHERE ';
+
+		$parts = array();
+		foreach( $movie_title as $movie_title_word ){
+		$parts[] = '`Bib_Title` LIKE "%'.$movie_title_word.'%"';
+		}
+
+		$query .= implode(' OR ', $parts);
+		//print $query;
+		$search_results = mysqli_query($connection, $query);
+		confirm_query($search_results);
+		$output = "<h2>Search Results</h2>";
+		while ($movie = mysqli_fetch_assoc($search_results)) {
+			$output .= "<ol><li><h3>";
+			$output .= "<a href=\"moviepage.php?movieid=";
+			$output .= urlencode($movie["Bib_IU_Barcode"]);
+			$output .= "\">";
+			$output .= $movie["Bib_Title"];
+			$output .= "</h3>";
+			$output .= "</a>";
+			$output .= "Creator :";
+			$output .= $movie["Bib_Creator"];
+			$output .=  "<br>";
+			$output .= "Date Created :";
+			$output .= $movie["Bib_Date"];
+			$output .=  "<br>";
+			$output .=  "Summary : ";
+			$output .= $movie["Bib_Summary"];
+			$output .= "<br></li></ol>";
+		}
 		return $output;
 	}
+
 ?>
