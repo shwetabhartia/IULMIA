@@ -29,6 +29,12 @@ body {
   color: #EDEBEB;
 }
 
+#pink {
+  width: 100%;
+  height: 25%;
+  background: #DF1E35;
+}
+
 #footer { 
   clear: both;
   width: 100%;
@@ -36,7 +42,7 @@ body {
   margin: 0; 
   padding: 1em; 
   text-align: center; 
-  background: #990000;  
+  background: #333333;  
   color: #EDEBEB;
 }
 
@@ -160,7 +166,7 @@ body {
 #search {
   float: left;
   width: 100%;
-  border: 3px solid #990000;
+  border: 3px solid #DF1E35;
   padding: 5px;
   height: 20px;
   border-radius: 5px;
@@ -169,7 +175,7 @@ body {
 }
 
 #search:focus{
-  color: #990000;
+  color: black;
 }
 
 #submit {
@@ -177,8 +183,8 @@ body {
   right: -50px;
   width: 40px;
   height: 36px;
-  border: 1px solid #990000;
-  background: #990000;
+  border: 1px solid #DF1E35;
+  background: #DF1E35;
   text-align: center;
   color: #fff;
   border-radius: 5px;

@@ -58,9 +58,9 @@
 		//print $query;
 		$search_results = mysqli_query($connection, $query);
 		confirm_query($search_results);
-		$output = "<h2>Search Results</h2>";
+		$output = "<h2>Search Results</h2><ol>";
 		while ($movie = mysqli_fetch_assoc($search_results)) {
-			$output .= "<ol><li><h3>";
+			$output .= "<li><h3>";
 			$output .= "<a href=\"moviepage.php?movieid=";
 			$output .= urlencode($movie["Bib_IU_Barcode"]);
 			$output .= "\">";
@@ -75,8 +75,9 @@
 			$output .=  "<br>";
 			$output .=  "Summary : ";
 			$output .= $movie["Bib_Summary"];
-			$output .= "<br></li></ol>";
+			$output .= "<br></li>";
 		}
+		$output .= "</ol>";
 		return $output;
 	}
 

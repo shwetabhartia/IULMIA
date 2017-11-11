@@ -1,3 +1,4 @@
+		<div id="pink"></div>
 		<div id="footer">Copyright &copy 2017 IULMIA</div>
 
 	</body>
