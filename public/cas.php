@@ -1,4 +1,4 @@
-#!/usr/local/bin/php  //needed on Webserve otherwise remove
+//needed on Webserve otherwise remove
 <?php
 session_start();
 $sid = SID; //Session ID #
