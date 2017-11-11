@@ -9,8 +9,8 @@
 	<body>
 
 		<nav class="navigation-bar">
-		    <img class="logo" src="../public/images/IULMIA_Bug04.png">
+		    <img class="logo" src="../public/images/logo001.png">
 		    <a href="#">logout</a>
 		    <a href="#">Manage admins</a>
-		    <a href="#">Manage accounts</a>
+		    <a href="#">Manage resources</a>
 		</nav>
