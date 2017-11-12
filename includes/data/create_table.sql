@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-=======
---Create tables queries
 
-CREATE DATABASE IULMIA;
+--Create tables queries
 
 CREATE DATABASE IULMIA;
 
@@ -67,7 +64,7 @@ CREATE TABLE BIB_IDENT (
     Bibident_Accom_Doc_ID varchar(25),
     Bibident_Accom_Doc_Title varchar(200),
     Bibident_Accom_Doc_Loc varchar(25),
-    primary key (Bibident_ID), 
+    primary key (Bibident_ID),
     foreign key (Bib_IU_Barcode) references BIB_BASIC (Bib_IU_Barcode),
     foreign key (Per_ID) references PERSON (Per_ID)
 );
@@ -87,7 +84,7 @@ CREATE TABLE BIB_TECH (
     BibTech_Edgecode_Date year,
     BibTech_Footage int,
     BibTech_Can_Size int,
-    primary key (BibTech_ID), 
+    primary key (BibTech_ID),
     foreign key (Bib_IU_Barcode) references BIB_BASIC (Bib_IU_Barcode)
 );
 
@@ -106,7 +103,7 @@ CREATE TABLE BIB_COND (
     BibCond_Research_Val smallint,
     BibCond_Research_Val_Note varchar(200),
     BibCond_Conserv_Act varchar(200),
-    primary key (Bibcond_ID), 
+    primary key (Bibcond_ID),
     foreign key (Bib_IU_Barcode) references BIB_BASIC (Bib_IU_Barcode)
 );
 
@@ -120,7 +117,7 @@ CREATE TABLE LOAN (
     Loan_Ext_Date DATE,
     Loan_Purpose varchar(200),
     Bibident_Current_Loc varchar(200) not null,
-    primary key (LOAN_ID), 
+    primary key (LOAN_ID),
     foreign key (Per_ID) references PERSON (Per_ID),
     foreign key (Bib_IU_Barcode) references BIB_BASIC (Bib_IU_Barcode)
 );
@@ -129,4 +126,3 @@ CREATE TABLE LOAN (
 --Clean database function
 
 --Intialize database function
->>>>>>> master
