@@ -2,7 +2,7 @@
 require_once('../includes/data/db_config.php');
 require_once("../includes/functions.php");
 include("../includes/templates/header.php");
-$perpage = 10;
+$perpage = 3;
 if(isset($_GET['page']) & !empty($_GET['page'])){
 	$curpage = $_GET['page'];
 }else{
@@ -34,41 +34,13 @@ $res = mysqli_query($connection, $ReadSql);
 	<body>
 		<div class="container">
 			<div class="row">
-				<table class="table "> 
-					<thead> 
-					<tr><?php echo show_columns() ?></tr>
-					</thead> 
+				<table class="table ">  
 					<tbody> 
 					<?php 
 					while($r = mysqli_fetch_assoc($res)){
 					?>
 					<tr>
-						<td><?php echo $r['Bib_IU_Barcode']; ?></td> 
-						<td><?php echo $r['Bib_Collect']; ?></td> 
-						<td><?php echo $r['Bib_Media_Type']; ?></td> 
-						<td><?php echo $r['Bib_Series_Name']; ?></td>
-						<td><?php echo $r['Bib_Series_Part']; ?></td>
-						<td><?php echo $r['Bib_Title']; ?></td>
-						<td><?php echo $r['Bib_Alt_Title']; ?></td>
-						<td><?php echo $r['Bib_Version']; ?></td>
-						<td><?php echo $r['Bib_Reel_No']; ?></td>
-						<td><?php echo $r['Bib_Summary']; ?></td>
-						<td><?php echo $r['Bib_Creator']; ?></td>
-						<td><?php echo $r['Bib_Producer']; ?></td>
-						<td><?php echo $r['Bib_Genre']; ?></td>
-						<td><?php echo $r['Bib_Subject']; ?></td>
-						<td><?php echo $r['Bib_Date']; ?></td>
-						<td><?php echo $r['Bib_Location']; ?></td>
-						<td><?php echo $r['Bib_Title_Note']; ?></td>
-						<td><?php echo $r['Bib_Orig_Med']; ?></td>
-						<td><?php echo $r['Bib_Orig_Gauge']; ?></td>
-						<td><?php echo $r['Bib_Generation']; ?></td>
-						<td><?php echo $r['Bib_Color']; ?></td>
-						<td><?php echo $r['Bib_Sound']; ?></td>
-						<td><?php echo $r['Bib_Frame_Rate']; ?></td>
-						<td><?php echo $r['Bib_Aspect_Ratio']; ?></td>
-						<td><?php echo $r['Bib_Dur']; ?></td>
-						<td><?php echo $r['Bib_Dial_Lang']; ?></td>
+						<td><?php echo $r['Bib_IU_Barcode']; ?></td>
 					</tr> 
 					<?php } ?>
 					</tbody> 
