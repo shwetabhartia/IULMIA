@@ -2,8 +2,6 @@
 
 CREATE DATABASE IULMIA;
 
-CREATE DATABASE IULMIA;
-
 CREATE TABLE PERSON (
     Per_ID bigint not null,
     Per_Last_Name varchar(25),
@@ -57,7 +55,7 @@ CREATE TABLE BIB_IDENT (
     Bib_IU_Barcode bigint not null,
     Per_ID bigint not null,
     Bibident_IUCAT_Title_No varchar(50),
-    bibident_Date_Created DATE,
+    Bibident_Date_Created DATE,
     Bibident_MDPI_Barcode bigint,
     Bibident_Current_Loc varchar(50) not null,
     Bibident_Alf_Shelf_Loc varchar(30),

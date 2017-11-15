@@ -75,7 +75,7 @@ VALUES
 
 
 INSERT INTO BIB_IDENT
-    (Bib_IU_Barcode, Per_ID, Bibident_IUCAT_Title_No, bibident_Date_Created, Bibident_MDPI_Barcode, Bibident_Current_Loc, Bibident_Alf_Shelf_Loc, Bibident_Orig_Ident, Bibident_Accom_Doc_ID, Bibident_Accom_Doc_Title, Bibident_Accom_Doc_Loc)
+    (Bib_IU_Barcode, Per_ID, Bibident_IUCAT_Title_No, Bibident_Date_Created, Bibident_MDPI_Barcode, Bibident_Current_Loc, Bibident_Alf_Shelf_Loc, Bibident_Orig_Ident, Bibident_Accom_Doc_ID, Bibident_Accom_Doc_Title, Bibident_Accom_Doc_Loc)
 VALUES
     (30000149802187, 2000023251, 'B-IULMIA', '2016-01-15', Null, 'In Storage (Awaiting Ingest)', 'Aisle 24 L11-5', '83653-2', '5001.1', 'Movie Script and Optional Reading', 'FileCabinet03'),
     (30000149802195, 2000023251, 'B-IULMIA', '2016-01-15', Null, 'In Storage (Awaiting Ingest)', 'Aisle 24 L11-6', '83653-3 ', '5002.1', 'Movie Script and Supplementary Reading', 'FileCabinet03'),

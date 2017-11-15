@@ -73,9 +73,9 @@ body {
     background: #EDEBEB;
     padding-bottom: 22.5%;
 }
-#page h2 { color: #191919; margin-top: 1em;}
-#page h3 { color: #191919; }
-
+#page h2 { color: #990000; margin-top: 1em; text-align: left;}
+#page h3 { color: #990000; }
+#page p { color: #333333; text-align: right;}
 
 #logo>img {
 	display: inline-block;
@@ -220,4 +220,8 @@ table tr td:first-child {
 }
 table tr td:last-child {
   border-right: 0;
+}
+
+#message {
+  
 }

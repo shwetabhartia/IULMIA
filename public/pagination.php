@@ -57,7 +57,7 @@ $res = mysqli_query($connection, $ReadSql);
 					</a>
 					</li>
 					<?php } ?>
-					<?php if($curpage >= 2){ ?>
+					<?php if($curpage >= 3){ ?>
 					<li class="page-item"><a class="page-link" href="?page=<?php echo $previouspage ?>"><?php echo $previouspage ?></a></li>
 					<?php } ?>
 					<li class="page-item active"><a class="page-link" href="?page=<?php echo $curpage ?>"><?php echo $curpage ?></a></li>

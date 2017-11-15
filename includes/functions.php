@@ -1,5 +1,17 @@
 <?php
 
+	function redirect_to($new_location) {
+	  header("Location: " . $new_location);
+	  exit;
+	}
+
+	function mysql_prep($string) {
+		global $connection;
+		
+		$escaped_string = mysqli_real_escape_string($connection, $string);
+		return $escaped_string;
+	}
+	
 	function confirm_query($result_set) {
 		if (!$result_set) {
 			die("Database query failed.");
@@ -33,9 +45,10 @@
 			$output .= "<input type=\"checkbox\" ";
 			$output .= "name=\"";
 			$output .= $column_name;
+			$output .= "[]";
 			$output .= "\" value=\"";
 			$output .= $val[$column_name];
-			$output .= "\"> <br>" ;
+			$output .= "\"/> <br>" ;
 		}
 		return $output;
 
@@ -78,6 +91,18 @@
 			$output .= "<br></li>";
 		}
 		$output .= "</ol>";
+		return $output;
+	}
+
+	function fetch_details_movie($movie_id) {
+		global $connection;
+		$query = "Select * from BIB_BASIC where Bib_IU_Barcode = $movie_id";
+		$movie_details = mysqli_query($connection, $query);
+		confirm_query($movie_details);
+		$output = "";
+		while ($mov = mysqli_fetch_assoc($movie_details)) {
+			$output .= $mov["Bib_Title"];
+		}
 		return $output;
 	}
 
