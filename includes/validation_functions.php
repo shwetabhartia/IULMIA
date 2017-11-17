@@ -3,9 +3,13 @@
 $errors = array();
 
 function fieldname_as_text($fieldname) {
-  $fieldname = str_replace("_", " ", $fieldname);
-  $fieldname = ucfirst($fieldname);
-  return $fieldname;
+	$fieldname = str_replace("Bib_", "", $fieldname);
+	$fieldname = str_replace("Bibident_", "", $fieldname);
+	$fieldname = str_replace("BibTech_", "", $fieldname);
+	$fieldname = str_replace("BibCond_", "", $fieldname);
+	$fieldname = str_replace("_", " ", $fieldname);
+	$fieldname = ucfirst($fieldname);
+	return $fieldname;
 }
 
 // * presence

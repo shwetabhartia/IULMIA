@@ -1,3 +1,4 @@
+<?php require_once("../includes/session.php"); ?>
 <?php require_once("../includes/data/db_config.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
 <?php include("../includes/templates/header-admin.php"); ?>
@@ -20,6 +21,9 @@
 			</td>
 			<td width="80%">
 				<div id="page">
+					<?php echo message(); ?>
+					<?php $errors = errors(); ?>
+					<?php echo form_errors($errors); ?>
 					<h2>METADATA BASICS</h2>
 					<form action="insertmetadata.php" method="post">
 					<p>IU Barcode: <input type="text" name="Bib_IU_Barcode" value="" /></p>
@@ -92,8 +96,7 @@
 					<p>Research Value: <input type="text" name="BibCond_Research_Value" value="" /></p>
 					<p>Research Value Note: <input type="text" name="BibCond_Research_Value_Note" value="" /></p>
 					<p>Conservation Action: <input type="text" name="BibCond_Conservation_Action" value="" /></p>
-
-					<input type="image" name="submit" src="../public/images/SubmitN.png" width="55%" />
+					<button type="submit" name="submit" id="submit-icon"><img src="../public/images/SubmitN.png" id="submit-icon" /></button>
 					</form>
 				</div>
 			</td>

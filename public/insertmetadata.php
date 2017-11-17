@@ -2,12 +2,26 @@
 require_once("../includes/session.php");
 require_once("../includes/data/db_config.php");
 require_once("../includes/functions.php");
+require_once("../includes/validation_functions.php");
 
 if (isset($_POST['submit'])) {
+
+    // validations
+    $required_fields = array("Bib_IU_Barcode", "Bib_Collection", "Bib_Title", "Bib_Genre", "Bib_Subject", "Per_ID", "Bibident_Current_Location");
+    validate_presences($required_fields);
+    
+    $fields_with_max_lengths = array("Bib_Media_Type" => 20);
+    validate_max_lengths($fields_with_max_lengths);
+    
+    if (!empty($errors)) {
+        $_SESSION["errors"] = $errors;
+        redirect_to("setmetadata.php");
+    }
+
 	// Process the form
 	
     //BIB_BASIC table attribute
-	$Bib_IU_Barcode = (int) $_POST["Bib_IU_Barcode"];
+	$Bib_IU_Barcode = mysql_prep($_POST["Bib_IU_Barcode"]);
     $Bib_Collection = mysql_prep($_POST["Bib_Collection"]);
     $Bib_Media_Type = mysql_prep($_POST["Bib_Media_Type"]);
     $Bib_Series_Name = mysql_prep($_POST["Bib_Series_Name"]);
@@ -38,13 +52,13 @@ if (isset($_POST['submit'])) {
     //Query for BIB_BASIC
 	$query_bib_basic = "INSERT INTO BIB_BASIC (Bib_IU_Barcode, Bib_Collection, Bib_Media_Type, Bib_Series_Name, Bib_Series_Part, Bib_Series_Production_No, Bib_Title, Bib_Alternative_Title, Bib_Version_No, Bib_Reel_No, Bib_Summary, Bib_Creator, Bib_Producer, Bib_Genre, Bib_Subject, Bib_Date_Created, Bib_Location, Bib_Title_Note, Bib_Original_Medium, Bib_Original_Gauge, Bib_Generation, Bib_Color, Bib_Sound, Bib_Frame_Rate, Bib_Aspect_Ratio, Bib_Duration, Bib_Language ) ";
 	$query_bib_basic .= "VALUES (";
-	$query_bib_basic .= " {$Bib_IU_Barcode}, '{$Bib_Collection}', '{Bib_Media_Type}', '{Bib_Series_Name}', '{Bib_Series_Part}', '{Bib_Series_Production_No}', '{Bib_Title}', '{Bib_Alternative_Title}', {Bib_Version_No}, {Bib_Reel_No}, '{Bib_Summary}', '{Bib_Creator}', '{Bib_Producer}', '{Bib_Genre}', '{Bib_Subject}', '{Bib_Date_Created}', '{Bib_Location}', '{Bib_Title_Note}', '{Bib_Original_Medium}', '{Bib_Original_Gauge}', '{Bib_Generation}', '{Bib_Color}', '{Bib_Sound}', {Bib_Frame_Rate}, '{Bib_Aspect_Ratio}', '{Bib_Duration}', '{Bib_Language}'";
+	$query_bib_basic .= " '{$Bib_IU_Barcode}', '{$Bib_Collection}', '{$Bib_Media_Type}', '{$Bib_Series_Name}', '{$Bib_Series_Part}', '{$Bib_Series_Production_No}', '{$Bib_Title}', '{$Bib_Alternative_Title}', {$Bib_Version_No}, {$Bib_Reel_No}, '{$Bib_Summary}', '{$Bib_Creator}', '{$Bib_Producer}', '{$Bib_Genre}', '{$Bib_Subject}', '{$Bib_Date_Created}', '{$Bib_Location}', '{$Bib_Title_Note}', '{$Bib_Original_Medium}', '{$Bib_Original_Gauge}', '{$Bib_Generation}', '{$Bib_Color}', '{$Bib_Sound}', {$Bib_Frame_Rate}, '{$Bib_Aspect_Ratio}', '{$Bib_Duration}', '{$Bib_Language}'";
 	$query_bib_basic .= ")";
 	$result_bib_basic = mysqli_query($connection, $query_bib_basic);
 
     //BIB_IDENT table attribute
     $Bibident_ID = (int) $_POST["Bibident_ID"];
-    $Per_ID = (int) $_POST["Per_ID"];
+    $Per_ID = mysql_prep($_POST["Per_ID"]);
     $Bibident_IUCAT_Title_No = mysql_prep($_POST["Bibident_IUCAT_Title_No"]);
     $Bibident_Date_Record_Created = mysql_prep($_POST["Bibident_Date_Record_Created"]);
     $Bibident_MDPI_Barcode = (int) $_POST["Bibident_MDPI_Barcode"];
@@ -58,7 +72,7 @@ if (isset($_POST['submit'])) {
     //Query for BIB_IDENT
     $query_bib_ident = "INSERT INTO BIB_IDENT (Bib_IU_Barcode, Per_ID, Bibident_IUCAT_Title_No, Bibident_Date_Record_Created, Bibident_MDPI_Barcode, Bibident_Current_Location, Bibident_Alf_Shelf_Location, Bibident_Original_Identification, Bibident_Accompanying_Doc_ID, Bibident_Accompanying_Doc_Title, Bibident_Accompanying_Doc_Location ) ";
     $query_bib_ident .= "VALUES (";
-    $query_bib_ident .= " {$Bib_IU_Barcode}, {$Per_ID}, '{$Bibident_IUCAT_Title_No}', '{$Bibident_Date_Record_Created}', {$Bibident_MDPI_Barcode}, '{$Bibident_Current_Location}', '{$Bibident_Alf_Shelf_Location}', '{$Bibident_Original_Identification}', '{$Bibident_Accompanying_Doc_ID}', '{$Bibident_Accompanying_Doc_Title}', '{$Bibident_Accompanying_Doc_Location}'";
+    $query_bib_ident .= " '{$Bib_IU_Barcode}', '{$Per_ID}', '{$Bibident_IUCAT_Title_No}', '{$Bibident_Date_Record_Created}', {$Bibident_MDPI_Barcode}, '{$Bibident_Current_Location}', '{$Bibident_Alf_Shelf_Location}', '{$Bibident_Original_Identification}', '{$Bibident_Accompanying_Doc_ID}', '{$Bibident_Accompanying_Doc_Title}', '{$Bibident_Accompanying_Doc_Location}'";
     $query_bib_ident .= ")";
     $result_bib_ident = mysqli_query($connection, $query_bib_ident);
 
@@ -79,7 +93,7 @@ if (isset($_POST['submit'])) {
     //Query for BIB_TECH
     $query_bib_tech = "INSERT INTO BIB_TECH (Bib_IU_Barcode, BibTech_Multi_Item_Can, BibTech_Picture_Type, BibTech_Sound_Form_Type, BibTech_Sound_Content_Type, BibTech_Original_Sound_Field, BibTech_Caption_Subtitle_Language, BibTech_Caption_Subtitle_Note, BibTech_Base, BibTech_Stock, BibTech_Edgecode_Date, BibTech_Footage, BibTech_Can_Size ) ";
     $query_bib_tech .= "VALUES (";
-    $query_bib_tech .= " {$Bib_IU_Barcode}, {$BibTech_Multi_Item_Can}, '{$BibTech_Picture_Type}', '{$BibTech_Sound_Form_Type}', '{$BibTech_Sound_Content_Type}', '{$BibTech_Original_Sound_Field}', '{$BibTech_Caption_Subtitle_Language}', '{$BibTech_Caption_Subtitle_Note}', {$BibTech_Base}, {$BibTech_Stock}, '{$BibTech_Edgecode_Date}', {$BibTech_Footage}, {$BibTech_Can_Size} ";
+    $query_bib_tech .= " '{$Bib_IU_Barcode}', {$BibTech_Multi_Item_Can}, '{$BibTech_Picture_Type}', '{$BibTech_Sound_Form_Type}', '{$BibTech_Sound_Content_Type}', '{$BibTech_Original_Sound_Field}', '{$BibTech_Caption_Subtitle_Language}', '{$BibTech_Caption_Subtitle_Note}', '{$BibTech_Base}', '{$BibTech_Stock}', '{$BibTech_Edgecode_Date}', {$BibTech_Footage}, {$BibTech_Can_Size} ";
     $query_bib_tech .= ")";
     $result_bib_tech = mysqli_query($connection, $query_bib_tech);
 
@@ -100,7 +114,7 @@ if (isset($_POST['submit'])) {
     //Query for BIB_COND
     $query_bib_cond = "INSERT INTO BIB_COND (Bib_IU_Barcode, BibCond_Format_Note, BibCond_AD, BibCond_Shrinkage, BibCond_Mold, BibCond_Condition_Type, BibCond_Micellaneous_Condition_Type, BibCond_Missing_Footage, BibCond_Overall_Condition, BibCond_Overall_Condition_Note, BibCond_Research_Value, BibCond_Research_Value_Note, BibCond_Conservation_Action ) ";
     $query_bib_cond .= "VALUES (";
-    $query_bib_cond .= " {$Bib_IU_Barcode}, '{$BibCond_Format_Note}', {$BibCond_AD}, {$BibCond_Shrinkage}, {$BibCond_Mold}, {$BibCond_Condition_Type}, '{$BibCond_Micellaneous_Condition_Type}', {$BibCond_Missing_Footage}, {$BibCond_Overall_Condition}, '{$BibCond_Overall_Condition_Note}', {$BibCond_Research_Value}, '{$BibCond_Research_Value_Note}', '{$BibCond_Conservation_Action}' ";
+    $query_bib_cond .= " '{$Bib_IU_Barcode}', '{$BibCond_Format_Note}', {$BibCond_AD}, {$BibCond_Shrinkage}, {$BibCond_Mold}, {$BibCond_Condition_Type}, '{$BibCond_Micellaneous_Condition_Type}', {$BibCond_Missing_Footage}, {$BibCond_Overall_Condition}, '{$BibCond_Overall_Condition_Note}', {$BibCond_Research_Value}, '{$BibCond_Research_Value_Note}', '{$BibCond_Conservation_Action}' ";
     $query_bib_cond .= ")";
     $result_bib_cond = mysqli_query($connection, $query_bib_cond);
 

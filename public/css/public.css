@@ -31,7 +31,8 @@ body {
 
 #pink {
   width: 100%;
-  height: 25%;
+  height: 10em;
+  padding: 1em;
   background: #DF1E35;
 }
 
@@ -222,6 +223,23 @@ table tr td:last-child {
   border-right: 0;
 }
 
-#message {
-  
+/* messages */
+div.message { 
+  border: 2px solid #990000;
+  color: #990000; font-weight: bold;
+  margin: 1em 0 ; padding: 1em; 
+}
+
+/* errors */
+.error {
+  color: #990000; border: 2px solid #990000;
+  margin: 1em 0; padding: 1em;
+}
+.error ul { padding-left: 2em; }
+
+#submit-icon { /* Change url to wanted image */
+  background-size: cover;
+  border: none;
+  cursor: pointer;
+  color: transparent;
 }

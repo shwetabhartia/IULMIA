@@ -3,7 +3,7 @@
 CREATE DATABASE IULMIA;
 
 CREATE TABLE PERSON (
-    Per_ID bigint not null,
+    Per_ID varchar(15) not null,
     Per_Last_Name varchar(25),
     Per_First_Name varchar(25),
     Per_Organization varchar(200),
@@ -12,7 +12,7 @@ CREATE TABLE PERSON (
     Per_Street varchar(100),
     Per_City varchar(25),
     Per_State varchar(2),
-    Per_Zip_Code bigint,
+    Per_Zip_Code int,
     Per_Region varchar(25),
     Per_Country varchar(25),
     Per_IUMember tinyint(1),
@@ -20,7 +20,7 @@ CREATE TABLE PERSON (
 );
 
 CREATE TABLE BIB_BASIC (
-    Bib_IU_Barcode bigint not null,
+    Bib_IU_Barcode varchar(20) not null,
     Bib_Collection varchar(200) not null,
     Bib_Media_Type varchar(20),
     Bib_Series_Name varchar(200),
@@ -51,9 +51,9 @@ CREATE TABLE BIB_BASIC (
 );
 
 CREATE TABLE BIB_IDENT (
-    Bibident_ID bigint not null auto_increment,
-    Bib_IU_Barcode bigint not null,
-    Per_ID bigint not null,
+    Bibident_ID int not null auto_increment,
+    Bib_IU_Barcode varchar(20) not null,
+    Per_ID varchar(15) not null,
     Bibident_IUCAT_Title_No varchar(50),
     Bibident_Date_Record_Created DATE,
     Bibident_MDPI_Barcode bigint,
@@ -69,8 +69,8 @@ CREATE TABLE BIB_IDENT (
 );
 
 CREATE TABLE BIB_TECH (
-    BibTech_ID bigint not null auto_increment,
-    Bib_IU_Barcode bigint not null,
+    BibTech_ID int not null auto_increment,
+    Bib_IU_Barcode varchar(20) not null,
     BibTech_Multi_Item_Can int,
     BibTech_Picture_Type varchar(50),
     BibTech_Sound_Form_Type varchar(25),
@@ -88,8 +88,8 @@ CREATE TABLE BIB_TECH (
 );
 
 CREATE TABLE BIB_COND (
-    Bibcond_ID bigint not null auto_increment,
-    Bib_IU_Barcode bigint not null,
+    Bibcond_ID int not null auto_increment,
+    Bib_IU_Barcode varchar(20) not null,
     BibCond_Format_Note varchar(200),
     BibCond_AD smallint,
     BibCond_Shrinkage float(2,1),
@@ -107,9 +107,9 @@ CREATE TABLE BIB_COND (
 );
 
 CREATE TABLE LOAN (
-    LOAN_ID bigint not null auto_increment,
-    Per_ID bigint not null,
-    Bib_IU_Barcode bigint not null,
+    LOAN_ID int not null auto_increment,
+    Per_ID varchar(15) not null,
+    Bib_IU_Barcode varchar(20) not null,
     Loan_Date DATE,
     Loan_Return_Date DATE,
     Loan_Returned_Date DATE,

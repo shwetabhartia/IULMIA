@@ -18,6 +18,23 @@
 		}
 	}
 
+	function form_errors($errors=array()) {
+		$output = "";
+		if (!empty($errors)) {
+		  $output .= "<div class=\"error\">";
+		  $output .= "Please fix the following errors:";
+		  $output .= "<ul>";
+		  foreach ($errors as $key => $error) {
+		    $output .= "<li>";
+				$output .= htmlentities($error);
+				$output .= "</li>";
+		  }
+		  $output .= "</ul>";
+		  $output .= "</div>";
+		}
+		return $output;
+	}
+
 	function show_columns() {
 		global $connection;
 
@@ -60,7 +77,7 @@
 
 		$movie_title = explode(' ', $movie_title);
 
-		$query = 'SELECT Bib_IU_Barcode, Bib_Title, Bib_Creator, Bib_Date, Bib_Summary FROM BIB_BASIC WHERE ';
+		$query = 'SELECT Bib_IU_Barcode, Bib_Title, Bib_Creator, Bib_Date_Created, Bib_Summary FROM BIB_BASIC WHERE ';
 
 		$parts = array();
 		foreach( $movie_title as $movie_title_word ){
@@ -84,7 +101,7 @@
 			$output .= $movie["Bib_Creator"];
 			$output .=  "<br>";
 			$output .= "Date Created :";
-			$output .= $movie["Bib_Date"];
+			$output .= $movie["Bib_Date_Created"];
 			$output .=  "<br>";
 			$output .=  "Summary : ";
 			$output .= $movie["Bib_Summary"];
