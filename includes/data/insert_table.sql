@@ -40,7 +40,7 @@ VALUES
 
     
 INSERT INTO BIB_BASIC
-    (Bib_IU_Barcode, Bib_Collect, Bib_Media_Type, Bib_Series_Name, Bib_Series_Part, Bib_Series_Prod_No, Bib_Title, Bib_Alt_Title, Bib_Version, Bib_Reel_No, Bib_Summary, Bib_Creator, Bib_Producer, Bib_Genre, Bib_Subject, Bib_Date, Bib_Location, Bib_Title_Note, Bib_Orig_Med, Bib_Orig_Gauge, Bib_Generation, Bib_Color, Bib_Sound, Bib_Frame_Rate, Bib_Aspect_Ratio, Bib_Dur, Bib_Dial_Lang)
+    (Bib_IU_Barcode, Bib_Collection, Bib_Media_Type, Bib_Series_Name, Bib_Series_Part, Bib_Series_Production_No, Bib_Title, Bib_Alternative_Title, Bib_Version_No, Bib_Reel_No, Bib_Summary, Bib_Creator, Bib_Producer, Bib_Genre, Bib_Subject, Bib_Date_Created, Bib_Location, Bib_Title_Note, Bib_Original_Medium, Bib_Original_Gauge, Bib_Generation, Bib_Color, Bib_Sound, Bib_Frame_Rate, Bib_Aspect_Ratio, Bib_Duration, Bib_Language)
 VALUES
     (30000149802187, 'Uncataloged_AVC', 'Moving Image', Null, Null, '[unknown]', 'The Sunspot Mystery: Sun Weather Connection', Null, Null, 1, 'Documentary on the Sun\'s sunspots.', '[unknown]', 'A United Nations Film', 'Education', 'Science', '[unknown]', '[unknown]', Null, 'Film','16mm', 'Projection Print', 'Color', 'Sound', 24, '1.37:1', '00:19:00', 'English'),
     (30000149802195, 'Uncataloged_AVC', 'Moving Image', 'The Americans', 5, '[unknown]', 'The Americans: Chief Joseph', Null, Null, 1, 'Series focused on the life of Chief Joseph.', '[unknown]', 'Encylopedia Brittanica Education Corporation', 'Education', 'History', '[unknown]', '[unknown]', 'Note on can: 83653-2, Note on leader- Show No.9', 'Film','16mm', 'Projection Print', 'Color', 'Sound', 24, '1.37:1', '00:22:00', 'English'),
@@ -75,7 +75,7 @@ VALUES
 
 
 INSERT INTO BIB_IDENT
-    (Bib_IU_Barcode, Per_ID, Bibident_IUCAT_Title_No, Bibident_Date_Created, Bibident_MDPI_Barcode, Bibident_Current_Loc, Bibident_Alf_Shelf_Loc, Bibident_Orig_Ident, Bibident_Accom_Doc_ID, Bibident_Accom_Doc_Title, Bibident_Accom_Doc_Loc)
+    (Bib_IU_Barcode, Per_ID, Bibident_IUCAT_Title_No, Bibident_Date_Record_Created, Bibident_MDPI_Barcode, Bibident_Current_Location, Bibident_Alf_Shelf_Location, Bibident_Original_Identification, Bibident_Accompanying_Doc_ID, Bibident_Accompanying_Doc_Title, Bibident_Accompanying_Doc_Location)
 VALUES
     (30000149802187, 2000023251, 'B-IULMIA', '2016-01-15', Null, 'In Storage (Awaiting Ingest)', 'Aisle 24 L11-5', '83653-2', '5001.1', 'Movie Script and Optional Reading', 'FileCabinet03'),
     (30000149802195, 2000023251, 'B-IULMIA', '2016-01-15', Null, 'In Storage (Awaiting Ingest)', 'Aisle 24 L11-6', '83653-3 ', '5002.1', 'Movie Script and Supplementary Reading', 'FileCabinet03'),
@@ -110,7 +110,7 @@ VALUES
 
 
 INSERT INTO BIB_TECH
-    (Bib_IU_Barcode, BibTech_Multi_Item_Can, BibTech_Pic_Type, BibTech_Snd_Form_Type, BibTech_Snd_Cont_Type, BibTech_Orig_Snd_Field, BibTech_Capt_Sub_Lang, BibTech_Capt_Sub_Note, BibTech_Base, BibTech_Stock, BibTech_Edgecode_Date, BibTech_Footage, BibTech_Can_Size)
+    (Bib_IU_Barcode, BibTech_Multi_Item_Can, BibTech_Picture_Type, BibTech_Sound_Form_Type, BibTech_Sound_Content_Type, BibTech_Original_Sound_Field, BibTech_Caption_Subtitle_Language, BibTech_Caption_Subtitle_Note, BibTech_Base, BibTech_Stock, BibTech_Edgecode_Date, BibTech_Footage, BibTech_Can_Size)
 VALUES
     (30000149802187, Null, 'Talkie', 'Magnetic', 'SND', 'Variable Area', '[unknown]', '[unknown]', 'Polyester', 'Kodak', '1972', 700, 1000),
     (30000149802195, Null, 'Talkie', 'Optical', 'SND', 'Variable Area', '[unknown]', '[unknown]', 'Acetate', 'Kodak', '1969', 800, 1200),
@@ -145,7 +145,7 @@ VALUES
 
 
 INSERT INTO BIB_COND
-    (Bib_IU_Barcode, BibCond_Format_Note, BibCond_AD, BibCond_Shrinkage, BibCond_Mold, BibCond_Cond_Type, BibCond_Misc_Cond_Type, BibCond_Miss_Foot, BibCond_Overall_Cond, BibCond_Overall_Cond_Note, BibCond_Research_Val, BibCond_Research_Val_Note, BibCond_Conserv_Act)
+    (Bib_IU_Barcode, BibCond_Format_Note, BibCond_AD, BibCond_Shrinkage, BibCond_Mold, BibCond_Condition_Type, BibCond_Micellaneous_Condition_Type, BibCond_Missing_Footage, BibCond_Overall_Condition, BibCond_Overall_Condition_Note, BibCond_Research_Value, BibCond_Research_Value_Note, BibCond_Conservation_Action)
 VALUES
     (30000149802187, Null, 1, Null, 0, 1, 1, Null, 1, 'Moderate to Severe Scratches and broken sprockets. Faded but no warpage.', 3, Null, 'Digitize when time and budget allows.'),
     (30000149802195, Null, 1, 0.4, 3, 1, 1, Null, 1, 'Few broken sprockets', 3, Null, 'Digitize when time and budget allows.'),
