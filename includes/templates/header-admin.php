@@ -10,7 +10,7 @@
 
 		<nav class="navigation-bar">
 		    <img class="logo" src="../public/images/logo001.png">
-		    <a href="#">logout</a>
-		    <a href="#">Manage admins</a>
-		    <a href="#">Manage resources</a>
+		    <a href="logout.php">logout</a>
+		    <a href="adminrights.php">Manage admins</a>
+		    <a href="ingest.php">Ingest</a>
 		</nav>

@@ -1,9 +1,38 @@
 <?php
 
+	function redirect_to($new_location) {
+	  header("Location: " . $new_location);
+	  exit;
+	}
+
+	function mysql_prep($string) {
+		global $connection;
+		
+		$escaped_string = mysqli_real_escape_string($connection, $string);
+		return $escaped_string;
+	}
+	
 	function confirm_query($result_set) {
 		if (!$result_set) {
 			die("Database query failed.");
 		}
+	}
+
+	function form_errors($errors=array()) {
+		$output = "";
+		if (!empty($errors)) {
+		  $output .= "<div class=\"error\">";
+		  $output .= "Please fix the following errors:";
+		  $output .= "<ul>";
+		  foreach ($errors as $key => $error) {
+		    $output .= "<li>";
+				$output .= htmlentities($error);
+				$output .= "</li>";
+		  }
+		  $output .= "</ul>";
+		  $output .= "</div>";
+		}
+		return $output;
 	}
 
 	function show_columns() {
@@ -33,9 +62,10 @@
 			$output .= "<input type=\"checkbox\" ";
 			$output .= "name=\"";
 			$output .= $column_name;
+			$output .= "[]";
 			$output .= "\" value=\"";
 			$output .= $val[$column_name];
-			$output .= "\"> <br>" ;
+			$output .= "\"/> <br>" ;
 		}
 		return $output;
 
@@ -47,7 +77,7 @@
 
 		$movie_title = explode(' ', $movie_title);
 
-		$query = 'SELECT Bib_IU_Barcode, Bib_Title, Bib_Creator, Bib_Date, Bib_Summary FROM BIB_BASIC WHERE ';
+		$query = 'SELECT Bib_IU_Barcode, Bib_Title, Bib_Creator, Bib_Date_Created, Bib_Summary FROM BIB_BASIC WHERE ';
 
 		$parts = array();
 		foreach( $movie_title as $movie_title_word ){
@@ -71,13 +101,25 @@
 			$output .= $movie["Bib_Creator"];
 			$output .=  "<br>";
 			$output .= "Date Created :";
-			$output .= $movie["Bib_Date"];
+			$output .= $movie["Bib_Date_Created"];
 			$output .=  "<br>";
 			$output .=  "Summary : ";
 			$output .= $movie["Bib_Summary"];
 			$output .= "<br></li>";
 		}
 		$output .= "</ol>";
+		return $output;
+	}
+
+	function fetch_details_movie($movie_id) {
+		global $connection;
+		$query = "Select * from BIB_BASIC where Bib_IU_Barcode = $movie_id";
+		$movie_details = mysqli_query($connection, $query);
+		confirm_query($movie_details);
+		$output = "";
+		while ($mov = mysqli_fetch_assoc($movie_details)) {
+			$output .= $mov["Bib_Title"];
+		}
 		return $output;
 	}
 

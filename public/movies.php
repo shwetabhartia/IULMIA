@@ -9,7 +9,7 @@
 				<div id="navigation">
 					<h2 style="color: #df1e35; text-align: right; padding-right: 5% ">Filter Movies</h2>
 					<ul style="list-style: none; text-align: right; padding-right: 5%">
-						<li class="Collection"><h3 style="color: #df1e35;">COLLECTION</h3> <?php echo fetch_column_values("Bib_Collect"); ?>
+						<li class="Collection"><h3 style="color: #df1e35;">COLLECTION</h3> <?php echo fetch_column_values("Bib_Collection"); ?>
 						</li>
 						<li class="Genre"><h3 style="color: #df1e35;">GENRE</h3></li> <?php echo fetch_column_values("Bib_Genre"); ?>
 						<li class="Subject"><h3 style="color: #df1e35;">SUBJECT</h3></li> <?php echo fetch_column_values("Bib_Subject"); ?>
