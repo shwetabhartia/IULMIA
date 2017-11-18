@@ -13,19 +13,19 @@
 
 html { height: 100%; width: 100%; }
 body {
-  width: 100%; height: 100%; 
+  width: 100%; height: 100%;
   margin: 0; padding: 0; border: 0;
-  font-family: Verdana, Arial, Helvetica, sans-serif; 
+  font-family: Verdana, Arial, Helvetica, sans-serif;
   font-size: 13px; line-height: 15px;
   background: #EDEBEB;
 }
-	
-#header { 
+
+#header {
 	height: 55px;
 	width: 100%;
-	margin: 0; 
+	margin: 0;
   padding: 1em;
-	background: #990000; 
+	background: #990000;
   color: #EDEBEB;
 }
 
@@ -35,26 +35,26 @@ body {
   background: #DF1E35;
 }
 
-#footer { 
+#footer {
   clear: both;
   width: 100%;
-  height: 2em; 
-  margin: 0; 
-  padding: 1em; 
-  text-align: center; 
-  background: #333333;  
+  height: 2em;
+  margin: 0;
+  padding: 1em;
+  text-align: center;
+  background: #333333;
   color: #EDEBEB;
 }
 
 #main {
-    width: 100%; 
+    width: 100%;
     background: #EDEBEB;
     overflow: auto;
     position: relative;
 }
 
 /* Navigation Pane - Left*/
-#navigation { 
+#navigation {
     float: left;
     margin: 0;
     color: #191919;
@@ -66,7 +66,7 @@ body {
 
 /* Page Content */
 
-#page { 
+#page {
     float: left;
     margin: 0;
     padding-left: 10%;
@@ -88,16 +88,22 @@ body {
 
 
 #login-container {
-	max-width: 500px;
-	height: 138px;
+  max-width: 500px;
+	height: 120px;
 	margin: auto;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 172px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 130px;
+  padding-bottom: 0px;
+  text-align: center;
+  font-size: 1.25em;
 }
+
 
 #login-other-choices {
     text-align: center;
+    padding-bottom: 250px;
+
 }
 
 .button {
@@ -118,9 +124,9 @@ body {
 /* Admin Navigation Bar - Start */
 
 .navigation-bar {
-    width: 100%;  
-    height: 80px; 
-    background-color: #990000; 
+    width: 100%;
+    height: 80px;
+    background-color: #990000;
 }
 .logo {
     display: inline-block;
@@ -149,7 +155,7 @@ body {
 .navigation-bar a.active {background-color: #ACA39A;}
 
 @media screen and (max-width: 600px){
-    .navigation-bar a.right, 
+    .navigation-bar a.right,
     .navigation-bar a {float: none;}
 }
 
@@ -179,7 +185,7 @@ body {
 }
 
 #submit {
-  position: absolute;  
+  position: absolute;
   right: -50px;
   width: 40px;
   height: 36px;
