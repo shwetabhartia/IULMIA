@@ -1,14 +1,12 @@
 <?php include("../includes/templates/header.php"); ?>
 
 <div id="login-container">
-	<h1>Part of Indiana University?</h1>
-	<p>Indiana University uses your network username and password to login to IULMIA. Continue to login to IULMIA through your network.</p>
-	<form method="post" action ="/login">
-		<button class="button" type="submit">Continue</button>
-	</form>
-	<div id="login-other-choices">
-		<a href="#">Not a part of Indiana University?</a> <!--This link should redirect to form(IULMIA)-->
-	</div>
+	<p>As a part of Indiana University, click on Continue to login through IU CAS and complete your loan request.</p>
+	</br>
+	<button class="button" onclick="location.href='cas.php'">Continue</button>
+</div>
+<div id="login-other-choices">
+	<a href="form.php">Not a part of Indiana University?</a> <!--This link should redirect to form(IULMIA)-->
 </div>
 
 <?php include("../includes/templates/footer.php"); ?>

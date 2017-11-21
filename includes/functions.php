@@ -1,8 +1,8 @@
 <?php
 
 	function redirect_to($new_location) {
-	  header("Location: " . $new_location);
-	  exit;
+		header("Location: " . $new_location);
+		exit;
 	}
 
 	function mysql_prep($string) {
@@ -21,16 +21,16 @@
 	function form_errors($errors=array()) {
 		$output = "";
 		if (!empty($errors)) {
-		  $output .= "<div class=\"error\">";
-		  $output .= "Please fix the following errors:";
-		  $output .= "<ul>";
-		  foreach ($errors as $key => $error) {
-		    $output .= "<li>";
+			$output .= "<div class=\"error\">";
+			$output .= "Please fix the following errors:";
+			$output .= "<ul>";
+			foreach ($errors as $key => $error) {
+				$output .= "<li>";
 				$output .= htmlentities($error);
 				$output .= "</li>";
-		  }
-		  $output .= "</ul>";
-		  $output .= "</div>";
+			}
+			$output .= "</ul>";
+			$output .= "</div>";
 		}
 		return $output;
 	}
@@ -39,15 +39,15 @@
 		global $connection;
 
 		$query = "SHOW COLUMNS FROM BIB_BASIC";
-        $columns_list = mysqli_query($connection, $query);
+		$columns_list = mysqli_query($connection, $query);
 		confirm_query($columns_list);
 		$output = "";
-        while($col = mysqli_fetch_assoc($columns_list)) {
-            $output .= "<th>";
-            $output .= $col["Field"];
-            $output .= "</th>";
-        }
-        return $output;
+		while($col = mysqli_fetch_assoc($columns_list)) {
+			$output .= "<th>";
+			$output .= $col["Field"];
+			$output .= "</th>";
+		}
+		return $output;
 	}
 
 
@@ -73,8 +73,7 @@
 
 
 	function search_movie_by_title($movie_title) {
-		global $connection;
-
+		
 		$movie_title = explode(' ', $movie_title);
 
 		$query = 'SELECT Bib_IU_Barcode, Bib_Title, Bib_Creator, Bib_Date_Created, Bib_Summary FROM BIB_BASIC WHERE ';
@@ -85,8 +84,8 @@
 		}
 
 		$query .= implode(' OR ', $parts);
-		//print $query;
-		$search_results = mysqli_query($connection, $query);
+		return $query;
+		/*$search_results = mysqli_query($connection, $query);
 		confirm_query($search_results);
 		$output = "<h2>Search Results</h2><ol>";
 		while ($movie = mysqli_fetch_assoc($search_results)) {
@@ -108,7 +107,7 @@
 			$output .= "<br></li>";
 		}
 		$output .= "</ol>";
-		return $output;
+		return $output;*/
 	}
 
 	function fetch_details_movie($movie_id) {
@@ -116,11 +115,7 @@
 		$query = "Select * from BIB_BASIC where Bib_IU_Barcode = $movie_id";
 		$movie_details = mysqli_query($connection, $query);
 		confirm_query($movie_details);
-		$output = "";
-		while ($mov = mysqli_fetch_assoc($movie_details)) {
-			$output .= $mov["Bib_Title"];
-		}
-		return $output;
+		return $movie_details;
 	}
 
 ?>
