@@ -110,6 +110,48 @@
 		return $output;*/
 	}
 
+	function filter_movie($movie_collection, $movie_genre, $movie_subject) {
+		global $connection;
+				
+		$collection = "";
+
+		foreach($movie_collection as $index => $c) {
+			if ($collection == "") $collection = "Bib_Collection IN ("; //if it's the first detected option, add the IN clause to the string
+			$collection .= "'" . $c."',";
+		}
+		//trim the trailing comma and add the closing bracket of the IN clause instead
+		if ($collection != "") {
+			$collection = rtrim($collection, ","); 
+			$collection .= ")";
+		}
+
+		$genre = "";
+		foreach($movie_genre as $index => $g) {
+			if ($genre == "") $genre = "Bib_Genre IN ("; //if it's the first detected option, add the IN clause to the string
+			$genre .= "'" . $g."',";
+		}
+		//trim the trailing comma and add the closing bracket of the IN clause instead
+		if ($genre != "") {
+			$genre = rtrim($genre, ","); 
+			$genre .= ")";
+		}
+
+		$subject = "";
+		foreach($movie_subject as $index => $s) {
+			if ($subject == "") $subject = "Bib_Subject IN ("; //if it's the first detected option, add the IN clause to the string
+			$subject .= "'" . $s."',";
+		}
+		//trim the trailing comma and add the closing bracket of the IN clause instead
+		if ($subject != "") {
+			$subject = rtrim($subject, ","); 
+			$subject .= ")";
+		}
+
+		$query = "SELECT Bib_IU_Barcode, Bib_Title, Bib_Creator, Bib_Date_Created, Bib_Summary FROM BIB_BASIC WHERE $collection AND $genre AND $subject";
+		//print $query;
+		return $query;
+	}
+
 	function fetch_details_movie($movie_id) {
 		global $connection;
 		$query = "Select * from BIB_BASIC where Bib_IU_Barcode = $movie_id";
