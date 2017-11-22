@@ -15,7 +15,7 @@
 							<li><h3 style="color: #df1e35;">GENRE</h3></li> <?php echo fetch_column_values("Bib_Genre"); ?>
 							<li><h3 style="color: #df1e35;">SUBJECT</h3></li> <?php echo fetch_column_values("Bib_Subject"); ?>
 						</ul>
-						<input type="submit" name="filter" value="FILTER MOVIES">
+						<button type="submit" name="filter" id="submit-icon" style="padding-bottom: 20%;"><img src="../public/images/Filter_H.png" id="submit-icon" /></button>
 					</form>
 				</div>
 			</td>

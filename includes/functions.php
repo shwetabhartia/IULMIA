@@ -160,4 +160,19 @@
 		return $movie_details;
 	}
 
+	function find_movie_by_id($iu_barcode) {
+	
+		global $connection;
+		$safe_iu_barcode = mysqli_real_escape_string($connection, $iu_barcode);
+		
+		$query = "Select * from BIB_BASIC where Bib_IU_Barcode = {$iu_barcode} ";
+		$result = mysqli_query($connection, $query);
+			
+		if ($result && mysqli_num_rows($result) >= 0) {
+			return $result;
+		} else {
+			return false;
+		}
+	}
+
 ?>
