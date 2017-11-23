@@ -15,6 +15,7 @@ CREATE TABLE PERSON (
     Per_Region varchar(25),
     Per_Country varchar(25),
     Per_IUMember tinyint(1),
+    Per_IUUsername varchar(30),
     primary key (Per_ID)
 );
 

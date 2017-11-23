@@ -9,8 +9,7 @@ if (!$authenticated) {
   $_SESSION['CAS'] = true;
 
   //Update CASURL to redirect to our application
-  header("Location: https://cas.iu.edu/cas/login?cassvc=IU&casurl=https://www.google.com");
-  echo 'Not authenticated, entering cas.php';
+  header("Location: https://cas.iu.edu/cas/login?cassvc=IU&casurl=http://localhost/IULMIA/public/request.php");
   exit;
 }
 if ($authenticated) {
@@ -21,7 +20,7 @@ if ($authenticated) {
 	$cassvc = 'IU';  //search kb.indiana.edu for "cas application code" to determine code to use here in place of "appCode"
 
   //Update CASURL to redirect to our application
-  $casurl = 'https://www.google.com'; //same base URLsent
+  $casurl = 'http://localhost/IULMIA/public/request.php'; //same base URLsent
 	$params = "cassvc=$cassvc&casticket=$_GET[casticket]&casurl=$casurl";
 	$urlNew = "$_url?$params";
 	//CAS sending response on 2 lines.  First line contains "yes" or "no".  If "yes", second line contains username (otherwise, it is empty).
@@ -43,7 +42,6 @@ if ($authenticated) {
 	//set user and session variable if CAS says YES
 	if ($access == "yes") {
         $_SESSION['user'] = $user;
-        echo "Welcome to our home page $user, now we can authorize you with our user database.";
 	}
   }
   else
@@ -51,7 +49,7 @@ if ($authenticated) {
      $_SESSION['CAS'] = true;
 
      //Update CASURL to redirect to our application
-     header("Location: https://cas.iu.edu/cas/login?cassvc=IU&casurl=https://www.google.com");
+     header("Location: https://cas.iu.edu/cas/login?cassvc=IU&casurl=http://localhost/IULMIA/public/request.php");
      exit;
   }
 }
