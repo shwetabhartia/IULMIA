@@ -5,12 +5,13 @@ require_once("../includes/data/db_config.php");
 
 $user = $_SESSION['user'];
 
-$sql = "SELECT Per_ID from Person where Per_IUUsername = '$user'";
-$result = mysqli_query($connection, $sql);
-$row = mysqli_fetch_assoc($result);
-$person_id = $row['Per_ID'];
+$fetch_id_sql = "SELECT Per_ID from Person where Per_IUUsername = '$user'";
+$fetch_id_result = mysqli_query($connection, $fetch_id_sql);
+$fetch_id_row = mysqli_fetch_assoc($fetch_id_result);
+$person_id = $fetch_id_row['Per_ID'];
 
-
+// $insert_loan_sql = "INSERT INTO Loan(Per_ID, Bib_IU_Barcode, Loan_Date, Loan_Return_Date, Loan_Returned_Date, Loan_Ext_Date, Loan_Purpose, Bibident_Current_Loc)"
+// $insert_loan_sql .= "VALUES('{$person_id}', )";
 
 // $sql = "INSERT INTO LOAN
 // VALUES ()";

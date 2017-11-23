@@ -5,16 +5,16 @@
 <div id="main">
 	<table>
 		<tr>
-			<td width="40%"><div id="navigation" style="padding-left: 43%; padding-bottom: 95%"><a href="movies.php"><img src="../public/images/NewSearchN.png" alt="New Search" width="100%"></a></div></td>
+			<td width="40%"><div id="navigation" style="padding-left: 43%; padding-bottom: 95%"><a href="movies.php"><img src="../public/images/NewFilter_N.png" alt="New Filter" width="100%"></a></div></td>
 			<td width="60%"><div id="page">
 				<?php
-					global $connection; 
+					global $connection;
 					$results_per_page = 3;
-					// find out the number of results stored in database
-					$query = search_movie_by_title($_POST["title"]); //method returns query
-					$search_results = mysqli_query($connection, $query);
-					confirm_query($search_results);
-					$number_of_results = mysqli_num_rows($search_results);
+					$query = filter_movie($_POST['Bib_Collection'], $_POST['Bib_Genre'], $_POST['Bib_Subject']);
+
+					$filter_results = mysqli_query($connection, $query);
+					confirm_query($filter_results);
+					$number_of_results = mysqli_num_rows($filter_results);
 
 					// determine number of total pages available
 					$number_of_pages = ceil($number_of_results/$results_per_page);
@@ -31,10 +31,10 @@
 
 					// retrieve selected results from database and display them on page
 					$queryPagination = $query . ' LIMIT ' . $this_page_first_result . ',' .  $results_per_page;
-					$search_results_page = mysqli_query($connection, $queryPagination);
-					confirm_query($search_results_page);
-					$output = "<h2>Search Results</h2><ol>";
-					while($movie = mysqli_fetch_array($search_results_page)) {
+					$filter_results_page = mysqli_query($connection, $queryPagination);
+					confirm_query($filter_results_page);
+					$output = "<h2>Filter Results</h2><ol>";
+					while($movie = mysqli_fetch_array($filter_results_page)) {
 					$output .= "<li><h3>";
 					$output .= "<a href=\"moviepage.php?movieid=";
 					$output .= urlencode($movie["Bib_IU_Barcode"]);
@@ -57,8 +57,8 @@
 
 					// display the links to the pages
 					for ($page=1;$page<=$number_of_pages;$page++) {
-					echo '<a href="search.php?page=' . $page . '">' . $page . '</a> ';
-					}
+					echo '<a href="filter.php?page=' . $page . '">' . $page . '</a> ';
+					} 
 				?>
 			</div></td>
 		</tr>

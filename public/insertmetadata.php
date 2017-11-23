@@ -4,24 +4,24 @@ require_once("../includes/data/db_config.php");
 require_once("../includes/functions.php");
 require_once("../includes/validation_functions.php");
 
-if (isset($_POST['submit'])) {
+    if (isset($_POST['submit'])) {
 
     // validations
     $required_fields = array("Bib_IU_Barcode", "Bib_Collection", "Bib_Title", "Bib_Genre", "Bib_Subject", "Per_ID", "Bibident_Current_Location");
     validate_presences($required_fields);
-    
+
     $fields_with_max_lengths = array("Bib_Media_Type" => 20);
     validate_max_lengths($fields_with_max_lengths);
-    
+
     if (!empty($errors)) {
         $_SESSION["errors"] = $errors;
         redirect_to("setmetadata.php");
     }
 
-	// Process the form
-	
+    // Process the form
+
     //BIB_BASIC table attribute
-	$Bib_IU_Barcode = mysql_prep($_POST["Bib_IU_Barcode"]);
+    $Bib_IU_Barcode = mysql_prep($_POST["Bib_IU_Barcode"]);
     $Bib_Collection = mysql_prep($_POST["Bib_Collection"]);
     $Bib_Media_Type = mysql_prep($_POST["Bib_Media_Type"]);
     $Bib_Series_Name = mysql_prep($_POST["Bib_Series_Name"]);
@@ -48,16 +48,15 @@ if (isset($_POST['submit'])) {
     $Bib_Aspect_Ratio = mysql_prep($_POST["Bib_Aspect_Ratio"]);
     $Bib_Duration = mysql_prep($_POST["Bib_Duration"]);
     $Bib_Language = mysql_prep($_POST["Bib_Language"]);
-	
+
     //Query for BIB_BASIC
-	$query_bib_basic = "INSERT INTO BIB_BASIC (Bib_IU_Barcode, Bib_Collection, Bib_Media_Type, Bib_Series_Name, Bib_Series_Part, Bib_Series_Production_No, Bib_Title, Bib_Alternative_Title, Bib_Version_No, Bib_Reel_No, Bib_Summary, Bib_Creator, Bib_Producer, Bib_Genre, Bib_Subject, Bib_Date_Created, Bib_Location, Bib_Title_Note, Bib_Original_Medium, Bib_Original_Gauge, Bib_Generation, Bib_Color, Bib_Sound, Bib_Frame_Rate, Bib_Aspect_Ratio, Bib_Duration, Bib_Language ) ";
-	$query_bib_basic .= "VALUES (";
-	$query_bib_basic .= " '{$Bib_IU_Barcode}', '{$Bib_Collection}', '{$Bib_Media_Type}', '{$Bib_Series_Name}', '{$Bib_Series_Part}', '{$Bib_Series_Production_No}', '{$Bib_Title}', '{$Bib_Alternative_Title}', {$Bib_Version_No}, {$Bib_Reel_No}, '{$Bib_Summary}', '{$Bib_Creator}', '{$Bib_Producer}', '{$Bib_Genre}', '{$Bib_Subject}', '{$Bib_Date_Created}', '{$Bib_Location}', '{$Bib_Title_Note}', '{$Bib_Original_Medium}', '{$Bib_Original_Gauge}', '{$Bib_Generation}', '{$Bib_Color}', '{$Bib_Sound}', {$Bib_Frame_Rate}, '{$Bib_Aspect_Ratio}', '{$Bib_Duration}', '{$Bib_Language}'";
-	$query_bib_basic .= ")";
-	$result_bib_basic = mysqli_query($connection, $query_bib_basic);
+    $query_bib_basic = "INSERT INTO BIB_BASIC (Bib_IU_Barcode, Bib_Collection, Bib_Media_Type, Bib_Series_Name, Bib_Series_Part, Bib_Series_Production_No, Bib_Title, Bib_Alternative_Title, Bib_Version_No, Bib_Reel_No, Bib_Summary, Bib_Creator, Bib_Producer, Bib_Genre, Bib_Subject, Bib_Date_Created, Bib_Location, Bib_Title_Note, Bib_Original_Medium, Bib_Original_Gauge, Bib_Generation, Bib_Color, Bib_Sound, Bib_Frame_Rate, Bib_Aspect_Ratio, Bib_Duration, Bib_Language ) ";
+    $query_bib_basic .= "VALUES (";
+    $query_bib_basic .= " '{$Bib_IU_Barcode}', '{$Bib_Collection}', '{$Bib_Media_Type}', '{$Bib_Series_Name}', '{$Bib_Series_Part}', '{$Bib_Series_Production_No}', '{$Bib_Title}', '{$Bib_Alternative_Title}', {$Bib_Version_No}, {$Bib_Reel_No}, '{$Bib_Summary}', '{$Bib_Creator}', '{$Bib_Producer}', '{$Bib_Genre}', '{$Bib_Subject}', '{$Bib_Date_Created}', '{$Bib_Location}', '{$Bib_Title_Note}', '{$Bib_Original_Medium}', '{$Bib_Original_Gauge}', '{$Bib_Generation}', '{$Bib_Color}', '{$Bib_Sound}', {$Bib_Frame_Rate}, '{$Bib_Aspect_Ratio}', '{$Bib_Duration}', '{$Bib_Language}'";
+    $query_bib_basic .= ")";
+    $result_bib_basic = mysqli_query($connection, $query_bib_basic);
 
     //BIB_IDENT table attribute
-    $Bibident_ID = (int) $_POST["Bibident_ID"];
     $Per_ID = mysql_prep($_POST["Per_ID"]);
     $Bibident_IUCAT_Title_No = mysql_prep($_POST["Bibident_IUCAT_Title_No"]);
     $Bibident_Date_Record_Created = mysql_prep($_POST["Bibident_Date_Record_Created"]);
@@ -118,19 +117,19 @@ if (isset($_POST['submit'])) {
     $query_bib_cond .= ")";
     $result_bib_cond = mysqli_query($connection, $query_bib_cond);
 
-	if ($result_bib_basic && $result_bib_ident && $result_bib_tech && $result_bib_cond) {
-		// Success
-		$_SESSION["message"] = "Metadata Inserted.";
-		redirect_to("ingest.php");
-	} else {
-		// Failure
-		$_SESSION["message"] = "Metadata Insertion failed.";
-		redirect_to("setmetadata.php");
-	}
-	
+    if ($result_bib_basic && $result_bib_ident && $result_bib_tech && $result_bib_cond) {
+    // Success
+        $_SESSION["message"] = "Metadata Inserted.";
+        redirect_to("ingest.php");
+    } else {
+    // Failure
+        $_SESSION["message"] = "Metadata Insertion failed.";
+        redirect_to("setmetadata.php");
+    }
+
 } else {
-	// This is probably a GET request
-	redirect_to("setmetadata.php");
+    // This is probably a GET request
+    redirect_to("setmetadata.php");
 }
 
 if (isset($connection)) { mysqli_close($connection); }

@@ -7,7 +7,6 @@ $authenticated = $_SESSION['CAS'];
 //send user to CAS login if not authenticated
 if (!$authenticated) {
   $_SESSION['CAS'] = true;
-
   //Update CASURL to redirect to our application
   header("Location: https://cas.iu.edu/cas/login?cassvc=IU&casurl=http://localhost/IULMIA/public/request.php");
   exit;
