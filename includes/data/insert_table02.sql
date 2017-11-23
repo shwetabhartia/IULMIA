@@ -48,36 +48,36 @@ VALUES
     INSERT INTO BIB_IDENT
     (Bib_IU_Barcode, Per_ID, Bibident_IUCAT_Title_No, bibident_Date_Created, Bibident_MDPI_Barcode, Bibident_Current_Loc, Bibident_Alf_Shelf_Loc, Bibident_Orig_Ident, Bibident_Accom_Doc_ID, Bibident_Accom_Doc_Title, Bibident_Accom_Doc_Loc)
 VALUES
-    (30000157726880, 2000032154, Null, '2017-08-10', Null, 'Freezer', 'ALF F L03-01', '3411', Null, Null, Null),
-    (30000157726898, 2000032154, Null, '2017-08-10', Null, 'Freezer', 'ALF F L03-01', '3708', Null, Null, Null),
-    (30000157791884, 2000032154, Null, '2017-08-10', Null, 'Freezer', 'ALF F L03-01', '3709', Null, Null, Null),
-    (30000157791892, 2000032154, Null, '2017-08-10', Null, 'Freezer', 'ALF F L03-01', '3505', Null, Null, Null),
-    (30000157791900, 2000032154, Null, '2017-08-10', Null, 'Freezer', 'ALF F L03-01', '3605', Null, Null, Null),
-    (30000157791918, 2000032154, Null, '2017-08-10', Null, 'Freezer', 'ALF F L03-01', '3701', Null, Null, Null),
-    (30000157726948, 2000032154, Null, '2017-08-10', Null, 'Freezer', 'ALF F L03-01', '3604', Null, Null, Null),
-    (30000157791926, 2000032154, Null, '2017-08-10', Null, 'Freezer', 'ALF F L03-01', '3802', Null, Null, Null),
-    (30000157791934, 2000032154, Null, '2017-08-10', Null, 'Freezer', 'ALF F L03-01', '3313', Null, Null, Null),
-    (30000157791942, 2000032154, Null, '2017-08-10', Null, 'Freezer', 'ALF F L03-01', '3801', Null, Null, Null),
-    (30000157726674, 2000023251, '14701710', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V506', '200-01', 'Study guide included', 'FileCabinet05'),
-    (30000157726682, 2000023251, '14701711', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V507', '200-05', 'Study guide included', 'FileCabinet05'),
-    (30000157726690, 2000023251, '14713629', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V508', Null, Null, Null),
-    (30000157791777, 2000023251, '7830226', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V508', Null, Null, Null),
-    (30000157791785, 2000023251, Null, '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V221', Null, Null, Null),
-    (30000157726724, 2000023251, '14714539', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V509', Null, Null, Null),
-    (30000157791793, 2000023251, '14714548', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V510', '200-32', 'Item description', 'FileCabinet05'),
-    (30000157791801, 2000023251, '14714568', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V511', Null, Null, Null),
-    (30000157791819, 2000023251, '14714571', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V512', '200-33', 'Item description', 'FileCabinet05'),
-    (30000157791827, 2000023251, '7827283', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V350', Null, Null, Null),
-    (30000157791835, 2000023251, '7827317', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V351', '200-34', '2 pieces- Study guide and German narration', 'FileCabinet05'),
-    (30000157726781, 2000023251, '14714588', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V513', Null, Null, Null),
-    (30000157726799, 2000023251, '7818843', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V194', Null, Null, Null),
-    (30000157726807, 2000023251, '7832206', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V451', Null, Null, Null),
-    (30000157726815, 2000023251, '7832204', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V450', Null, Null, Null),
-    (30000157791843, 2000023251, Null, '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V403', Null, Null, Null),
-    (30000157791850, 2000023251, '7829380', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V390', Null, Null, Null),
-    (30000157791868, 2000023251, '7825207', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V303', Null, Null, Null),
-    (30000157791876, 2000023251, '14714594', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V514', Null, Null, Null),
-    (30000157726864, 2000023251, '14736727', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V105', Null, Null, Null)
+    (30000157726880, '2000032154', Null, '2017-08-10', Null, 'Freezer', 'ALF F L03-01', '3411', Null, Null, Null),
+    (30000157726898, '2000032154', Null, '2017-08-10', Null, 'Freezer', 'ALF F L03-01', '3708', Null, Null, Null),
+    (30000157791884, '2000032154', Null, '2017-08-10', Null, 'Freezer', 'ALF F L03-01', '3709', Null, Null, Null),
+    (30000157791892, '2000032154', Null, '2017-08-10', Null, 'Freezer', 'ALF F L03-01', '3505', Null, Null, Null),
+    (30000157791900, '2000032154', Null, '2017-08-10', Null, 'Freezer', 'ALF F L03-01', '3605', Null, Null, Null),
+    (30000157791918, '2000032154', Null, '2017-08-10', Null, 'Freezer', 'ALF F L03-01', '3701', Null, Null, Null),
+    (30000157726948, '2000032154', Null, '2017-08-10', Null, 'Freezer', 'ALF F L03-01', '3604', Null, Null, Null),
+    (30000157791926, '2000032154', Null, '2017-08-10', Null, 'Freezer', 'ALF F L03-01', '3802', Null, Null, Null),
+    (30000157791934, '2000032154', Null, '2017-08-10', Null, 'Freezer', 'ALF F L03-01', '3313', Null, Null, Null),
+    (30000157791942, '2000032154', Null, '2017-08-10', Null, 'Freezer', 'ALF F L03-01', '3801', Null, Null, Null),
+    (30000157726674, '2000023251', '14701710', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V506', '200-01', 'Study guide included', 'FileCabinet05'),
+    (30000157726682, '2000023251', '14701711', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V507', '200-05', 'Study guide included', 'FileCabinet05'),
+    (30000157726690, '2000023251', '14713629', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V508', Null, Null, Null),
+    (30000157791777, '2000023251', '7830226', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V508', Null, Null, Null),
+    (30000157791785, '2000023251', Null, '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V221', Null, Null, Null),
+    (30000157726724, '2000023251', '14714539', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V509', Null, Null, Null),
+    (30000157791793, '2000023251', '14714548', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V510', '200-32', 'Item description', 'FileCabinet05'),
+    (30000157791801, '2000023251', '14714568', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V511', Null, Null, Null),
+    (30000157791819, '2000023251', '14714571', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V512', '200-33', 'Item description', 'FileCabinet05'),
+    (30000157791827, '2000023251', '7827283', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V350', Null, Null, Null),
+    (30000157791835, '2000023251', '7827317', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V351', '200-34', '2 pieces- Study guide and German narration', 'FileCabinet05'),
+    (30000157726781, '2000023251', '14714588', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V513', Null, Null, Null),
+    (30000157726799, '2000023251', '7818843', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V194', Null, Null, Null),
+    (30000157726807, '2000023251', '7832206', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V451', Null, Null, Null),
+    (30000157726815, '2000023251', '7832204', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V450', Null, Null, Null),
+    (30000157791843, '2000023251', Null, '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V403', Null, Null, Null),
+    (30000157791850, '2000023251', '7829380', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V390', Null, Null, Null),
+    (30000157791868, '2000023251', '7825207', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V303', Null, Null, Null),
+    (30000157791876, '2000023251', '14714594', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V514', Null, Null, Null),
+    (30000157726864, '2000023251', '14736727', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V105', Null, Null, Null)
     ;
 
 
@@ -155,5 +155,11 @@ VALUES
     (30000157726864, Null, 0, Null, 0, 0, 0, Null, 0, 'Fine on General Inspection', 3, Null, 'Digitize when time and budget allows.')
     ;
 
-
+    INSERT INTO LOAN 
+     (Per_ID, Bib_IU_Barcode, Loan_Date, Loan_Return_Date, Loan_Returned_Date, Loan_Ext_Date, Loan_Purpose, Loan_Screen_Loc)
+VALUES
+    ('2000024716', 30000157703103, '2016-09-04', '2016-09-18', '2016-09-05', Null, 'Screening for media studies', 'IULMIA Screening Room'),
+    ('2000065238', 30000157703103, '2017-02-06', '2017-04-20', '2017-04-08', Null, 'Screening at Cinematique, Orphan Films', 'Cinematique: Paris, France'),
+    ('2000084571', 30000157703103, '2017-10-20', '2017-11-03', '2017-11-02', Null, 'Screening for IU Cinema, General Public', 'IU Cinema')
+    ;
 

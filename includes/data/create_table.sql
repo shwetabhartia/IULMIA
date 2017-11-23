@@ -3,7 +3,7 @@
 CREATE DATABASE IULMIA;
 
 CREATE TABLE PERSON (
-    Per_ID bigint not null,
+    Per_ID varchar(25) not null,
     Per_Last_Name varchar(25),
     Per_First_Name varchar(25),
     Per_Organization varchar(200),
@@ -53,7 +53,7 @@ CREATE TABLE BIB_BASIC (
 CREATE TABLE BIB_IDENT (
     Bibident_ID bigint not null auto_increment,
     Bib_IU_Barcode bigint not null,
-    Per_ID bigint not null,
+    Per_ID varchar(25) not null,
     Bibident_IUCAT_Title_No varchar(50),
     bibident_Date_Created DATE,
     Bibident_MDPI_Barcode bigint,
@@ -108,14 +108,14 @@ CREATE TABLE BIB_COND (
 
 CREATE TABLE LOAN (
     LOAN_ID bigint not null auto_increment,
-    Per_ID bigint not null,
+    Per_ID varchar(25) not null,
     Bib_IU_Barcode bigint not null,
     Loan_Date DATE,
     Loan_Return_Date DATE,
     Loan_Returned_Date DATE,
     Loan_Ext_Date DATE,
     Loan_Purpose varchar(200),
-    Bibident_Current_Loc varchar(200) not null,
+    Loan_Screen_Loc varchar(200) not null,
     primary key (LOAN_ID), 
     foreign key (Per_ID) references PERSON (Per_ID),
     foreign key (Bib_IU_Barcode) references BIB_BASIC (Bib_IU_Barcode)
