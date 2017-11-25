@@ -20,7 +20,7 @@ CREATE TABLE PERSON (
 );
 
 CREATE TABLE BIB_BASIC (
-    Bib_IU_Barcode bigint not null,
+    Bib_IU_Barcode varchar(25) not null,
     Bib_Collect varchar(200) not null,
     Bib_Media_Type varchar(20),
     Bib_Series_Name varchar(200),
@@ -52,7 +52,7 @@ CREATE TABLE BIB_BASIC (
 
 CREATE TABLE BIB_IDENT (
     Bibident_ID bigint not null auto_increment,
-    Bib_IU_Barcode bigint not null,
+    Bib_IU_Barcode varchar(25) not null,
     Per_ID varchar(25) not null,
     Bibident_IUCAT_Title_No varchar(50),
     bibident_Date_Created DATE,
@@ -70,7 +70,7 @@ CREATE TABLE BIB_IDENT (
 
 CREATE TABLE BIB_TECH (
     BibTech_ID bigint not null auto_increment,
-    Bib_IU_Barcode bigint not null,
+    Bib_IU_Barcode varchar(25) not null,
     BibTech_Multi_Item_Can int,
     BibTech_Pic_Type varchar(50),
     BibTech_Snd_Form_Type varchar(25),
@@ -89,7 +89,7 @@ CREATE TABLE BIB_TECH (
 
 CREATE TABLE BIB_COND (
     Bibcond_ID bigint not null auto_increment,
-    Bib_IU_Barcode bigint not null,
+    Bib_IU_Barcode varchar(25) not null,
     BibCond_Format_Note varchar(200),
     BibCond_AD smallint,
     BibCond_Shrinkage float(2,1),
@@ -109,7 +109,7 @@ CREATE TABLE BIB_COND (
 CREATE TABLE LOAN (
     LOAN_ID bigint not null auto_increment,
     Per_ID varchar(25) not null,
-    Bib_IU_Barcode bigint not null,
+    Bib_IU_Barcode varchar(25) not null,
     Loan_Date DATE,
     Loan_Return_Date DATE,
     Loan_Returned_Date DATE,
