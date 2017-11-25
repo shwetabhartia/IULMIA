@@ -1,3 +1,4 @@
+<?php require_once("../includes/session.php"); ?>
 <?php require_once("../includes/data/db_config.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
 <?php include("../includes/templates/header.php"); ?>
@@ -21,6 +22,7 @@
 			</td>
 			<td width="50%">
 				<div id="page">
+					<?php echo message(); ?>
 					<div id="wrap">
 					<form id="searchbox" action="search.php" method="post">
 					    <input id="search" type="text" placeholder="Search By Title" name="title"/>

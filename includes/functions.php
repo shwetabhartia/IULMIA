@@ -85,69 +85,57 @@
 
 		$query .= implode(' OR ', $parts);
 		return $query;
-		/*$search_results = mysqli_query($connection, $query);
-		confirm_query($search_results);
-		$output = "<h2>Search Results</h2><ol>";
-		while ($movie = mysqli_fetch_assoc($search_results)) {
-			$output .= "<li><h3>";
-			$output .= "<a href=\"moviepage.php?movieid=";
-			$output .= urlencode($movie["Bib_IU_Barcode"]);
-			$output .= "\">";
-			$output .= $movie["Bib_Title"];
-			$output .= "</h3>";
-			$output .= "</a>";
-			$output .= "Creator :";
-			$output .= $movie["Bib_Creator"];
-			$output .=  "<br>";
-			$output .= "Date Created :";
-			$output .= $movie["Bib_Date_Created"];
-			$output .=  "<br>";
-			$output .=  "Summary : ";
-			$output .= $movie["Bib_Summary"];
-			$output .= "<br></li>";
-		}
-		$output .= "</ol>";
-		return $output;*/
 	}
 
 	function filter_movie($movie_collection, $movie_genre, $movie_subject) {
 		global $connection;
-				
-		$collection = "";
+		$where_clause_array = Array();
 
-		foreach($movie_collection as $index => $c) {
-			if ($collection == "") $collection = "Bib_Collection IN ("; //if it's the first detected option, add the IN clause to the string
-			$collection .= "'" . $c."',";
-		}
-		//trim the trailing comma and add the closing bracket of the IN clause instead
-		if ($collection != "") {
-			$collection = rtrim($collection, ","); 
-			$collection .= ")";
-		}
+		if (count($movie_collection) > 0) {		
+			$collection = "";
 
-		$genre = "";
-		foreach($movie_genre as $index => $g) {
-			if ($genre == "") $genre = "Bib_Genre IN ("; //if it's the first detected option, add the IN clause to the string
-			$genre .= "'" . $g."',";
-		}
-		//trim the trailing comma and add the closing bracket of the IN clause instead
-		if ($genre != "") {
-			$genre = rtrim($genre, ","); 
-			$genre .= ")";
+			foreach($movie_collection as $index => $c) {
+				if ($collection == "") $collection = "Bib_Collection IN ("; //if it's the first detected option, add the IN clause to the string
+				$collection .= "'" . $c."',";
+			}
+			//trim the trailing comma and add the closing bracket of the IN clause instead
+			if ($collection != "") {
+				$collection = rtrim($collection, ","); 
+				$collection .= ")";
+			}
+			array_push($where_clause_array, $collection);
 		}
 
-		$subject = "";
-		foreach($movie_subject as $index => $s) {
-			if ($subject == "") $subject = "Bib_Subject IN ("; //if it's the first detected option, add the IN clause to the string
-			$subject .= "'" . $s."',";
-		}
-		//trim the trailing comma and add the closing bracket of the IN clause instead
-		if ($subject != "") {
-			$subject = rtrim($subject, ","); 
-			$subject .= ")";
+		if (count($movie_genre) > 0) {
+			$genre = "";
+			foreach($movie_genre as $index => $g) {
+				if ($genre == "") $genre = "Bib_Genre IN ("; //if it's the first detected option, add the IN clause to the string
+				$genre .= "'" . $g."',";
+			}
+			//trim the trailing comma and add the closing bracket of the IN clause instead
+			if ($genre != "") {
+				$genre = rtrim($genre, ","); 
+				$genre .= ")";
+			}
+			array_push($where_clause_array, $genre);
 		}
 
-		$query = "SELECT Bib_IU_Barcode, Bib_Title, Bib_Creator, Bib_Date_Created, Bib_Summary FROM BIB_BASIC WHERE $collection AND $genre AND $subject";
+		if (count($movie_subject) > 0) {
+			$subject = "";
+			foreach($movie_subject as $index => $s) {
+				if ($subject == "") $subject = "Bib_Subject IN ("; //if it's the first detected option, add the IN clause to the string
+				$subject .= "'" . $s."',";
+			}
+			//trim the trailing comma and add the closing bracket of the IN clause instead
+			if ($subject != "") {
+				$subject = rtrim($subject, ","); 
+				$subject .= ")";
+			}
+			array_push($where_clause_array, $subject);
+		}
+		$where_clause = join(" AND ", $where_clause_array);
+
+		$query = "SELECT Bib_IU_Barcode, Bib_Title, Bib_Creator, Bib_Date_Created, Bib_Summary FROM BIB_BASIC WHERE $where_clause ";
 		//print $query;
 		return $query;
 	}

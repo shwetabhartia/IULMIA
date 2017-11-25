@@ -1,3 +1,4 @@
+<?php require_once("../includes/session.php"); ?>
 <?php require_once("../includes/data/db_config.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
 <?php include("../includes/templates/header.php"); ?>
@@ -11,7 +12,10 @@
 					global $connection; 
 					$results_per_page = 3;
 					// find out the number of results stored in database
-					$query = search_movie_by_title($_POST["title"]); //method returns query
+					if (isset($_POST["title"])) {
+						$_SESSION["title"] = $_POST["title"];
+					}
+					$query = search_movie_by_title($_SESSION["title"]); //method returns query
 					$search_results = mysqli_query($connection, $query);
 					confirm_query($search_results);
 					$number_of_results = mysqli_num_rows($search_results);
@@ -21,9 +25,9 @@
 
 					// determine which page number visitor is currently on
 					if (!isset($_GET['page'])) {
-					$page = 1;
+						$page = 1;
 					} else {
-					$page = $_GET['page'];
+						$page = $_GET['page'];
 					}
 
 					// determine the sql LIMIT starting number for the results on the displaying page
@@ -35,29 +39,29 @@
 					confirm_query($search_results_page);
 					$output = "<h2>Search Results</h2><ol>";
 					while($movie = mysqli_fetch_array($search_results_page)) {
-					$output .= "<li><h3>";
-					$output .= "<a href=\"moviepage.php?movieid=";
-					$output .= urlencode($movie["Bib_IU_Barcode"]);
-					$output .= "\">";
-					$output .= $movie["Bib_Title"];
-					$output .= "</h3>";
-					$output .= "</a>";
-					$output .= "Creator :";
-					$output .= $movie["Bib_Creator"];
-					$output .=  "<br>";
-					$output .= "Date Created :";
-					$output .= $movie["Bib_Date_Created"];
-					$output .=  "<br>";
-					$output .=  "Summary : ";
-					$output .= $movie["Bib_Summary"];
-					$output .= "<br></li>";
+						$output .= "<li><h3>";
+						$output .= "<a href=\"moviepage.php?movieid=";
+						$output .= urlencode($movie["Bib_IU_Barcode"]);
+						$output .= "\">";
+						$output .= $movie["Bib_Title"];
+						$output .= "</h3>";
+						$output .= "</a>";
+						$output .= "Creator :";
+						$output .= $movie["Bib_Creator"];
+						$output .=  "<br>";
+						$output .= "Date Created :";
+						$output .= $movie["Bib_Date_Created"];
+						$output .=  "<br>";
+						$output .=  "Summary : ";
+						$output .= $movie["Bib_Summary"];
+						$output .= "<br></li>";
 					}
 					$output .= "</ol>";
 					echo $output;
 
 					// display the links to the pages
 					for ($page=1;$page<=$number_of_pages;$page++) {
-					echo '<a href="search.php?page=' . $page . '">' . $page . '</a> ';
+						echo '<a href="search.php?page=' . $page . '">' . $page . '</a> ';
 					}
 				?>
 			</div></td>
