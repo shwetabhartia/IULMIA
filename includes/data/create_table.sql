@@ -19,6 +19,13 @@ CREATE TABLE PERSON (
     primary key (Per_ID)
 );
 
+CREATE TABLE ADMINS (
+    id int(11) NOT NULL AUTO_INCREMENT,
+    username varchar(50) NOT NULL,
+    hashed_password varchar(60) NOT NULL,
+    PRIMARY KEY (id)
+);
+
 CREATE TABLE BIB_BASIC (
     Bib_IU_Barcode varchar(20) not null,
     Bib_Collection varchar(200) not null,

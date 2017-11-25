@@ -38,7 +38,13 @@ VALUES
     ('2000003812', 'Midgen', 'Wil', 'IU', 812, '563-4255', '376 Walnut #4B', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1),
     ('8880008745', 'Langlois', 'Hénri', 'Cinematheque Francaise', 33, '1-71-19-33-33', '51 Rue de Bercy', 'Paris', 'FR', 75012, 'Paris', 'France', 0);
 
-    
+DROP TABLE IF EXISTS ADMINS;
+
+INSERT INTO ADMINS
+    (username, hashed_password)
+VALUES
+    ('rstoeltje','$2y$10$NTdmODYxZWQ0OGMwYmMxZ.Q3I4i0FtO/X9DWv1tpsF5hiS9LBXqmu');
+
 INSERT INTO BIB_BASIC
     (Bib_IU_Barcode, Bib_Collection, Bib_Media_Type, Bib_Series_Name, Bib_Series_Part, Bib_Series_Production_No, Bib_Title, Bib_Alternative_Title, Bib_Version_No, Bib_Reel_No, Bib_Summary, Bib_Creator, Bib_Producer, Bib_Genre, Bib_Subject, Bib_Date_Created, Bib_Location, Bib_Title_Note, Bib_Original_Medium, Bib_Original_Gauge, Bib_Generation, Bib_Color, Bib_Sound, Bib_Frame_Rate, Bib_Aspect_Ratio, Bib_Duration, Bib_Language)
 VALUES
