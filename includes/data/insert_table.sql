@@ -43,7 +43,7 @@ DROP TABLE IF EXISTS ADMINS;
 INSERT INTO ADMINS
     (username, hashed_password)
 VALUES
-    ('rstoeltje','$2y$10$NTdmODYxZWQ0OGMwYmMxZ.Q3I4i0FtO/X9DWv1tpsF5hiS9LBXqmu');
+    ('rstoeltje','$2y$10$MjA4OTEwNGFmNzU5MzAzZe.sWeXZpDD0fvIFp.St4zEFyeFQjfFY.');
 
 INSERT INTO BIB_BASIC
     (Bib_IU_Barcode, Bib_Collection, Bib_Media_Type, Bib_Series_Name, Bib_Series_Part, Bib_Series_Production_No, Bib_Title, Bib_Alternative_Title, Bib_Version_No, Bib_Reel_No, Bib_Summary, Bib_Creator, Bib_Producer, Bib_Genre, Bib_Subject, Bib_Date_Created, Bib_Location, Bib_Title_Note, Bib_Original_Medium, Bib_Original_Gauge, Bib_Generation, Bib_Color, Bib_Sound, Bib_Frame_Rate, Bib_Aspect_Ratio, Bib_Duration, Bib_Language)
