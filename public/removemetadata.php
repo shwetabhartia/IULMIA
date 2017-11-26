@@ -1,6 +1,7 @@
 <?php require_once("../includes/session.php"); ?>
 <?php require_once("../includes/data/db_config.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
+<?php confirm_logged_in(); ?>
 
 <?php
 	if (isset($_POST['remove'])) {

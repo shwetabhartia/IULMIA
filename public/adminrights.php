@@ -1,25 +1,17 @@
 <?php require_once("../includes/session.php"); ?>
 <?php require_once("../includes/data/db_config.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
+<?php confirm_logged_in(); ?>
 
 <?php
   $admin_set = find_all_admins();
 ?>
 
 <?php include("../includes/templates/header-admin.php"); ?>
-<div id="main">
-	<table>
+<div id="main" style="padding-top: 5%; padding-bottom: 5%;">
+	<table align="center">
 		<tr>
-			<td width="20%">
-				<div id="navigation" style="padding-left: 40%;">
-					<a href="editadmin.php"><img src="../public/images/Edit_Admin_N.png" alt="Edit Admins" width="100%"></a>
-					<br>
-					<br>
-					<br>
-					<a href="removeadmin.php"><img src="../public/images/Delete_Admin_N.png" alt="Delete Admins" width="100%"></a>
-				</div>
-			</td>
-			<td width="80%">
+			<td>
 				<div id="page">
 					<?php echo message(); ?>
 					<h2>Manage Admins</h2>
