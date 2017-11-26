@@ -12,20 +12,25 @@
 					
 					global $connection;
 					$results_per_page = 3;
-					if (count($_POST['Bib_Collection']) == 0 && count($_POST['Bib_Genre']) == 0 && count($_POST['Bib_Subject'] == 0)) {
+
+					if (!isset($_SESSION["Bib_Collection"])) {
+						$_SESSION["Bib_Collection"] = isset($_POST['Bib_Collection']) ? $_POST['Bib_Collection'] : Array();
+					}
+
+					if (!isset($_SESSION["Bib_Genre"])) {
+						$_SESSION["Bib_Genre"] = isset($_POST['Bib_Genre']) ? $_POST['Bib_Genre'] : Array();
+					}
+
+					if (!isset($_SESSION["Bib_Subject"])) {
+						$_SESSION["Bib_Subject"] = isset($_POST['Bib_Subject']) ? $_POST['Bib_Subject'] : Array();
+					}
+
+					if (count($_SESSION['Bib_Collection']) == 0 && count($_SESSION['Bib_Genre']) == 0 && count($_SESSION['Bib_Subject'] == 0)) {
 						$_SESSION["message"] = "Select atleast 1 filter";
 						redirect_to("movies.php");
 					}
 
-					/*$movie_collection = isset($_POST['Bib_Collection']) ? $_POST['Bib_Collection'] : Array();
-					$movie_genre = isset($_POST['Bib_Genre']) ? $_POST['Bib_Genre'] : Array();
-					$movie_subject = isset($_POST['Bib_Subject']) ? $_POST['Bib_Subject'] : Array();*/
-
-					$_SESSION["movie_collection"] = isset($_POST['Bib_Collection']) ? $_POST['Bib_Collection'] : Array();
-					$_SESSION["movie_genre"] = isset($_POST['Bib_Genre']) ? $_POST['Bib_Genre'] : Array();
-					$_SESSION["movie_subject"] = isset($_POST['Bib_Subject']) ? $_POST['Bib_Subject'] : Array();
-
-					$query = filter_movie($_SESSION["movie_collection"], $_SESSION["movie_genre"], $_SESSION["movie_subject"]);
+					$query = filter_movie($_SESSION["Bib_Collection"], $_SESSION["Bib_Genre"], $_SESSION["Bib_Subject"]);
 
 					$filter_results = mysqli_query($connection, $query);
 					confirm_query($filter_results);

@@ -18,7 +18,7 @@
 					<br>
 					<br>
 					<br>
-					<a href="editmetadata.php"><img src="../public/images/removeMetadata_N.png" alt="Edit Metadata" width="100%"></a>
+					<a href="editmetadata.php"><img src="../public/images/editMetadata_N.png" alt="Edit Metadata" width="100%"></a>
 				</div>
 			</td>
 			<td width="80%">
