@@ -13,8 +13,27 @@
 					global $connection;
 					$results_per_page = 3;
 
-					if (!isset($_SESSION["Bib_Collection"])) {
+					if (isset($_POST['Bib_Collection'])) {
+						$_SESSION['Bib_Collection'] = $_POST['Bib_Collection'];
+					} else {
+						$_SESSION['Bib_Collection'] = isset($_SESSION['Bib_Collection']) ? $_SESSION['Bib_Collection'] : Array();
+					}
+
+					if (isset($_POST['Bib_Genre'])) {
+						$_SESSION['Bib_Genre'] = $_POST['Bib_Genre'];
+					} else {
+						$_SESSION['Bib_Genre'] = isset($_SESSION['Bib_Genre']) ? $_SESSION['Bib_Genre'] : Array();
+					}
+
+					if (isset($_POST['Bib_Subject'])) {
+						$_SESSION['Bib_Subject'] = $_POST['Bib_Subject'];
+					} else {
+						$_SESSION['Bib_Subject'] = isset($_SESSION['Bib_Subject']) ? $_SESSION['Bib_Subject'] : Array();
+					}
+					
+					/*if (!isset($_SESSION["Bib_Collection"])) {
 						$_SESSION["Bib_Collection"] = isset($_POST['Bib_Collection']) ? $_POST['Bib_Collection'] : Array();
+						echo $_SESSION['Bib_Collection'];
 					}
 
 					if (!isset($_SESSION["Bib_Genre"])) {
@@ -23,7 +42,7 @@
 
 					if (!isset($_SESSION["Bib_Subject"])) {
 						$_SESSION["Bib_Subject"] = isset($_POST['Bib_Subject']) ? $_POST['Bib_Subject'] : Array();
-					}
+					}*/
 
 					if (count($_SESSION['Bib_Collection']) == 0 && count($_SESSION['Bib_Genre']) == 0 && count($_SESSION['Bib_Subject'] == 0)) {
 						$_SESSION["message"] = "Select atleast 1 filter";

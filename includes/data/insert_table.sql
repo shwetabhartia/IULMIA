@@ -38,8 +38,6 @@ VALUES
     ('2000003812', 'Midgen', 'Wil', 'IU', 812, '563-4255', '376 Walnut #4B', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1),
     ('8880008745', 'Langlois', 'Hénri', 'Cinematheque Francaise', 33, '1-71-19-33-33', '51 Rue de Bercy', 'Paris', 'FR', 75012, 'Paris', 'France', 0);
 
-DROP TABLE IF EXISTS ADMINS;
-
 INSERT INTO ADMINS
     (username, hashed_password)
 VALUES

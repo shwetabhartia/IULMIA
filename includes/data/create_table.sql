@@ -2,6 +2,7 @@
 
 CREATE DATABASE IULMIA;
 
+DROP TABLE IF EXISTS PERSON;
 CREATE TABLE PERSON (
     Per_ID varchar(15) not null,
     Per_Last_Name varchar(25),
@@ -19,6 +20,7 @@ CREATE TABLE PERSON (
     primary key (Per_ID)
 );
 
+DROP TABLE IF EXISTS ADMINS;
 CREATE TABLE ADMINS (
     id int(11) NOT NULL AUTO_INCREMENT,
     username varchar(50) NOT NULL,
@@ -26,6 +28,7 @@ CREATE TABLE ADMINS (
     PRIMARY KEY (id)
 );
 
+DROP TABLE IF EXISTS BIB_BASIC;
 CREATE TABLE BIB_BASIC (
     Bib_IU_Barcode varchar(20) not null,
     Bib_Collection varchar(200) not null,
@@ -57,6 +60,7 @@ CREATE TABLE BIB_BASIC (
     primary key (Bib_IU_Barcode)
 );
 
+DROP TABLE IF EXISTS BIB_IDENT;
 CREATE TABLE BIB_IDENT (
     Bibident_ID int not null auto_increment,
     Bib_IU_Barcode varchar(20) not null,
@@ -75,6 +79,7 @@ CREATE TABLE BIB_IDENT (
     foreign key (Per_ID) references PERSON (Per_ID)
 );
 
+DROP TABLE IF EXISTS BIB_TECH;
 CREATE TABLE BIB_TECH (
     BibTech_ID int not null auto_increment,
     Bib_IU_Barcode varchar(20) not null,
@@ -94,6 +99,7 @@ CREATE TABLE BIB_TECH (
     foreign key (Bib_IU_Barcode) references BIB_BASIC (Bib_IU_Barcode)
 );
 
+DROP TABLE IF EXISTS BIB_COND;
 CREATE TABLE BIB_COND (
     Bibcond_ID int not null auto_increment,
     Bib_IU_Barcode varchar(20) not null,
@@ -113,6 +119,7 @@ CREATE TABLE BIB_COND (
     foreign key (Bib_IU_Barcode) references BIB_BASIC (Bib_IU_Barcode)
 );
 
+DROP TABLE IF EXISTS LOAN;
 CREATE TABLE LOAN (
     LOAN_ID int not null auto_increment,
     Per_ID varchar(15) not null,

@@ -6,7 +6,7 @@
 <div id="main">
 	<table>
 		<tr>
-			<td width="50%">
+			<td width="20%">
 				<div id="navigation">
 					<form action="filter.php" method="post">
 						<h2 style="color: #df1e35; text-align: right; padding-right: 5% ">Filter Movies</h2>
@@ -20,7 +20,7 @@
 					</form>
 				</div>
 			</td>
-			<td width="50%">
+			<td width="80%">
 				<div id="page">
 					<?php echo message(); ?>
 					<div id="wrap">

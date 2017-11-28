@@ -11,7 +11,7 @@
 
 		<nav class="navigation-bar">
 		    <img class="logo" src="../public/images/logo001.png">
-		    <a href="logoutadmin.php">logout</a>
+		    <a href="logoutadmin.php">Logout</a>
 		    <a href="adminrights.php">Manage admins</a>
 		    <a href="#">Forms</a>
 		    <a href="ingest.php">Ingest</a>
