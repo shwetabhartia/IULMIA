@@ -5,44 +5,43 @@
 
 
 --Run queries
-
 INSERT INTO PERSON
-    (Per_ID, Per_Last_Name, Per_First_Name, Per_Organization, Per_Area_Code, Per_Phone_No, Per_Street, Per_City, Per_State, Per_Zip_Code, Per_Region, Per_Country, Per_IUMember, Per_IUUsername)
+    (Per_ID, Per_Last_Name, Per_First_Name, Per_Organization, Per_Area_Code, Per_Phone_No, Per_Street, Per_City, Per_State, Per_Zip_Code, Per_Region, Per_Country, Per_IUMember, Per_IUusername)
 VALUES
     ('2000010802', 'Shively', 'Vicki', 'IULMIA', 818, '653-7254', '3339 S. Cheekwood Ln.', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'vshively'),
-    ('2000012315', 'Kutnicki', 'Saul', 'IULMIA', 812, '808-1117', '560 Dutch Valley Rd. #2414', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'saulkut'),
-    ('2000062254', 'Holschuh', 'Courtney', 'IULMIA', 812, '547-4164', '250 10th St. #3210', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'courthol'),
-    ('2000032154', 'Tater-Lind', 'Katie', 'IULMIA', 812, '547-384-0323', '2137 Panorama Terrace', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'katietat'),
-    ('2000023251', 'Creech', 'Lydia', 'IULMIA', 812, '515-9773', '501 North St.', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'lydcree'),
-    ('2000054127', 'Uhrich', 'Andy', 'IULMIA', 812, '494-3118', '3333 E. Florida Avd.', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'andyu'),
-    ('2000056484', 'Stoeltje', 'Rachael', 'IULMIA', 310, '889-4311', '5700 Cortina Circle', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'rachaels'),
-    ('2000075481', 'Slavins', 'Cynthia', 'IU', 812, '480-6129', '12 Vickrey St.', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'cslavins'),
-    ('2000095348', 'Schneider', 'Paul', 'IU', 812, '588-3499', '1245 Baylor Way', 'Elletsville', 'IN', 47429, 'Monroe', 'USA', 1, 'scheipaul'),
-    ('2000012141', 'Klug', 'Daniel', 'IU', 812, '405-7077', '353 Wild Rose Circle.', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'kdan'),
-    ('2000065247', 'Coates', 'Will', 'IU', 812, '225-2270', '91 Fenimore St.', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'willc'),
-    ('2000065656', 'Hoffer', 'Kristin', 'IU', 812, '493-2243', '755 Thistlewood Dr.', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'khoff'),
-    ('2000021247', 'Smith', 'Robert', 'IU', 812, '592-8849', '10260 Burbank Blvd. #2', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'robsmi'),
-    ('2000065374', 'Bonner', 'Mike', 'IU', 812, '205-3587', '2459 Park Oak Dr.', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'mikebonner'),
-    ('2000024716', 'Dailey', 'Kathy', 'IU', 812, '397-8455', '8263 Elizabeth Ln.', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'kathd'),
-    ('2000065238', 'Anderson', 'Tom', 'IU', 812, '621-1014', '8263 Elizabeth Ln.', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'tand'),
-    ('2000084571', 'Mattivi', 'Adam', 'IU', 469, '867-6870', '4333 Brunswick Ave.', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'mattivi'),
-    ('8880099654', 'Hogarth', 'Pam', 'MoMA', 212, '708-9400', '11 W. 53rd. S.', 'New York', 'NY', 10019, 'New York', 'USA', 0, Null),
+    ('2000012315', 'Kutnicki', 'Saul', 'IULMIA', 812, '808-1117', '560 Dutch Valley Rd. #2414', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'skutnicki'),
+    ('2000062254', 'Holschuh', 'Courtney', 'IULMIA', 812, '547-4164', '250 10th St. #3210', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'cholschuh'),
+    ('2000032154', 'Tater-Lind', 'Katie', 'IULMIA', 812, '547-384-0323', '2137 Panorama Terrace', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1,'ktaterlind'),
+    ('2000023251', 'Creech', 'Lydia', 'IULMIA', 812, '515-9773', '501 North St.', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'lCreech'),
+    ('2000054127', 'Uhrich', 'Andy', 'IULMIA', 812, '494-3118', '3333 E. Florida Avd.', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'auhrich'),
+    ('2000056484', 'Stoeltje', 'Rachael', 'IULMIA', 310, '889-4311', '5700 Cortina Circle', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'rstoeltje'),
+    ('2000075481', 'Slavins', 'Cynthia', 'IU', 812, '480-6129', '12 Vickrey St.', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1,'cslavins'),
+    ('2000095348', 'Schneider', 'Paul', 'IU', 812, '588-3499', '1245 Baylor Way', 'Elletsville', 'IN', 47429, 'Monroe', 'USA', 1, 'pschneider'),
+    ('2000012141', 'Klug', 'Daniel', 'IU', 812, '405-7077', '353 Wild Rose Circle.', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1,'dklug'),
+    ('2000065247', 'Coates', 'Will', 'IU', 812, '225-2270', '91 Fenimore St.', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'wcoates'),
+    ('2000065656', 'Hoffer', 'Kristin', 'IU', 812, '493-2243', '755 Thistlewood Dr.', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'khoffer'),
+    ('2000021247', 'Smith', 'Robert', 'IU', 812, '592-8849', '10260 Burbank Blvd. #2', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1,'rsmith'),
+    ('2000065374', 'Bonner', 'Mike', 'IU', 812, '205-3587', '2459 Park Oak Dr.', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1,'mbonner'),
+    ('2000024716', 'Dailey', 'Kathy', 'IU', 812, '397-8455', '8263 Elizabeth Ln.', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'kdailey'),
+    ('2000065238', 'Anderson', 'Tom', 'IU', 812, '621-1014', '8263 Elizabeth Ln.', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'tanderson'),
+    ('2000084571', 'Mattivi', 'Adam', 'IU', 469, '867-6870', '4333 Brunswick Ave.', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'amattivi'),
+    ('8880099654', 'Hogarth', 'Pam', 'MoMA', 212, '708-9400', '11 W. 53rd. S.', 'New York', 'NY', 10019, 'New York', 'USA', 0, 'phogarth'),
     ('2000096487', 'Moreland', 'Sheila', 'IU', 812, '791-8570', '216 Sheldon St. #5', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'smoreland'),
-    ('2000074146', 'Deckard', 'Phil', 'IU', 812, '753-5211', '92 Caballo Court', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'pdeck'),
-    ('2000032698', 'Vadnais', 'Gina', 'IU', 812, '709-8480', '2121 E. 7th Place', 'Indianapolis', 'IN', 46231, 'Marion', 'USA', 1, 'ginav'),
-    ('2000045176', 'Edwards', 'Mae', 'IU', 812, '259-2848', '1225 N. Cherokee #208', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'edmae'),
+    ('2000074146', 'Deckard', 'Phil', 'IU', 812, '753-5211', '92 Caballo Court', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1,'pdeckard'),
+    ('2000032698', 'Vadnais', 'Gina', 'IU', 812, '709-8480', '2121 E. 7th Place', 'Indianapolis', 'IN', 46231, 'Marion', 'USA', 1, 'gvadnais'),
+    ('2000045176', 'Edwards', 'Mae', 'IU', 812, '259-2848', '1225 N. Cherokee #208', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'medwards'),
     ('2000043652', 'Gunn', 'Traci', 'IU', 812, '420-9980', '2211 Hastings Shore Ln.', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'tgunn'),
-    ('2000001254', 'Elsroad', 'Joyce', 'IU', 812, '354-4124', '2026 Santa Cruz Ave..', 'Indianapolis', 'IN', 46204, 'Marion', 'USA', 1, 'jelroad'),
-    ('2000003218', 'Armon', 'Steve', 'IU', 812, '596-2521', '1120 S. Point View St.', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'starmon'),
-    ('2000025318', 'Kinney', 'Kristin', 'IU', 812, '427-5500', '478 Wynola St.', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'kkin'),
+    ('2000001254', 'Elsroad', 'Joyce', 'IU', 812, '354-4124', '2026 Santa Cruz Ave..', 'Indianapolis', 'IN', 46204, 'Marion', 'USA', 1, 'jelsroad'),
+    ('2000003218', 'Armon', 'Steve', 'IU', 812, '596-2521', '1120 S. Point View St.', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'sarmon'),
+    ('2000025318', 'Kinney', 'Kristin', 'IU', 812, '427-5500', '478 Wynola St.', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'kkinney'),
     ('2000029856', 'Whalen', 'David', 'IU', 812, '788-9409', '2435 5th St. #201', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'dwhalen'),
     ('2000003812', 'Midgen', 'Wil', 'IU', 812, '563-4255', '376 Walnut #4B', 'Bloomington', 'IN', 47401, 'Monroe', 'USA', 1, 'wmidgen'),
-    ('8880008745', 'Langlois', 'Hénri', 'Cinematheque Francaise', 33, '1-71-19-33-33', '51 Rue de Bercy', 'Paris', 'FR', 75012, 'Paris', 'France', 0, Null),
-    ('2000016064', 'Noronha', 'Mildred', 'IU', 812, '369-1583', '3220 John Hinkle Pl Apt E', 'Bloomington', 'IN', 47408, 'Monroe', 'USA', 1, 'noronham');
+    ('8880008745', 'Langlois', 'Hénri', 'Cinematheque Francaise', 33, '1-71-19-33-33', '51 Rue de Bercy', 'Paris', 'FR', 75012, 'Paris', 'France', 0, 'hlanglois'),
+    ('2000016064', 'Noronha', 'Mildred', 'IU', 812, '369-1583', '3220 John Hinkle Pl.', 'Bloomington', 'IN', 47408, 'Monroe', 'USA', 1, 'noronham');
 
 
 INSERT INTO BIB_BASIC
-    (Bib_IU_Barcode, Bib_Collection, Bib_Media_Type, Bib_Series_Name, Bib_Series_Part, Bib_Series_Production_No, Bib_Title, Bib_Alternative_Title, Bib_Version_No, Bib_Reel_No, Bib_Summary, Bib_Creator, Bib_Producer, Bib_Genre, Bib_Subject, Bib_Date_Created, Bib_Location, Bib_Title_Note, Bib_Original_Medium, Bib_Original_Gauge, Bib_Generation, Bib_Color, Bib_Sound, Bib_Frame_Rate, Bib_Aspect_Ratio, Bib_Duration, Bib_Language)
+    (Bib_IU_Barcode, Bib_Collect, Bib_Media_Type, Bib_Series_Name, Bib_Series_Part, Bib_Series_Prod_No, Bib_Title, Bib_Alt_Title, Bib_Version, Bib_Reel_No, Bib_Summary, Bib_Creator, Bib_Producer, Bib_Genre, Bib_Subject, Bib_Date, Bib_Location, Bib_Title_Note, Bib_Orig_Med, Bib_Orig_Gauge, Bib_Generation, Bib_Color, Bib_Sound, Bib_Frame_Rate, Bib_Aspect_Ratio, Bib_Dur, Bib_Dial_Lang)
 VALUES
     ('30000149802187', 'Uncataloged_AVC', 'Moving Image', Null, Null, '[unknown]', 'The Sunspot Mystery: Sun Weather Connection', Null, Null, 1, 'Documentary on the Sun\'s sunspots.', '[unknown]', 'A United Nations Film', 'Education', 'Science', '[unknown]', '[unknown]', Null, 'Film','16mm', 'Projection Print', 'Color', 'Sound', 24, '1.37:1', '00:19:00', 'English'),
     ('30000149802195', 'Uncataloged_AVC', 'Moving Image', 'The Americans', 5, '[unknown]', 'The Americans: Chief Joseph', Null, Null, 1, 'Series focused on the life of Chief Joseph.', '[unknown]', 'Encylopedia Brittanica Education Corporation', 'Education', 'History', '[unknown]', '[unknown]', 'Note on can: 83653-2, Note on leader- Show No.9', 'Film','16mm', 'Projection Print', 'Color', 'Sound', 24, '1.37:1', '00:22:00', 'English'),
@@ -73,11 +72,42 @@ VALUES
     ('30000149803029', 'Uncataloged_AVC', 'Moving Image', Null, Null, '[unknown]', 'Will the Fishing Have to Stop?', Null, Null, 1, 'How environmental impact affects fishing and streams.', '[unknown]', 'BBC Television Film', 'Education', 'Environment', '[unknown]', '[unknown]', Null, 'Film','16mm', 'Projection Print', 'Color', 'Sound', 24, '1.37:1', '00:25:00', 'English'),
     ('30000149803037', 'Uncataloged_AVC', 'Moving Image', Null, Null, '[unknown]', 'Ten Who Dared: Roald Amundsen', Null, Null, 1, 'Profile on the life of Roald Amundsen.', '[unknown]', 'BBC Films', 'Education', 'History', '[unknown]', '[unknown]', Null, 'Film','16mm', 'Projection Print', 'Color', 'Sound', 24, '1.37:1', '00:25:00', 'English'),
     ('30000149803045', 'Uncataloged_AVC', 'Moving Image', Null, Null, '[unknown]', 'Boxing - The Noble Art', Null, Null, 1, 'The study of the history of boxing.', '[unknown]', 'BBC Television Film', 'Education', 'Sports', '[unknown]', '[unknown]', 'Note on can: 83813-1', 'Film','16mm', 'Projection Print', 'Color', 'Sound', 24, '1.37:1', '00:27:00', 'English'),
-    ('30000149803052', 'Uncataloged_AVC', 'Moving Image', Null, Null, '[unknown]', 'Edgar Cayce (1877-1945)', Null, Null, 1, 'The mysticism of Edgar Cayce.', '[unknown]', 'BBC Films', 'Education', 'History', '[unknown]', '[unknown]', 'Note on can: 83813-1', 'Film','16mm', 'Projection Print', 'Color', 'Sound', 24, '1.37:1', '00:22:00', 'English');
+    ('30000149803052', 'Uncataloged_AVC', 'Moving Image', Null, Null, '[unknown]', 'Edgar Cayce (1877-1945)', Null, Null, 1, 'The mysticism of Edgar Cayce.', '[unknown]', 'BBC Films', 'Education', 'History', '[unknown]', '[unknown]', 'Note on can: 83813-1', 'Film','16mm', 'Projection Print', 'Color', 'Sound', 24, '1.37:1', '00:22:00', 'English'),
+    ('30000157726880', 'Myrtle McGraw Collection', 'Moving Image', 'Climbing', '1', Null, 'Descent from Pedestals', Null, Null, Null, '983-1284 days', '[unknown]', '[unknown]', 'Education', 'Sports', '[unknown]', '[unknown]', '3708 - J. Briggs', 'Film','16mm', 'Projection Print', 'Black and White', 'Silent', 24, '1.37:1', '03:00', 'None'),
+    ('30000157726898', 'Myrtle McGraw Collection', 'Moving Image', 'Climbing', '2', Null, 'Descent from Pedestals', Null, Null, Null, '1230-940 days', '[unknown]', '[unknown]', 'Education', 'Sports', '[unknown]', '[unknown]', '1-8 - 3708. J. Briggs', 'Film','16mm', 'Projection Print', 'Black and White', 'Silent', 24, '1.37:1', '04:00', 'None'),
+    ('30000157791884', 'Myrtle McGraw Collection', 'Moving Image', 'Climbing', '3', Null, 'Descent from Pedestals', Null, Null, Null, '[unknown]', '[unknown]', '[unknown]', 'Education', 'Sports', '[unknown]', '[unknown]', 'Note: N3 - 3505-3707 - 1-2', 'Film','16mm', 'Projection Print', 'Black and White', 'Silent', 24, '1.37:1', '04:00', 'None'),
+    ('30000157791892', 'Myrtle McGraw Collection', 'Moving Image', 'Climbing', '1', Null, 'Descent from Pedestals', Null, Null, Null, '[unknown]', '[unknown]', '[unknown]', 'Education', 'Sports', '[unknown]', '[unknown]', '3605 - C. Davern-B', 'Film','16mm', 'Projection Print', 'Black and White', 'Silent', 24, '1.37:1', '04:00', 'None'),
+    ('30000157791900', 'Myrtle McGraw Collection', 'Moving Image', 'Climbing', '2', Null, 'Descent from Pedestals', Null, Null, Null, '1080-1402 days', '[unknown]', '[unknown]', 'Education', 'Sports', '[unknown]', '[unknown]', '3701 - A. Nicholson- 2-8 Peds', 'Film','16mm', 'Projection Print', 'Black and White', 'Silent', 24, '1.37:1', '02:00', 'None'),
+    ('30000157791918', 'Myrtle McGraw Collection', 'Moving Image', 'Climbing', '3', Null, 'Descent from Pedestals', Null, Null, Null, '322-658 days', '[unknown]', '[unknown]', 'Education', 'Sports', '[unknown]', '[unknown]', '1-4 -3604  - P. Davern-A', 'Film','16mm', 'Projection Print', 'Black and White', 'Silent', 24, '1.37:1', '03:00', 'None'),
+    ('30000157726948', 'Myrtle McGraw Collection', 'Moving Image', 'Climbing', '4', Null, 'Descent from Pedestals', Null, Null, Null, '227-792 days', '[unknown]', '[unknown]', 'Education', 'Sports', '[unknown]', '[unknown]', '3802 -Ja Woods - 1-6', 'Film','16mm', 'Projection Print', 'Black and White', 'Silent', 24, '1.37:1', '04:00', 'None'),
+    ('30000157791926', 'Myrtle McGraw Collection', 'Moving Image', 'Climbing', '5', Null, 'Descent from Pedestals', Null, Null, Null, '[unknown]', '[unknown]', '[unknown]', 'Education', 'Sports', '[unknown]', '[unknown]', '10 - 3313-14 - 3401 - 03-06 -09 -11-12', 'Film','16mm', 'Projection Print', 'Black and White', 'Silent', 24, '1.37:1', '04:00', 'None'),
+    ('30000157791934', 'Myrtle McGraw Collection', 'Moving Image', 'Climbing', '6', Null, 'Descent from Pedestals', Null, Null, Null, '819-885 Days', '[unknown]', '[unknown]', 'Education', 'Sports', '[unknown]', '[unknown]', '3802 - Ja. Woods', 'Film','16mm', 'Projection Print', 'Black and White', 'Silent', 24, '1.37:1', '00:40', 'None'),
+    ('30000157791942', 'Myrtle McGraw Collection', 'Moving Image', 'Climbing', '7', Null, 'Descent from Pedestals', Null, Null, Null, '220-706 Days', '[unknown]', '[unknown]', 'Education', 'Sports', '[unknown]', '[unknown]', '1-7 -3803 - Shelley', 'Film','16mm', 'Projection Print', 'Black and White', 'Silent', 24, '1.37:1', '06:00', 'None'),
+    ('30000157726674', 'Lane County Educational Service District', 'Moving Image', Null, Null, '[unknown]', 'Wheels, Wheels, Wheels', Null, Null, Null, 'The history of the wheel.', '[unknown]', '[unknown]', 'Education', 'History', '[unknown]', '[unknown]', Null, 'Film','16mm', 'Positive', 'Color', 'Sound', 24, '1.37:1', '10:00', 'English'),
+    ('30000157726682', 'Lane County Educational Service District', 'Moving Image', Null, Null, '[unknown]', 'Wheels, Wheels, Wheels', Null, Null, Null, 'The history of the wheel.', '[unknown]', '[unknown]', 'Education', 'History', '[unknown]', '[unknown]', Null, 'Film','16mm', 'Positive', 'Color', 'Sound', 24, '1.37:1', '11:00', 'English'),
+   	('30000157726690', 'Lane County Educational Service District', 'Moving Image', Null, Null, '[unknown]', 'What Does Our Flag Mean?', Null, Null, Null, 'Study of the symbolic meaning behind the elements that make up the American flag.', '[unknown]', '[unknown]', 'Education', 'History', '[unknown]', '[unknown]', Null, 'Film','16mm', 'Positive', 'Color', 'Sound', 24, '1.37:1', '11:00', 'English'),
+    ('30000157791777', 'Lane County Educational Service District', 'Moving Image', Null, Null, '[unknown]', 'Plankton: Pastures of the Ocean', Null, Null, Null, 'Oceanic study of plankton and how it is part of the feeding cycle of fish.', '[unknown]', '[unknown]', 'Education', 'Science', '[unknown]', '[unknown]', Null, 'Film','16mm', 'Positive', 'Color', 'Sound', 24, '1.37:1', '11:00', 'English'),
+    ('30000157791785', 'Lane County Educational Service District', 'Moving Image', 'Sounds', Null, '1', 'Sounds All About Us', Null, Null, 1, 'Everything makes noise.  This film isolates each elements that makes up everyday ambience.', '[unknown]', '[unknown]', 'Education', 'Arts & Science', '1969', '[unknown]', Null, 'Film','16mm', 'Positive', 'Color', 'Sound', 24, '1.37:1', '11:00', 'English'),
+    ('30000157726724', 'Lane County Educational Service District', 'Moving Image', 'Sounds', Null, '2', 'Sound for Beginners', Null, Null, 1, 'Introducing beginners to the study of foley work.', '[unknown]', '[unknown]', 'Education', 'Arts & Science', '1969', '[unknown]', Null, 'Film','16mm', 'Positive', 'Color', 'Sound', 24, '1.37:1', '11:00', 'English'),
+    ('30000157791793', 'Lane County Educational Service District', 'Moving Image', Null, Null, '[unknown]', 'Space', Null, Null, Null, 'Documentary on what we currently know about Space.', '[unknown]', '[unknown]', 'Education', 'Science', '[unknown]', '[unknown]', Null, 'Film','16mm', 'Positive', 'Color', 'Sound', 24, '1.37:1', '10:00', 'English'),
+    ('30000157791801', 'Lane County Educational Service District', 'Moving Image', Null, Null, '[unknown]', 'Squeeze', Null, Null, Null, '[unknown]', '[unknown]', '[unknown]', 'Education', '[unknown]', '[unknown]', '[unknown]', Null, 'Film','16mm', 'Positive', 'Color', 'Sound', 24, '1.37:1', '11:00', 'English'),
+    ('30000157791819', 'Lane County Educational Service District', 'Moving Image', Null, Null, '[unknown]', 'The Spinal Column', Null, Null, Null, 'Dissection of the spinal column and the nerves system.', '[unknown]', '[unknown]', 'Education', 'History', '[unknown]', '[unknown]', Null, 'Film','16mm', 'Positive', 'Color', 'Sound', 24, '1.37:1', '10:00', 'English'),
+    ('30000157791827', 'Lane County Educational Service District', 'Moving Image', Null, Null, '[unknown]', 'Spanish: Introducing the Language', Null, Null, Null, 'Discusing the root of Spanish syntax.', '[unknown]', '[unknown]', 'Education', 'Cultural Science', '[unknown]', '[unknown]', Null, 'Film','16mm', 'Positive', 'Color', 'Sound', 24, '1.37:1', '10:00', 'English'),
+    ('30000157791835', 'Lane County Educational Service District', 'Moving Image', Null, Null, '[unknown]', 'Bauernvolk in Den Bergen', Null, Null, Null, '[unknown]', '[unknown]', '[unknown]', 'Documentary', 'History', '1942', '[unknown]', Null, 'Film','16mm', 'Positive', 'Color', 'Sound', 24, '1.37:1', '11:00', 'Finnish'),
+    ('30000157726781', 'Lane County Educational Service District', 'Moving Image', Null, Null, '[unknown]', 'Basketball for Boys: Teamplay', Null, Null, Null, 'Teaching the importance and techniques of team play in basketball.', '[unknown]', '[unknown]', 'Education', 'Sports', '[unknown', '[unknown]', Null, 'Film','16mm', 'Positive', 'Color', 'Sound', 24, '1.37:1', '11:00', 'English'),
+    ('30000157726799', 'Lane County Educational Service District', 'Moving Image', Null, Null, '[unknown]', 'My Own Yard to Play In', Null, Null, Null, 'Landscape artists show how to take advantage of the underutilized home backyard.', '[unknown]', '[unknown]', 'Education', 'Environment', '[unknown]', '[unknown]', Null, 'Film','16mm', 'Positive', 'Color', 'Sound', 24, '1.37:1', '11:00', 'English'),
+    ('30000157726807', 'Lane County Educational Service District', 'Moving Image', 'Reading Music', Null, '3', 'Reading Music: Learning About Notes', Null, Null, 1, 'Lessons in note reading for all instruments.', 'Milton O. Pella', '[unknown]', 'Education', 'Arts & Science', '1959', '[unknown]', Null, 'Film','16mm', 'Positive', 'Color', 'Sound', 24, '1.37:1', '11:00', 'English'),
+    ('30000157726815', 'Lane County Educational Service District', 'Moving Image', 'Reading Music', Null, '4', 'Reading Music: Learning About Notes', Null, Null, 2, 'Lessons on rhythm development while playing an instrument.', 'Milton O. Pella', '[unknown]', 'Education', 'Arts & Science', '1959', '[unknown]', Null, 'Film','16mm', 'Positive', 'Color', 'Sound', 24, '1.37:1', '11:00', 'English'),
+    ('30000157791843', 'Lane County Educational Service District', 'Moving Image', 'Reptiles', Null, '1', 'Reptiles Are Interesting', Null, Null, Null, 'Study of reptile evolution.', '[unknown]', '[unknown]', 'Education', 'Science', '[unknown]', '[unknown]', Null, 'Film','16mm', 'Positive', 'Color', 'Sound', 24, '1.37:1', '11:00', 'English'),
+    ('30000157791850', 'Lane County Educational Service District', 'Moving Image', 'Reptiles', Null, '2', 'Reptiles and Their Characteristics', Null, Null, Null, 'Anatomical study of the reptile.', '[unknown]', '[unknown]', 'Education', 'Science', '[unknown]', '[unknown]', Null, 'Film','16mm', 'Positive', 'Color', 'Sound', 24, '1.37:1', '11:00', 'English'),
+    ('30000157791868', 'Lane County Educational Service District', 'Moving Image', 'Reproduction', Null, '2', 'Reproduction in Animals', Null, Null, Null, 'Reproductive study of different animal species.', '[unknown]', '[unknown]', 'Education', 'Science', '[unknown]', '[unknown]', Null, 'Film','16mm', 'Positive', 'Black and White', 'Sound', 24, '1.37:1', '11:00', 'English'),
+    ('30000157791876', 'Lane County Educational Service District', 'Moving Image', 'Reproduction', Null, '4', 'Reproduction Among Mammals', Null, Null, Null, 'Reproductive study of different mammals.', '[unknown]', '[unknown]', 'Education', 'Science', '[unknown]', '[unknown]', Null, 'Film','16mm', 'Positive', 'Color', 'Sound', 24, '1.37:1', '11:00', 'English'),
+    ('30000157726864', 'Lane County Educational Service District', 'Moving Image', Null, Null, '4', 'The Roman Wall', Null, Null, Null, 'Documentary on the construction and longevity of roman engineering.', '[unknown]', '[unknown]', 'Education', 'History', '[unknown]', 'Rome', Null, 'Film','16mm', 'Positive', 'Color', 'Black and White', 24, '1.37:1', '11:00', 'English')
+    ;
 
 
 INSERT INTO BIB_IDENT
-    (Bib_IU_Barcode, Per_ID, Bibident_IUCAT_Title_No, Bibident_Date_Record_Created, Bibident_MDPI_Barcode, Bibident_Current_Location, Bibident_Alf_Shelf_Location, Bibident_Original_Identification, Bibident_Accompanying_Doc_ID, Bibident_Accompanying_Doc_Title, Bibident_Accompanying_Doc_Location)
+    (Bib_IU_Barcode, Per_ID, Bibident_IUCAT_Title_No, bibident_Date_Created, Bibident_MDPI_Barcode, Bibident_Current_Loc, Bibident_Alf_Shelf_Loc, Bibident_Orig_Ident, Bibident_Accom_Doc_ID, Bibident_Accom_Doc_Title, Bibident_Accom_Doc_Loc)
 VALUES
     ('30000149802187', '2000023251', 'B-IULMIA', '2016-01-15', Null, 'In Storage (Awaiting Ingest)', 'Aisle 24 L11-5', '83653-2', '5001.1', 'Movie Script and Optional Reading', 'FileCabinet03'),
     ('30000149802195', '2000023251', 'B-IULMIA', '2016-01-15', Null, 'In Storage (Awaiting Ingest)', 'Aisle 24 L11-6', '83653-3 ', '5002.1', 'Movie Script and Supplementary Reading', 'FileCabinet03'),
@@ -108,11 +138,42 @@ VALUES
     ('30000149803029', '2000032154', 'B-IULMIA', '2016-01-15', Null, 'ALF', 'Aisle 24 L11-7', '[unknown]', Null, Null, Null),
     ('30000149803037', '2000032154', 'B-IULMIA', '2016-01-15', Null, 'ALF', 'Aisle 24 L11-7', '[unknown]', Null, Null, Null),
     ('30000149803045', '2000032154', 'B-IULMIA', '2016-01-15', Null, 'IULMIA', 'Aisle 24 L11-6', '[unknown]', Null, Null, Null),
-    ('30000149803052', '2000032154', 'B-IULMIA', '2016-01-15', Null, 'ALF', 'Aisle 24 L11-5', '[unknown]', Null, Null, Null);
+    ('30000149803052', '2000032154', 'B-IULMIA', '2016-01-15', Null, 'ALF', 'Aisle 24 L11-5', '[unknown]', Null, Null, Null),
+    ('30000157726880', '2000032154', Null, '2017-08-10', Null, 'Freezer', 'ALF F L03-01', '3411', Null, Null, Null),
+    ('30000157726898', '2000032154', Null, '2017-08-10', Null, 'Freezer', 'ALF F L03-01', '3708', Null, Null, Null),
+    ('30000157791884', '2000032154', Null, '2017-08-10', Null, 'Freezer', 'ALF F L03-01', '3709', Null, Null, Null),
+    ('30000157791892', '2000032154', Null, '2017-08-10', Null, 'Freezer', 'ALF F L03-01', '3505', Null, Null, Null),
+    ('30000157791900', '2000032154', Null, '2017-08-10', Null, 'Freezer', 'ALF F L03-01', '3605', Null, Null, Null),
+    ('30000157791918', '2000032154', Null, '2017-08-10', Null, 'Freezer', 'ALF F L03-01', '3701', Null, Null, Null),
+    ('30000157726948', '2000032154', Null, '2017-08-10', Null, 'Freezer', 'ALF F L03-01', '3604', Null, Null, Null),
+    ('30000157791926', '2000032154', Null, '2017-08-10', Null, 'Freezer', 'ALF F L03-01', '3802', Null, Null, Null),
+    ('30000157791934', '2000032154', Null, '2017-08-10', Null, 'Freezer', 'ALF F L03-01', '3313', Null, Null, Null),
+    ('30000157791942', '2000032154', Null, '2017-08-10', Null, 'Freezer', 'ALF F L03-01', '3801', Null, Null, Null),
+    ('30000157726674', '2000023251', '14701710', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V506', '200-01', 'Study guide included', 'FileCabinet05'),
+    ('30000157726682', '2000023251', '14701711', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V507', '200-05', 'Study guide included', 'FileCabinet05'),
+    ('30000157726690', '2000023251', '14713629', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V508', Null, Null, Null),
+    ('30000157791777', '2000023251', '7830226', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V508', Null, Null, Null),
+    ('30000157791785', '2000023251', Null, '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V221', Null, Null, Null),
+    ('30000157726724', '2000023251', '14714539', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V509', Null, Null, Null),
+    ('30000157791793', '2000023251', '14714548', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V510', '200-32', 'Item description', 'FileCabinet05'),
+    ('30000157791801', '2000023251', '14714568', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V511', Null, Null, Null),
+    ('30000157791819', '2000023251', '14714571', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V512', '200-33', 'Item description', 'FileCabinet05'),
+    ('30000157791827', '2000023251', '7827283', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V350', Null, Null, Null),
+    ('30000157791835', '2000023251', '7827317', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V351', '200-34', '2 pieces- Study guide and German narration', 'FileCabinet05'),
+    ('30000157726781', '2000023251', '14714588', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V513', Null, Null, Null),
+    ('30000157726799', '2000023251', '7818843', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V194', Null, Null, Null),
+    ('30000157726807', '2000023251', '7832206', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V451', Null, Null, Null),
+    ('30000157726815', '2000023251', '7832204', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V450', Null, Null, Null),
+    ('30000157791843', '2000023251', Null, '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V403', Null, Null, Null),
+    ('30000157791850', '2000023251', '7829380', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V390', Null, Null, Null),
+    ('30000157791868', '2000023251', '7825207', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V303', Null, Null, Null),
+    ('30000157791876', '2000023251', '14714594', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V514', Null, Null, Null),
+    ('30000157726864', '2000023251', '14736727', '2014-01-04', Null, 'In Storage (Ingested)', 'ALF 24 L06-03', 'V105', Null, Null, Null)
+    ;
 
 
 INSERT INTO BIB_TECH
-    (Bib_IU_Barcode, BibTech_Multi_Item_Can, BibTech_Picture_Type, BibTech_Sound_Form_Type, BibTech_Sound_Content_Type, BibTech_Original_Sound_Field, BibTech_Caption_Subtitle_Language, BibTech_Caption_Subtitle_Note, BibTech_Base, BibTech_Stock, BibTech_Edgecode_Date, BibTech_Footage, BibTech_Can_Size)
+    (Bib_IU_Barcode, BibTech_Multi_Item_Can, BibTech_Pic_Type, BibTech_Snd_Form_Type, BibTech_Snd_Cont_Type, BibTech_Orig_Snd_Field, BibTech_Capt_Sub_Lang, BibTech_Capt_Sub_Note, BibTech_Base, BibTech_Stock, BibTech_Edgecode_Date, BibTech_Footage, BibTech_Can_Size)
 VALUES
     ('30000149802187', Null, 'Talkie', 'Magnetic', 'SND', 'Variable Area', '[unknown]', '[unknown]', 'Polyester', 'Kodak', '1972', 700, 1000),
     ('30000149802195', Null, 'Talkie', 'Optical', 'SND', 'Variable Area', '[unknown]', '[unknown]', 'Acetate', 'Kodak', '1969', 800, 1200),
@@ -143,11 +204,42 @@ VALUES
     ('30000149803029', Null, 'Talkie', 'Optical', 'SND', 'Variable Area', '[unknown]', '[unknown]', 'Polyester', 'Kodak', '1947', 900, 1000),
     ('30000149803037', Null, 'Talkie', 'Optical', 'SND', 'Variable Area', '[unknown]', '[unknown]', 'Polyester', 'Kodak', '1941', 900, 1000),
     ('30000149803045', Null, 'Talkie', 'Optical', 'SND', 'Variable Area', '[unknown]', '[unknown]', 'Polyester', 'Kodak', '1978', 1000, 1200),
-    ('30000149803052', Null, 'Talkie', 'Optical', 'SND', 'Variable Area', '[unknown]', '[unknown]', 'Acetate', 'Ecktachrome', '1976', 1000, 1200);
+    ('30000149803052', Null, 'Talkie', 'Optical', 'SND', 'Variable Area', '[unknown]', '[unknown]', 'Acetate', 'Ecktachrome', '1976', 1000, 1200),
+    ('30000157726880', Null, 'Silent', 'None', 'MOS', 'None', '[unknown]', '[unknown]', 'Acetate', 'Agfa', '1932', 300, 400),
+    ('30000157726898', Null, 'Silent', 'None', 'MOS', 'None', '[unknown]', '[unknown]', 'Acetate', 'Agfa', '1932', 400, 400),
+    ('30000157791884', Null, 'Silent', 'None', 'MOS', 'None', '[unknown]', '[unknown]', 'Acetate', 'Agfa', '1932', 400, 400),
+    ('30000157791892', Null, 'Silent', 'None', 'MOS', 'None', '[unknown]', '[unknown]', 'Acetate', 'Agfa', '1932', 400, 400),
+    ('30000157791900', Null, 'Silent', 'None', 'MOS', 'None', '[unknown]', '[unknown]', 'Acetate', 'Agfa', '1932', 200, 400),
+    ('30000157791918', Null, 'Silent', 'None', 'MOS', 'None', '[unknown]', '[unknown]', 'Acetate', 'Agfa', '1932', 300, 400),
+    ('30000157726948', Null, 'Silent', 'None', 'MOS', 'None', '[unknown]', '[unknown]', 'Acetate', 'Agfa', '1932', 400, 400),
+    ('30000157791926', Null, 'Silent', 'None', 'MOS', 'None', '[unknown]', '[unknown]', 'Acetate', 'Agfa', '1932', 400, 400),
+    ('30000157791934', Null, 'Silent', 'None', 'MOS', 'None', '[unknown]', '[unknown]', 'Acetate', 'Agfa', '1932', 150, 400),
+    ('30000157791942', Null, 'Silent', 'None', 'MOS', 'None', '[unknown]', '[unknown]', 'Acetate', 'Agfa', '1932', 600, 800),
+    ('30000157726674', Null, 'Talkie', 'Optical', 'SND', 'Variable Area', '[unknown]', '[unknown]', 'Polyester', 'Kodak', '1954', 400, 800),
+    ('30000157726682', Null, 'Talkie', 'Optical', 'SND', 'Variable Area', '[unknown]', '[unknown]', 'Acetate', 'Kodak', '1954', 400, 800),
+    ('30000157726690', Null, 'Talkie', 'Optical', 'SND', 'Variable Area', '[unknown]', '[unknown]', 'Polyester', 'Kodak', '1954', 400, 800),
+    ('30000157791777', Null, 'Talkie', 'Optical', 'SND', 'Variable Area', '[unknown]', '[unknown]', 'Polyester', 'Kodak', '1970', 400, 800),
+    ('30000157791785', Null, 'Talkie', 'Optical', 'SND', 'Variable Area', '[unknown]', '[unknown]', 'Polyester', 'Kodak', '1982', 400, 800),
+    ('30000157726724', Null, 'Talkie', 'Optical', 'SND', 'Variable Area', '[unknown]', '[unknown]', 'Polyester', 'Kodak', '1953', 400, 800),
+    ('30000157791793', Null, 'Talkie', 'Optical', 'SND', 'Variable Area', '[unknown]', '[unknown]', 'Polyester', 'Kodak', '1982', 400, 800),
+    ('30000157791801', Null, 'Talkie', 'Optical', 'SND', 'Variable Area', '[unknown]', '[unknown]', 'Polyester', 'Kodak', '1970', 400, 800),
+    ('30000157791819', Null, 'Talkie', 'Optical', 'SND', 'Variable Area', '[unknown]', '[unknown]', 'Polyester', 'Kodak', '1947', 400, 800),
+    ('30000157791827', Null, 'Talkie', 'Optical', 'SND', 'Variable Area', '[unknown]', '[unknown]', 'Polyester', 'Kodak', '1948', 400, 800),
+    ('30000157791835', Null, 'Talkie', 'Optical', 'SND', 'Variable Area', '[unknown]', '[unknown]', 'Polyester', 'Agfa', '1947', 400, 800),
+    ('30000157726781', Null, 'Talkie', 'Optical', 'SND', 'Variable Area', '[unknown]', '[unknown]', 'Polyester', 'Kodak', '1941', 400, 800),
+    ('30000157726799', Null, 'Talkie', 'Optical', 'SND', 'Variable Area', '[unknown]', '[unknown]', 'Polyester', 'Kodak', '1978', 400, 800),
+    ('30000157726807', Null, 'Talkie', 'Optical', 'SND', 'Variable Area', '[unknown]', '[unknown]', 'Polyester', 'Kodak', '1976', 400, 800),
+    ('30000157726815', Null, 'Talkie', 'Optical', 'SND', 'Variable Area', '[unknown]', '[unknown]', 'Polyester', 'Kodak', '1974', 400, 800),
+    ('30000157791843', Null, 'Talkie', 'Optical', 'SND', 'Variable Area', '[unknown]', '[unknown]', 'Polyester', 'Kodak', '1983', 400, 800),
+    ('30000157791850', Null, 'Talkie', 'Optical', 'SND', 'Variable Area', '[unknown]', '[unknown]', 'Polyester', 'Kodak', '1970', 400, 800),
+    ('30000157791868', Null, 'Talkie', 'Optical', 'SND', 'Variable Area', '[unknown]', '[unknown]', 'Polyester', 'Kodak', '1970', 400, 800),
+    ('30000157791876', Null, 'Talkie', 'Optical', 'SND', 'Variable Area', '[unknown]', '[unknown]', 'Polyester', 'Kodak', '1970', 400, 800),
+    ('30000157726864', Null, 'Talkie', 'Optical', 'SND', 'Variable Area', '[unknown]', '[unknown]', 'Polyester', 'Kodak', '1947', 400, 800)
+    ;
 
 
 INSERT INTO BIB_COND
-    (Bib_IU_Barcode, BibCond_Format_Note, BibCond_AD, BibCond_Shrinkage, BibCond_Mold, BibCond_Condition_Type, BibCond_Micellaneous_Condition_Type, BibCond_Missing_Footage, BibCond_Overall_Condition, BibCond_Overall_Condition_Note, BibCond_Research_Value, BibCond_Research_Value_Note, BibCond_Conservation_Action)
+    (Bib_IU_Barcode, BibCond_Format_Note, BibCond_AD, BibCond_Shrinkage, BibCond_Mold, BibCond_Cond_Type, BibCond_Misc_Cond_Type, BibCond_Miss_Foot, BibCond_Overall_Cond, BibCond_Overall_Cond_Note, BibCond_Research_Val, BibCond_Research_Val_Note, BibCond_Conserv_Act)
 VALUES
     ('30000149802187', Null, 1, Null, 0, 1, 1, Null, 1, 'Moderate to Severe Scratches and broken sprockets. Faded but no warpage.', 3, Null, 'Digitize when time and budget allows.'),
     ('30000149802195', Null, 1, 0.4, 3, 1, 1, Null, 1, 'Few broken sprockets', 3, Null, 'Digitize when time and budget allows.'),
@@ -178,20 +270,54 @@ VALUES
     ('30000149803029', Null, 1, Null, 0, 1, 1, Null, 1, 'Beginning to warp but otherwise fine on general inspection', 3, Null, 'Digitize when time and budget allows.'),
     ('30000149803037', Null, 1, Null, 0, 1, 1, Null, 1, 'Beginning to warp but otherwise fine on general inspection', 3, Null, 'Digitize when time and budget allows.'),
     ('30000149803045', Null, 1, 0.1, 0, 1, 1, Null, 1, 'Beginning to warp but otherwise fine on general inspection', 3, Null, 'Digitize when time and budget allows.'),
-    ('30000149803052', Null, 1, Null, 0, 1, 1, Null, 1, '1 flip, moderate scratches, fine on general inspection', 3, Null, 'Digitize when time and budget allows.');
+    ('30000149803052', Null, 1, Null, 0, 1, 1, Null, 1, '1 flip, moderate scratches, fine on general inspection', 3, Null, 'Digitize when time and budget allows.'),
+    ('30000157726880', Null, 3, 2, 0, 2, 1, Null, 2, 'Warp-2', 1, 'Rare and unique', 'Digitize immediately.  Deteriorating Rapidly.'),
+    ('30000157726898', Null, 3, 2, 0, 2, 1, Null, 2, 'Warp-1', 1, 'Rare and unique', 'Digitize immediately.  Deteriorating Rapidly.'),
+    ('30000157791884', Null, 3, 2, 0, 2, 1, Null, 2, 'Warp-3', 1, 'Rare and unique', 'Digitize immediately.  Deteriorating Rapidly.'),
+    ('30000157791892', Null, 3, 2, 0, 2, 1, Null, 2, 'Warp-1', 1, 'Rare and unique', 'Digitize immediately.  Deteriorating Rapidly.'),
+    ('30000157791900', Null, 3, 2, 0, 2, 1, Null, 2, 'Warp-1', 1, 'Rare and unique', 'Digitize immediately.  Deteriorating Rapidly.'),
+    ('30000157791918', Null, 3, 2, 0, 2, 1, Null, 2, 'Warp-2', 1, 'Rare and unique', 'Digitize immediately.  Deteriorating Rapidly.'),
+    ('30000157726948', Null, 3, 2, 0, 2, 1, Null, 2, 'Warp-2', 1, 'Rare and unique', 'Digitize immediately.  Deteriorating Rapidly.'),
+    ('30000157791926', Null, 3, 2, 0, 2, 1, Null, 2, 'Warp-1', 1, 'Rare and unique', 'Digitize immediately.  Deteriorating Rapidly.'),
+    ('30000157791934', Null, 3, 2, 0, 2, 1, Null, 2, 'Warp-2', 1, 'Rare and unique', 'Digitize immediately.  Deteriorating Rapidly.'),
+    ('30000157791942', Null, 3, 2, 0, 2, 1, Null, 2, 'Warp-3', 1, 'Rare and unique', 'Digitize immediately.  Deteriorating Rapidly.'),
+    ('30000157726674', Null, 0, Null, 0, 1, 1, Null, 1, 'Fine on General Inspection', 3, Null, 'Digitize when time and budget allows.'),
+    ('30000157726682', Null, 0, Null, 0, 1, 1, Null, 1, 'Fine on General Inspection', 3, Null, 'Digitize when time and budget allows.'),
+    ('30000157726690', Null, 0, Null, 0, 1, 1, Null, 1, 'Fine on General Inspection', 3, Null, 'Digitize when time and budget allows.'),
+    ('30000157791777', Null, 0, Null, 0, 1, 1, Null, 1, 'Fine on General Inspection', 3, Null, 'Digitize when time and budget allows.'),
+    ('30000157791785', Null, 0, Null, 0, 1, 1, Null, 1, 'Fine on General Inspection', 3, Null, 'Digitize when time and budget allows.'),
+    ('30000157726724', Null, 0, Null, 0, 1, 1, Null, 1, 'Fine on General Inspection', 3, Null, 'Digitize when time and budget allows.'),
+    ('30000157791793', Null, 0, Null, 0, 0, 0, Null, 1, 'Fine on General Inspection', 3, Null, 'Digitize when time and budget allows.'),
+    ('30000157791801', Null, 0, Null, 0, 0, 0, Null, 1, 'Fine on General Inspection', 3, Null, 'Digitize when time and budget allows.'),
+    ('30000157791819', Null, 1, Null, 0, 0, 0, Null, 0, 'Fine on General Inspection', 3, Null, 'Digitize when time and budget allows.'),
+    ('30000157791827', Null, 1, Null, 0, 0, 0, Null, 0, 'Loose wind', 3, Null, 'Digitize when time and budget allows.'),
+    ('30000157791835', Null, 0, Null, 0, 0, 0, Null, 0, 'Fine on General Inspection', 3, Null, 'Digitize when time and budget allows.'),
+    ('30000157726781', Null, 0, Null, 0, 0, 0, Null, 0, 'Fine on General Inspection', 3, Null, 'Digitize when time and budget allows.'),
+    ('30000157726799', Null, 0, Null, 0, 0, 0, Null, 0, 'Fine on General Inspection', 3, Null, 'Digitize when time and budget allows.'),
+    ('30000157726807', Null, 0, Null, 0, 1, 1, Null, 0, 'Fine on General Inspection', 3, Null, 'Digitize when time and budget allows.'),
+    ('30000157726815', Null, 1, Null, 0, 0, 0, Null, 0, 'Fine on General Inspection', 3, Null, 'Digitize when time and budget allows.'),
+    ('30000157791843', Null, 1, Null, 0, 0, 0, Null, 1, 'Fine on General Inspection', 3, Null, 'Digitize when time and budget allows.'),
+    ('30000157791850', Null, 1, Null, 0, 0, 0, Null, 0, 'Fine on General Inspection', 3, Null, 'Digitize when time and budget allows.'),
+    ('30000157791868', Null, 1, Null, 0, 0, 0, Null, 0, 'Fine on General Inspection', 3, Null, 'Digitize when time and budget allows.'),
+    ('30000157791876', Null, 1, Null, 0, 0, 0, Null, 0, 'Fine on General Inspection', 3, Null, 'Digitize when time and budget allows.'),
+    ('30000157726864', Null, 0, Null, 0, 0, 0, Null, 0, 'Fine on General Inspection', 3, Null, 'Digitize when time and budget allows.')
+    ;
 
 
 INSERT INTO LOAN
-    (Per_ID, Bib_IU_Barcode, Loan_Date, Loan_Return_Date, Loan_Returned_Date, Loan_Ext_Date, Loan_Purpose, Bibident_Current_Loc)
+    (Per_ID, Bib_IU_Barcode, Loan_Date, Loan_Return_Date, Loan_Returned_Date, Loan_Ext_Date, Loan_Purpose, Loan_Screen_Loc)
 VALUES
-    ('8880008745', '30000149802336', '2017-05-09', '2017-07-09', '2017-07-01', Null, 'Screened for the Cinematheque Francaise Orphan Films Festival.', 'ALF'),
+    ('8880008745', '30000149802336', '2017-05-09', '2017-07-09', '2017-07-01', Null, 'Screened for the Cinematheque Francaise Orphan Films Festival.', 'IULMIA Screening Room'),
     ('8880099654', '30000149803110', '2017-08-22', '2017-10-22', Null, Null, 'Screening with film collections on deserts around the world.', 'MoMa'),
-    ('2000075481', '30000149802583', '2017-02-03', '2017-02-17', '2017-02-16', Null, 'Screening for class studies on rise of Totaltarianism.', 'ALF'),
-    ('2000075481', '30000149802591', '2017-02-03', '2017-02-17', '2017-02-16', Null, 'Screening for class studies on rise of Totaltarianism.', 'ALF'),
-    ('2000095348', '30000149803003', '2016-11-16', '2016-11-30', '2016-12-05', Null, 'Research on Cook Island', 'ALF'),
-    ('2000012141', '30000149803011', '2016-02-23', '2016-03-08', '2016-03-13', '2016-03-15', 'Research on Francisco Pizarro', 'ALF'),
-    ('2000065247', '30000149803029', '2017-07-06', '2017-07-20', '2017-07-19', Null, 'Environmental Study', 'ALF'),
-    ('2000065656', '30000149803037', '2017-08-24', '2017-09-07', '2017-08-26', Null, 'Undergrad curiosity about 16mm educational films.', 'ALF'),
-    ('2000021247', '30000149803045', '2017-10-23', '2017-11-06', Null, '2017-12-17', 'Screening for media studies', 'IULMIA'),
-    ('2000065374', '30000149803052', '2017-03-13', '2017-03-27', '2017-03-23', Null, 'Screening for media studies', 'ALF'),
-    ('2000016064', '30000157703053', '2017-11-01', '2017-11-14', '2017-11-13', Null, 'Screening for media studies', 'IULMIA');
+    ('2000075481', '30000149802583', '2017-02-03', '2017-02-17', '2017-02-16', Null, 'Screening for class studies on rise of Totaltarianism.', 'IULMIA Screening Room'),
+    ('2000075481', '30000149802591', '2017-02-03', '2017-02-17', '2017-02-16', Null, 'Screening for class studies on rise of Totaltarianism.', 'IULMIA Screening Room'),
+    ('2000095348', '30000149803003', '2016-11-16', '2016-11-30', '2016-12-05', Null, 'Research on Cook Island', 'IULMIA Screening Room'),
+    ('2000012141', '30000149803011', '2016-02-23', '2016-03-08', '2016-03-13', '2016-03-15', 'Research on Francisco Pizarro', 'IULMIA Screening Room'),
+    ('2000065247', '30000149803029', '2017-07-06', '2017-07-20', '2017-07-19', Null, 'Environmental Study', 'IULMIA Screening Room'),
+    ('2000065656', '30000149803037', '2017-08-24', '2017-09-07', '2017-08-26', Null, 'Undergrad curiosity about 16mm educational films.', 'IULMIA Screening Room'),
+    ('2000021247', '30000149803045', '2017-10-23', '2017-11-06', Null, '2017-12-17', 'Screening for media studies', 'IULMIA Screening Room'),
+    ('2000065374', '30000149803052', '2017-03-13', '2017-03-27', '2017-03-23', Null, 'Screening for media studies', 'IULMIA Screening Room'),
+    ('2000024716', '30000157703103', '2016-09-04', '2016-09-18', '2016-09-05', Null, 'Screening for media studies', 'IULMIA Screening Room'),
+    ('2000065238', '30000157703103', '2017-02-06', '2017-04-20', '2017-04-08', Null, 'Screening at Cinematique, Orphan Films', 'Cinematique: Paris, France'),
+    ('2000084571', '30000157703103', '2017-10-20', '2017-11-03', '2017-11-02', Null, 'Screening for IU Cinema, General Public', 'IU Cinema')
+    ;

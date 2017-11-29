@@ -5,9 +5,9 @@
 <div id="main">
 	<table>
 		<tr>
-			<td width="20%"><div id="navigation" style="padding-left: 40%; padding-bottom: 98%"><a href="index.php"><img src="../public/images/RequestFilmN.png" alt="Request Film" width="100%"></a></div></td>
+			<td width="20%"><div id="navigation" style="padding-left: 40%; padding-bottom: 98%"><a href="first.php"><img src="../public/images/RequestFilmN.png" alt="Request Film" width="100%"></a></div></td>
 			<td width="80%"><div id="page">
-			<?php 
+			<?php
 				if(isset($_GET["movieid"])) {
 					$movie_details = fetch_details_movie($_GET["movieid"]);
 					$output = "<h2>";
@@ -42,6 +42,7 @@
 						$output .= "Language: " . $mov["Bib_Language"] . "<br>";
 					}
 					echo "$output";
+
 				}
 
 			?>
