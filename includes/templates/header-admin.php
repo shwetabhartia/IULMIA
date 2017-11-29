@@ -4,13 +4,15 @@
 <html lang="en">
 	<head>
 		<title>IULMIA</title>
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 		<link href="css/public.css" media="all" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
 
 		<nav class="navigation-bar">
 		    <img class="logo" src="../public/images/logo001.png">
-		    <a href="logout.php">logout</a>
+		    <a href="logoutadmin.php">Logout</a>
 		    <a href="adminrights.php">Manage admins</a>
+		    <a href="#">Forms</a>
 		    <a href="ingest.php">Ingest</a>
 		</nav>

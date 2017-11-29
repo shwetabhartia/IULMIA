@@ -40,6 +40,14 @@ VALUES
     ('2000016064', 'Noronha', 'Mildred', 'IU', 812, '369-1583', '3220 John Hinkle Pl.', 'Bloomington', 'IN', 47408, 'Monroe', 'USA', 1, 'noronham');
 
 
+<<<<<<< HEAD
+=======
+INSERT INTO ADMINS
+    (username, hashed_password)
+VALUES
+    ('rstoeltje','$2y$10$MjA4OTEwNGFmNzU5MzAzZe.sWeXZpDD0fvIFp.St4zEFyeFQjfFY.');
+
+>>>>>>> master
 INSERT INTO BIB_BASIC
     (Bib_IU_Barcode, Bib_Collect, Bib_Media_Type, Bib_Series_Name, Bib_Series_Part, Bib_Series_Prod_No, Bib_Title, Bib_Alt_Title, Bib_Version, Bib_Reel_No, Bib_Summary, Bib_Creator, Bib_Producer, Bib_Genre, Bib_Subject, Bib_Date, Bib_Location, Bib_Title_Note, Bib_Orig_Med, Bib_Orig_Gauge, Bib_Generation, Bib_Color, Bib_Sound, Bib_Frame_Rate, Bib_Aspect_Ratio, Bib_Dur, Bib_Dial_Lang)
 VALUES

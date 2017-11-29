@@ -2,6 +2,7 @@
 require_once("../includes/session.php");
 require_once("../includes/data/db_config.php");
 require_once("../includes/functions.php");
+confirm_logged_in();
 require_once("../includes/validation_functions.php");
 
     if (isset($_POST['submit'])) {

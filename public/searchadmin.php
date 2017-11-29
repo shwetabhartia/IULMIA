@@ -1,7 +1,9 @@
 <?php require_once("../includes/session.php"); ?>
 <?php require_once("../includes/data/db_config.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
-<?php include("../includes/templates/header.php"); ?>
+<?php confirm_logged_in(); ?>
+
+<?php include("../includes/templates/header-admin.php"); ?>
 
 <div id="main">
 	<table>
@@ -10,7 +12,7 @@
 				<br>
 				<br>
 				<br>
-				<a href="movies.php"><img src="../public/images/NewSearchN.png" alt="New Search" width="100%"></a>
+				<a href="ingest.php"><img src="../public/images/NewSearchN.png" alt="New Search" width="100%"></a>
 			</div></td>
 			<td width="60%"><div id="page">
 				<?php
@@ -45,7 +47,7 @@
 					$output = "<h2>Search Results</h2><ol>";
 					while($movie = mysqli_fetch_array($search_results_page)) {
 						$output .= "<li><h3>";
-						$output .= "<a href=\"moviepage.php?movieid=";
+						$output .= "<a href=\"moviepageadmin.php?movieid=";
 						$output .= urlencode($movie["Bib_IU_Barcode"]);
 						$output .= "\">";
 						$output .= $movie["Bib_Title"];
@@ -66,7 +68,7 @@
 
 					// display the links to the pages
 					for ($page=1;$page<=$number_of_pages;$page++) {
-						echo '<a href="search.php?page=' . $page . '">' . $page . '</a> ';
+						echo '<a href="searchadmin.php?page=' . $page . '">' . $page . '</a> ';
 					}
 				?>
 			</div></td>

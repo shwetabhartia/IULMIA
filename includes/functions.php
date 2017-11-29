@@ -85,69 +85,57 @@
 
 		$query .= implode(' OR ', $parts);
 		return $query;
-		/*$search_results = mysqli_query($connection, $query);
-		confirm_query($search_results);
-		$output = "<h2>Search Results</h2><ol>";
-		while ($movie = mysqli_fetch_assoc($search_results)) {
-			$output .= "<li><h3>";
-			$output .= "<a href=\"moviepage.php?movieid=";
-			$output .= urlencode($movie["Bib_IU_Barcode"]);
-			$output .= "\">";
-			$output .= $movie["Bib_Title"];
-			$output .= "</h3>";
-			$output .= "</a>";
-			$output .= "Creator :";
-			$output .= $movie["Bib_Creator"];
-			$output .=  "<br>";
-			$output .= "Date Created :";
-			$output .= $movie["Bib_Date_Created"];
-			$output .=  "<br>";
-			$output .=  "Summary : ";
-			$output .= $movie["Bib_Summary"];
-			$output .= "<br></li>";
-		}
-		$output .= "</ol>";
-		return $output;*/
 	}
 
 	function filter_movie($movie_collection, $movie_genre, $movie_subject) {
 		global $connection;
-				
-		$collection = "";
+		$where_clause_array = Array();
 
-		foreach($movie_collection as $index => $c) {
-			if ($collection == "") $collection = "Bib_Collection IN ("; //if it's the first detected option, add the IN clause to the string
-			$collection .= "'" . $c."',";
-		}
-		//trim the trailing comma and add the closing bracket of the IN clause instead
-		if ($collection != "") {
-			$collection = rtrim($collection, ","); 
-			$collection .= ")";
-		}
+		if (count($movie_collection) > 0) {		
+			$collection = "";
 
-		$genre = "";
-		foreach($movie_genre as $index => $g) {
-			if ($genre == "") $genre = "Bib_Genre IN ("; //if it's the first detected option, add the IN clause to the string
-			$genre .= "'" . $g."',";
-		}
-		//trim the trailing comma and add the closing bracket of the IN clause instead
-		if ($genre != "") {
-			$genre = rtrim($genre, ","); 
-			$genre .= ")";
+			foreach($movie_collection as $index => $c) {
+				if ($collection == "") $collection = "Bib_Collection IN ("; //if it's the first detected option, add the IN clause to the string
+				$collection .= "'" . $c."',";
+			}
+			//trim the trailing comma and add the closing bracket of the IN clause instead
+			if ($collection != "") {
+				$collection = rtrim($collection, ","); 
+				$collection .= ")";
+			}
+			array_push($where_clause_array, $collection);
 		}
 
-		$subject = "";
-		foreach($movie_subject as $index => $s) {
-			if ($subject == "") $subject = "Bib_Subject IN ("; //if it's the first detected option, add the IN clause to the string
-			$subject .= "'" . $s."',";
-		}
-		//trim the trailing comma and add the closing bracket of the IN clause instead
-		if ($subject != "") {
-			$subject = rtrim($subject, ","); 
-			$subject .= ")";
+		if (count($movie_genre) > 0) {
+			$genre = "";
+			foreach($movie_genre as $index => $g) {
+				if ($genre == "") $genre = "Bib_Genre IN ("; //if it's the first detected option, add the IN clause to the string
+				$genre .= "'" . $g."',";
+			}
+			//trim the trailing comma and add the closing bracket of the IN clause instead
+			if ($genre != "") {
+				$genre = rtrim($genre, ","); 
+				$genre .= ")";
+			}
+			array_push($where_clause_array, $genre);
 		}
 
-		$query = "SELECT Bib_IU_Barcode, Bib_Title, Bib_Creator, Bib_Date_Created, Bib_Summary FROM BIB_BASIC WHERE $collection AND $genre AND $subject";
+		if (count($movie_subject) > 0) {
+			$subject = "";
+			foreach($movie_subject as $index => $s) {
+				if ($subject == "") $subject = "Bib_Subject IN ("; //if it's the first detected option, add the IN clause to the string
+				$subject .= "'" . $s."',";
+			}
+			//trim the trailing comma and add the closing bracket of the IN clause instead
+			if ($subject != "") {
+				$subject = rtrim($subject, ","); 
+				$subject .= ")";
+			}
+			array_push($where_clause_array, $subject);
+		}
+		$where_clause = join(" AND ", $where_clause_array);
+
+		$query = "SELECT Bib_IU_Barcode, Bib_Title, Bib_Creator, Bib_Date_Created, Bib_Summary FROM BIB_BASIC WHERE $where_clause ";
 		//print $query;
 		return $query;
 	}
@@ -160,6 +148,7 @@
 		return $movie_details;
 	}
 
+	//Find if the movie exists by iu barcode
 	function find_movie_by_id($iu_barcode) {
 	
 		global $connection;
@@ -174,5 +163,118 @@
 			return false;
 		}
 	}
+
+	/*Admin funtions - start*/
+	function find_all_admins() {
+		global $connection;
+
+		$query  = "SELECT * ";
+		$query .= "FROM admins ";
+		$query .= "ORDER BY username ASC";
+		$admin_set = mysqli_query($connection, $query);
+		confirm_query($admin_set);
+		return $admin_set;
+	}
+
+	function find_admin_by_id($admin_id) {
+		global $connection;
+
+		$safe_admin_id = mysqli_real_escape_string($connection, $admin_id);
+
+		$query  = "SELECT * ";
+		$query .= "FROM admins ";
+		$query .= "WHERE id = {$safe_admin_id} ";
+		$query .= "LIMIT 1";
+		$admin_set = mysqli_query($connection, $query);
+		confirm_query($admin_set);
+		if($admin = mysqli_fetch_assoc($admin_set)) {
+			return $admin;
+		} else {
+			return null;
+		}
+	}
+
+	function find_admin_by_username($username) {
+		global $connection;
+		
+		$safe_username = mysqli_real_escape_string($connection, $username);
+		
+		$query  = "SELECT * ";
+		$query .= "FROM admins ";
+		$query .= "WHERE username = '{$safe_username}' ";
+		$query .= "LIMIT 1";
+		$admin_set = mysqli_query($connection, $query);
+		confirm_query($admin_set);
+		if($admin = mysqli_fetch_assoc($admin_set)) {
+			return $admin;
+		} else {
+			return null;
+		}
+	}
+
+	function password_encrypt($password) {
+		$hash_format = "$2y$10$";	// Tells PHP to use Blowfish with a "cost" of 10
+		$salt_length = 22;			// Blowfish salts should be 22-characters or more
+		$salt = generate_salt($salt_length);
+		$format_and_salt = $hash_format . $salt;
+		$hash = crypt($password, $format_and_salt);
+		return $hash;
+	}
+	
+	function generate_salt($length) {
+		// Not 100% unique, not 100% random, but good enough for a salt
+		// MD5 returns 32 characters
+		$unique_random_string = md5(uniqid(mt_rand(), true));
+
+		// Valid characters for a salt are [a-zA-Z0-9./]
+		$base64_string = base64_encode($unique_random_string);
+
+		// But not '+' which is valid in base64 encoding
+		$modified_base64_string = str_replace('+', '.', $base64_string);
+
+		// Truncate string to the correct length
+		$salt = substr($modified_base64_string, 0, $length);
+
+		return $salt;
+	}
+	
+	function password_check($password, $existing_hash) {
+		// existing hash contains format and salt at start
+		$hash = crypt($password, $existing_hash);
+		if ($hash === $existing_hash) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	function attempt_login($username, $password) {
+		$admin = find_admin_by_username($username);
+		if ($admin) {
+			// found admin, now check password
+			if (password_check($password, $admin["hashed_password"])) {
+			// password matches
+			return $admin;
+			} else {
+			// password does not match
+			return false;
+			}
+		} else {
+			// admin not found
+			return false;
+		}
+	}
+
+	function logged_in() {
+		return isset($_SESSION['admin_id']);
+	}
+	
+	function confirm_logged_in() {
+		if (!logged_in()) {
+			redirect_to("admin.php");
+		}
+	}
+
+	/*Admin funtions - end*/
 
 ?>

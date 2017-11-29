@@ -5,8 +5,6 @@
 	<head>
 		<title>IULMIA</title>
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="js/filter.js"></script>
 		<link href="css/public.css" media="all" rel="stylesheet" type="text/css" />
 	</head>
 	<body>

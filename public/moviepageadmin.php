@@ -1,19 +1,20 @@
 <?php require_once("../includes/data/db_config.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
-<?php include("../includes/templates/header.php"); ?>
+<?php confirm_logged_in(); ?>
+
+<?php include("../includes/templates/header-admin.php"); ?>
 
 <div id="main">
 	<table>
 		<tr>
 			<td width="20%"><div id="navigation" style="padding-left: 40%; padding-bottom: 98%">
-				<a href="index.php"><img src="../public/images/RequestFilmN.png" alt="Request Film" width="100%"></a>
 				<br>
 				<br>
 				<br>
-				<a href="movies.php"><img src="../public/images/NewSearchN.png" alt="New Search" width="100%"></a>
+				<a href="ingest.php"><img src="../public/images/NewSearchN.png" alt="New Search" width="100%"></a>
 			</div></td>
 			<td width="80%"><div id="page">
-			<?php
+			<?php 
 				if(isset($_GET["movieid"])) {
 					$movie_details = fetch_details_movie($_GET["movieid"]);
 					$output = "<h2>";
@@ -48,7 +49,6 @@
 						$output .= "Language: " . $mov["Bib_Language"] . "<br>";
 					}
 					echo "$output";
-
 				}
 
 			?>

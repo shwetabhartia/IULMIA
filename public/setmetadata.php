@@ -1,6 +1,8 @@
 <?php require_once("../includes/session.php"); ?>
 <?php require_once("../includes/data/db_config.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
+<?php confirm_logged_in(); ?>
+
 <?php include("../includes/templates/header-admin.php"); ?>
 
 <div id="main">
@@ -16,7 +18,7 @@
 					<br>
 					<br>
 					<br>
-					<a href="editmetadata.php"><img src="../public/images/removeMetadata_N.png" alt="Edit Metadata" width="100%"></a>
+					<a href="editmetadata.php"><img src="../public/images/editMetadata_N.png" alt="Edit Metadata" width="100%"></a>
 				</div>
 			</td>
 			<td width="80%">
