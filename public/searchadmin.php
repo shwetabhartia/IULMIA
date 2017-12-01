@@ -2,7 +2,6 @@
 <?php require_once("../includes/data/db_config.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
 <?php confirm_logged_in(); ?>
-
 <?php include("../includes/templates/header-admin.php"); ?>
 
 <div id="main">
