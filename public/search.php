@@ -25,6 +25,11 @@
 					confirm_query($search_results);
 					$number_of_results = mysqli_num_rows($search_results);
 
+					if ($number_of_results == 0) {
+						$_SESSION["message"] = "No movies found for this search.";
+						redirect_to("index.php");
+					}
+
 					// determine number of total pages available
 					$number_of_pages = ceil($number_of_results/$results_per_page);
 
