@@ -10,7 +10,7 @@
 				<br>
 				<br>
 				<br>
-				<a href="movies.php"><img src="../public/images/NewSearchN.png" alt="New Search" width="100%"></a>
+				<a href="index.php"><img src="../public/images/NewSearchFilter_N.png" alt="New SF" width="100%"></a>
 			</div></td>
 			<td width="60%"><div id="page">
 				<?php

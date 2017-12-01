@@ -6,7 +6,7 @@
 <div id="main">
 	<table>
 		<tr>
-			<td width="20%"><div id="navigation" style="padding-left: 43%; padding-bottom: 95%"><a href="movies.php"><img src="../public/images/NewFilter_N.png" alt="New Filter" width="100%"></a></div></td>
+			<td width="20%"><div id="navigation" style="padding-left: 43%; padding-bottom: 95%"><a href="index.php"><img src="../public/images/NewSearchFilter_N.png" alt="New SF" width="100%"></a></div></td>
 			<td width="80%"><div id="page">
 				<?php
 					
@@ -25,7 +25,7 @@
 					
 					if (count($_SESSION['Bib_Collection']) == 0 && count($_SESSION['Bib_Genre']) == 0 && count($_SESSION['Bib_Subject']) == 0) {
 						$_SESSION["message"] = "Select atleast 1 filter";
-						redirect_to("movies.php");
+						redirect_to("index.php");
 					}
 
 					$query = filter_movie($_SESSION["Bib_Collection"], $_SESSION["Bib_Genre"], $_SESSION["Bib_Subject"]);
@@ -36,7 +36,7 @@
 
 					if ($number_of_results == 0) {
 						$_SESSION["message"] = "No movies found for this filter.";
-						redirect_to("movies.php");
+						redirect_to("index.php");
 					}
 
 					// determine number of total pages available
