@@ -2,7 +2,6 @@
 <?php require_once("../includes/data/db_config.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
 <?php confirm_logged_in(); ?>
-
 <?php include("../includes/templates/header-admin.php"); ?>
 
 <div id="main">
@@ -26,6 +25,11 @@
 					$search_results = mysqli_query($connection, $query);
 					confirm_query($search_results);
 					$number_of_results = mysqli_num_rows($search_results);
+
+					if ($number_of_results == 0) {
+						$_SESSION["message"] = "No movies found for this search.";
+						redirect_to("ingest.php");
+					}
 
 					// determine number of total pages available
 					$number_of_pages = ceil($number_of_results/$results_per_page);

@@ -10,7 +10,7 @@
 				<br>
 				<br>
 				<br>
-				<a href="movies.php"><img src="../public/images/NewSearchN.png" alt="New Search" width="100%"></a>
+				<a href="index.php"><img src="../public/images/NewSearchFilter_N.png" alt="New SF" width="100%"></a>
 			</div></td>
 			<td width="60%"><div id="page">
 				<?php
@@ -24,6 +24,11 @@
 					$search_results = mysqli_query($connection, $query);
 					confirm_query($search_results);
 					$number_of_results = mysqli_num_rows($search_results);
+
+					if ($number_of_results == 0) {
+						$_SESSION["message"] = "No movies found for this search.";
+						redirect_to("index.php");
+					}
 
 					// determine number of total pages available
 					$number_of_pages = ceil($number_of_results/$results_per_page);

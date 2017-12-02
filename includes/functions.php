@@ -157,9 +157,37 @@
 		return $query;
 	}
 
+	//BIB_BASIC Details
 	function fetch_details_movie($movie_id) {
 		global $connection;
 		$query = "Select * from BIB_BASIC where Bib_IU_Barcode = $movie_id";
+		$movie_details = mysqli_query($connection, $query);
+		confirm_query($movie_details);
+		return $movie_details;
+	}
+
+	//BIB_IDENT Details
+	function fetch_ident_details_movie($movie_id) {
+		global $connection;
+		$query = "Select * from BIB_IDENT where Bib_IU_Barcode = $movie_id";
+		$movie_details = mysqli_query($connection, $query);
+		confirm_query($movie_details);
+		return $movie_details;
+	}
+
+	//BIB_TECH Details
+	function fetch_tech_details_movie($movie_id) {
+		global $connection;
+		$query = "Select * from BIB_TECH where Bib_IU_Barcode = $movie_id";
+		$movie_details = mysqli_query($connection, $query);
+		confirm_query($movie_details);
+		return $movie_details;
+	}
+
+	////BIB_COND Details
+	function fetch_cond_details_movie($movie_id) {
+		global $connection;
+		$query = "Select * from BIB_COND where Bib_IU_Barcode = $movie_id";
 		$movie_details = mysqli_query($connection, $query);
 		confirm_query($movie_details);
 		return $movie_details;

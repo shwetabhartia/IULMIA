@@ -8,11 +8,11 @@ session_start();
 	<table>
 		<tr>
 			<td width="20%"><div id="navigation" style="padding-left: 40%; padding-bottom: 98%">
-				<a href="index.php"><img src="../public/images/RequestFilmN.png" alt="Request Film" width="100%"></a>
+				<a href="login.php"><img src="../public/images/RequestFilmN.png" alt="Request Film" width="100%"></a>
 				<br>
 				<br>
 				<br>
-				<a href="movies.php"><img src="../public/images/NewSearchN.png" alt="New Search" width="100%"></a>
+				<a href="index.php"><img src="../public/images/NewSearchFilter_N.png" alt="New SF" width="100%"></a>
 			</div></td>
 			<td width="80%"><div id="page">
 			<?php
