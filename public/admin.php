@@ -8,17 +8,17 @@ $username = "";
 
 if (isset($_POST['submit'])) {
   // Process the form
-  
+
   // validations
   $required_fields = array("username", "password");
   validate_presences($required_fields);
-  
+
   if (empty($errors)) {
     // Attempt Login
 
 		$username = $_POST["username"];
 		$password = $_POST["password"];
-		
+
 		$found_admin = attempt_login($username, $password);
 
     if ($found_admin) {
@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
   }
 } else {
   // This is probably a GET request
-  
+
 } // end: if (isset($_POST['submit']))
 
 ?>
