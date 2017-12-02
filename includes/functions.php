@@ -87,6 +87,19 @@
 		return $query;
 	}
 
+	function search_movie_by_loan($movie_title) {
+		$movie_title = explode(' ', $movie_title);
+		$query = 'SELECT BIB_BASIC.Bib_IU_Barcode, BIB_BASIC.Bib_Title, BIB_BASIC.Bib_Creator, Loan.Loan_Date, Loan.Loan_Screen_Loc FROM BIB_BASIC INNER JOIN Loan ON BIB_BASIC.Bib_IU_Barcode = Loan.Bib_IU_Barcode WHERE ';
+		//SELECT BIB_BASIC.Bib_IU_Barcode, BIB_BASIC.Bib_Title, BIB_BASIC.Bib_Creator, Loan.Loan_Date, Loan.Bibident_Current_Loc FROM BIB_BASIC INNER JOIN Loan ON BIB_BASIC.Bib_IU_Barcode = Loan.Bib_IU_Barcode WHERE BIB_BASIC.Bib_Title LIKE "%anto%" AND Loan.Loan_Date IS NOT NULL;
+		$parts = array();
+		foreach( $movie_title as $movie_title_word ){
+		$parts[] = '`Bib_Title` LIKE "%'.$movie_title_word.'%"';
+		}
+		$query .= implode(' OR ', $parts);
+		$query .= ' AND Loan.Loan_Date IS NOT NULL';
+		return $query;
+	}
+
 	function filter_movie($movie_collection, $movie_genre, $movie_subject) {
 		global $connection;
 		$where_clause_array = Array();

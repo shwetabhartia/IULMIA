@@ -121,15 +121,15 @@ CREATE TABLE BIB_COND (
 
 DROP TABLE IF EXISTS LOAN;
 CREATE TABLE LOAN (
-    LOAN_ID int not null auto_increment,
-    Per_ID varchar(15) not null,
-    Bib_IU_Barcode varchar(20) not null,
+    LOAN_ID bigint not null auto_increment,
+    Per_ID varchar(25) not null,
+    Bib_IU_Barcode varchar(25) not null,
     Loan_Date DATE,
     Loan_Return_Date DATE,
     Loan_Returned_Date DATE,
     Loan_Ext_Date DATE,
     Loan_Purpose varchar(200),
-    Bibident_Current_Loc varchar(200) not null,
+    Loan_Screen_Loc varchar(200) not null,
     primary key (LOAN_ID), 
     foreign key (Per_ID) references PERSON (Per_ID),
     foreign key (Bib_IU_Barcode) references BIB_BASIC (Bib_IU_Barcode)

@@ -184,15 +184,15 @@ VALUES
 
 
 INSERT INTO LOAN 
-    (Per_ID, Bib_IU_Barcode, Loan_Date, Loan_Return_Date, Loan_Returned_Date, Loan_Ext_Date, Loan_Purpose, Bibident_Current_Loc)
+    (Per_ID, Bib_IU_Barcode, Loan_Date, Loan_Return_Date, Loan_Returned_Date, Loan_Ext_Date, Loan_Purpose, Loan_Screen_Loc)
 VALUES
-    ('8880008745', '30000149802336', '2017-05-09', '2017-07-09', '2017-07-01', Null, 'Screened for the Cinematheque Francaise Orphan Films Festival.', 'ALF'),
+    ('8880008745', '30000149802336', '2017-05-09', '2017-07-09', '2017-07-01', Null, 'Screened for the Cinematheque Francaise Orphan Films Festival.', 'IULMIA Screening Room'),
     ('8880099654', '30000149803110', '2017-08-22', '2017-10-22', Null, Null, 'Screening with film collections on deserts around the world.', 'MoMa'),
-    ('2000075481', '30000149802583', '2017-02-03', '2017-02-17', '2017-02-16', Null, 'Screening for class studies on rise of Totaltarianism.', 'ALF'),
-    ('2000075481', '30000149802591', '2017-02-03', '2017-02-17', '2017-02-16', Null, 'Screening for class studies on rise of Totaltarianism.', 'ALF'),
-    ('2000095348', '30000149803003', '2016-11-16', '2016-11-30', '2016-12-05', Null, 'Research on Cook Island', 'ALF'),
-    ('2000012141', '30000149803011', '2016-02-23', '2016-03-08', '2016-03-13', '2016-03-15', 'Research on Francisco Pizarro', 'ALF'),
-    ('2000065247', '30000149803029', '2017-07-06', '2017-07-20', '2017-07-19', Null, 'Environmental Study', 'ALF'),
-    ('2000065656', '30000149803037', '2017-08-24', '2017-09-07', '2017-08-26', Null, 'Undergrad curiosity about 16mm educational films.', 'ALF'),
-    ('2000021247', '30000149803045', '2017-10-23', '2017-11-06', Null, '2017-12-17', 'Screening for media studies', 'IULMIA'),
-    ('2000065374', '30000149803052', '2017-03-13', '2017-03-27', '2017-03-23', Null, 'Screening for media studies', 'ALF');
+    ('2000075481', '30000149802583', '2017-02-03', '2017-02-17', '2017-02-16', Null, 'Screening for class studies on rise of Totaltarianism.', 'IULMIA Screening Room'),
+    ('2000075481', '30000149802591', '2017-02-03', '2017-02-17', '2017-02-16', Null, 'Screening for class studies on rise of Totaltarianism.', 'IULMIA Screening Room'),
+    ('2000095348', '30000149803003', '2016-11-16', '2016-11-30', '2016-12-05', Null, 'Research on Cook Island', 'IULMIA Screening Room'),
+    ('2000012141', '30000149803011', '2016-02-23', '2016-03-08', '2016-03-13', '2016-03-15', 'Research on Francisco Pizarro', 'IULMIA Screening Room'),
+    ('2000065247', '30000149803029', '2017-07-06', '2017-07-20', '2017-07-19', Null, 'Environmental Study', 'IULMIA Screening Room'),
+    ('2000065656', '30000149803037', '2017-08-24', '2017-09-07', '2017-08-26', Null, 'Undergrad curiosity about 16mm educational films.', 'IULMIA Screening Room'),
+    ('2000021247', '30000149803045', '2017-10-23', '2017-11-06', Null, '2017-12-17', 'Screening for media studies', 'IULMIA Screening Room'),
+    ('2000065374', '30000149803052', '2017-03-13', '2017-03-27', '2017-03-23', Null, 'Screening for media studies', 'IULMIA Screening Room');

@@ -10,7 +10,7 @@ if (isset($_POST['edit'])) {
 	global $connection;
 	
 	// validations
-	/*$required_fields = array("Bib_IU_Barcode", "Bib_Collection", "Bib_Title", "Bib_Genre", "Bib_Subject", "Per_ID", "Bibident_Current_Location");
+	$required_fields = array("Bib_IU_Barcode", "Bib_Collection", "Bib_Title", "Bib_Genre", "Bib_Subject", "Per_ID", "Bibident_Current_Location");
 	validate_presences($required_fields);
 
 	$fields_with_max_lengths = array("Bib_Media_Type" => 20);
@@ -19,7 +19,7 @@ if (isset($_POST['edit'])) {
 	if (!empty($errors)) {
         $_SESSION["errors"] = $errors;
         redirect_to("editmetadata.php");
-    }*/
+    }
 
 	$IU_Barcode = find_movie_by_id($_POST['Bib_IU_Barcode']); // find if movie exist in database
 	if (!$IU_Barcode) {

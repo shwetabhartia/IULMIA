@@ -56,7 +56,8 @@
 					$queryPagination = $query . ' LIMIT ' . $this_page_first_result . ',' .  $results_per_page;
 					$filter_results_page = mysqli_query($connection, $queryPagination);
 					confirm_query($filter_results_page);
-					$output = "<h2>Filter Results</h2><ol>";
+					$offset = $this_page_first_result + 1;
+					$output = "<h2>Filter Results</h2><ol start = '$offset'>";
 					while($movie = mysqli_fetch_array($filter_results_page)) {
 						$output .= "<li><h3>";
 						$output .= "<a href=\"moviepage.php?movieid=";
