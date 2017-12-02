@@ -1,6 +1,8 @@
-<?php require_once("../includes/data/db_config.php"); ?>
+<?php
+session_start();
+ require_once("../includes/data/db_config.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
-<?php include("../includes/templates/header.php"); ?>
+<?php include("../includes/templates/header.php");?>
 
 <div id="main">
 	<table>
@@ -17,6 +19,7 @@
 				if(isset($_GET["movieid"])) {
 					$movie_details = fetch_details_movie($_GET["movieid"]);
 					$output = "<h2>";
+					$_SESSION['movieid'] = $_GET["movieid"];
 					while ($mov = mysqli_fetch_assoc($movie_details)) {
 						$output .= $mov["Bib_Title"] . "</h2>";
 						$output .= "IU Barcode: " . $mov["Bib_IU_Barcode"] . "<br>";

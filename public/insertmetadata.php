@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once("../includes/session.php");
 require_once("../includes/data/db_config.php");
 require_once("../includes/functions.php");
@@ -19,7 +19,7 @@ require_once("../includes/validation_functions.php");
         redirect_to("setmetadata.php");
     }
 
-    // Process the form
+    //Process the form
 
     //BIB_BASIC table attribute
     $Bib_IU_Barcode = mysql_prep($_POST["Bib_IU_Barcode"]);

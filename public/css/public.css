@@ -13,11 +13,13 @@
 
 html { height: 100%; width: 100%; }
 body {
-  width: 100%; height: 100%;
+  max-width: 100%;
+  height: 100%;
   margin: 0; padding: 0; border: 0;
   font-family: Verdana, Arial, Helvetica, sans-serif;
   font-size: 13px; line-height: 15px;
   background: #EDEBEB;
+  text-align: center;
 }
 
 #header {
@@ -30,6 +32,7 @@ body {
 }
 
 #pink {
+  /*position: relative;*/
   width: 100%;
   height: 10em;
   padding: 1em;
@@ -37,6 +40,7 @@ body {
 }
 
 #footer {
+  position:fixed;
   clear: both;
   width: 100%;
   height: 2em;
@@ -97,7 +101,7 @@ body {
   padding: 130px;
   padding-bottom: 0px;
   text-align: center;
-  font-size: 1.25em;
+
 }
 
 
@@ -118,16 +122,99 @@ body {
 /* Form.php */
 
 #form-container{
-  max-width: 500px;
-	height: 120px;
-	margin: auto;
+  max-width: 100%;
+	height: 50%;
+	margin: 10px solid black;
+  overflow-x: hidden;
   margin-left: auto;
   margin-right: auto;
-  padding: 130px;
+  padding: 0px;
   padding-bottom: 0px;
   text-align: center;
-  font-size: 1.25em;
 }
+
+/*Form page css*/
+
+#fname, #lname, #organisation, #purpose, #street, #city, #state, #zipcode, #region, #country{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+#areacode, #phoneno{
+  width:100%;
+  display: block;
+
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+/*#areacode{
+  width:20%;
+  float: left;
+  /*padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;*/
+}
+
+#phoneno{
+  width:75%;
+  float:right;
+  /*padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;*/
+}
+/*Form-request page*/
+
+#non-iu-form{
+  /*position: absolute;*/
+  max-width: 500px;
+	/*height: 120px;*/
+	margin: auto;
+  /*margin-left: auto;
+  margin-right: auto;*/
+  padding: 80px;
+  /*padding-bottom: 0px;*/
+  text-align: center;
+}
+
+input[type=submit] {
+    background-color: white;
+    color: black;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+/*.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}*/
+/*Form page css end*/
 
 /* Submit Request Page */
 
@@ -143,16 +230,9 @@ body {
 /* Admin Navigation Bar - Start */
 
 .navigation-bar {
-<<<<<<< HEAD
     width: 100%;
     height: 80px;
     background-color: #990000;
-=======
-    width: 100%;  
-    height: 80px; 
-    background-color: #990000;
-    padding: 1em;
->>>>>>> master
 }
 .logo {
     display: inline-block;

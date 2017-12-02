@@ -9,7 +9,7 @@
 			<td width="20%"><div id="navigation" style="padding-left: 43%; padding-bottom: 95%"><a href="movies.php"><img src="../public/images/NewFilter_N.png" alt="New Filter" width="100%"></a></div></td>
 			<td width="80%"><div id="page">
 				<?php
-					
+
 					global $connection;
 					$results_per_page = 3;
 
@@ -30,7 +30,7 @@
 					} else {
 						$_SESSION['Bib_Subject'] = isset($_SESSION['Bib_Subject']) ? $_SESSION['Bib_Subject'] : Array();
 					}
-					
+
 					/*if (!isset($_SESSION["Bib_Collection"])) {
 						$_SESSION["Bib_Collection"] = isset($_POST['Bib_Collection']) ? $_POST['Bib_Collection'] : Array();
 						echo $_SESSION['Bib_Collection'];
@@ -103,7 +103,7 @@
 					for ($page=1;$page<=$number_of_pages;$page++) {
 						echo '<a href="filter.php?page=' . $page . '">' . $page . '</a> ';
 					}
-					
+
 				?>
 			</div></td>
 		</tr>
