@@ -159,40 +159,16 @@ body {
   resize: vertical;
 }
 
-/*#areacode{
-  width:20%;
-  float: left;
-  /*padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;*/
-}
-
 #phoneno{
   width:75%;
   float:right;
-  /*padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;*/
 }
 /*Form-request page*/
 
 #non-iu-form{
-  /*position: absolute;*/
   max-width: 500px;
-	/*height: 120px;*/
 	margin: auto;
-  /*margin-left: auto;
-  margin-right: auto;*/
   padding: 80px;
-  /*padding-bottom: 0px;*/
   text-align: center;
 }
 
@@ -209,11 +185,6 @@ input[type=submit]:hover {
     background-color: #45a049;
 }
 
-/*.container {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-}*/
 /*Form page css end*/
 
 /* Submit Request Page */

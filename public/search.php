@@ -14,7 +14,7 @@
 			</div></td>
 			<td width="60%"><div id="page">
 				<?php
-					global $connection; 
+					global $connection;
 					$results_per_page = 3;
 					// find out the number of results stored in database
 					if (isset($_POST["title"])) {

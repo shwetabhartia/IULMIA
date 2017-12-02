@@ -42,24 +42,15 @@
             // determine the sql LIMIT starting number for the results on the displaying page
             $this_page_first_result = ($page-1)*$results_per_page;
             $queryPagination = $retrieve_condition_query . ' LIMIT ' . $this_page_first_result . ' , ' .$results_per_page;
-
-//'SELECT BIB_BASIC.Bib_IU_Barcode, BIB_BASIC.Bib_Title, BIB_BASIC.Bib_Creator, BIB_COND.BibCond_Overall_Condition, BIB_COND.BibCond_Overall_Condition_Note from BIB_BASIC INNER JOIN BIB_COND ON BIB_BASIC.Bib_IU_Barcode = BIB_COND.Bib_IU_Barcode ORDER BY BIB_COND.BibCond_Overall_Condition DESC LIMIT 0,10';
-// echo $queryPagination;
-
             $pageresults = mysqli_query($connection, $queryPagination);
             confirm_query($pageresults);
-//$number_of_results = mysqli_num_rows($pageresults);
-//echo $number_of_results;
+
             $offset = $this_page_first_result + 1;
-            $output = "<h2 style=\"color:#990000;\">VALUE</h2><ol start = '$offset'>";
+            $output = "<h2 style=\"color:#990000;\">VALUE</h2></br><ol start = '$offset'>";
   					while($movie = mysqli_fetch_array($pageresults)) {
   						$output .= "<li style=\"text-align:left;\"><h3>";
-  						//$output .= "<a href=\"moviepage.php?movieid=";
-  						//$output .= urlencode($movie["Bib_IU_Barcode"]);
-  						//$output .= "\">";
   						$output .= $movie["Bib_Title"];
   						$output .= "</h3>";
-  						//$output .= "</a>";
   						$output .= "Creator:";
   						$output .= $movie["Bib_Creator"];
   						$output .=  "<br>";

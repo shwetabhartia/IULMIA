@@ -7,11 +7,11 @@
 
 	function mysql_prep($string) {
 		global $connection;
-		
+
 		$escaped_string = mysqli_real_escape_string($connection, $string);
 		return $escaped_string;
 	}
-	
+
 	function confirm_query($result_set) {
 		if (!$result_set) {
 			die("Database query failed.");
@@ -73,7 +73,7 @@
 
 
 	function search_movie_by_title($movie_title) {
-		
+
 		$movie_title = explode(' ', $movie_title);
 
 		$query = 'SELECT Bib_IU_Barcode, Bib_Title, Bib_Creator, Bib_Date_Created, Bib_Summary FROM BIB_BASIC WHERE ';
@@ -87,11 +87,28 @@
 		return $query;
 	}
 
+	function search_movie_by_loan($movie_title) {
+
+		$movie_title = explode(' ', $movie_title);
+
+		$query = 'SELECT BIB_BASIC.Bib_IU_Barcode, BIB_BASIC.Bib_Title, BIB_BASIC.Bib_Creator, Loan.Loan_Date, Loan.Bibident_Current_Loc FROM BIB_BASIC INNER JOIN Loan ON BIB_BASIC.Bib_IU_Barcode = Loan.Bib_IU_Barcode WHERE ';
+		//SELECT BIB_BASIC.Bib_IU_Barcode, BIB_BASIC.Bib_Title, BIB_BASIC.Bib_Creator, Loan.Loan_Date, Loan.Bibident_Current_Loc FROM BIB_BASIC INNER JOIN Loan ON BIB_BASIC.Bib_IU_Barcode = Loan.Bib_IU_Barcode WHERE BIB_BASIC.Bib_Title LIKE "%anto%" AND Loan.Loan_Date IS NOT NULL;
+
+		$parts = array();
+		foreach( $movie_title as $movie_title_word ){
+		$parts[] = '`Bib_Title` LIKE "%'.$movie_title_word.'%"';
+		}
+
+		$query .= implode(' OR ', $parts);
+		$query .= ' AND Loan.Loan_Date IS NOT NULL';
+		return $query;
+	}
+
 	function filter_movie($movie_collection, $movie_genre, $movie_subject) {
 		global $connection;
 		$where_clause_array = Array();
 
-		if (count($movie_collection) > 0) {		
+		if (count($movie_collection) > 0) {
 			$collection = "";
 
 			foreach($movie_collection as $index => $c) {
@@ -100,7 +117,7 @@
 			}
 			//trim the trailing comma and add the closing bracket of the IN clause instead
 			if ($collection != "") {
-				$collection = rtrim($collection, ","); 
+				$collection = rtrim($collection, ",");
 				$collection .= ")";
 			}
 			array_push($where_clause_array, $collection);
@@ -114,7 +131,7 @@
 			}
 			//trim the trailing comma and add the closing bracket of the IN clause instead
 			if ($genre != "") {
-				$genre = rtrim($genre, ","); 
+				$genre = rtrim($genre, ",");
 				$genre .= ")";
 			}
 			array_push($where_clause_array, $genre);
@@ -128,7 +145,7 @@
 			}
 			//trim the trailing comma and add the closing bracket of the IN clause instead
 			if ($subject != "") {
-				$subject = rtrim($subject, ","); 
+				$subject = rtrim($subject, ",");
 				$subject .= ")";
 			}
 			array_push($where_clause_array, $subject);
@@ -150,13 +167,13 @@
 
 	//Find if the movie exists by iu barcode
 	function find_movie_by_id($iu_barcode) {
-	
+
 		global $connection;
 		$safe_iu_barcode = mysqli_real_escape_string($connection, $iu_barcode);
-		
+
 		$query = "Select * from BIB_BASIC where Bib_IU_Barcode = {$iu_barcode} ";
 		$result = mysqli_query($connection, $query);
-			
+
 		if ($result && mysqli_num_rows($result) >= 0) {
 			return $result;
 		} else {
@@ -196,9 +213,9 @@
 
 	function find_admin_by_username($username) {
 		global $connection;
-		
+
 		$safe_username = mysqli_real_escape_string($connection, $username);
-		
+
 		$query  = "SELECT * ";
 		$query .= "FROM admins ";
 		$query .= "WHERE username = '{$safe_username}' ";
@@ -220,7 +237,7 @@
 		$hash = crypt($password, $format_and_salt);
 		return $hash;
 	}
-	
+
 	function generate_salt($length) {
 		// Not 100% unique, not 100% random, but good enough for a salt
 		// MD5 returns 32 characters
@@ -237,7 +254,7 @@
 
 		return $salt;
 	}
-	
+
 	function password_check($password, $existing_hash) {
 		// existing hash contains format and salt at start
 		$hash = crypt($password, $existing_hash);
@@ -268,7 +285,7 @@
 	function logged_in() {
 		return isset($_SESSION['admin_id']);
 	}
-	
+
 	function confirm_logged_in() {
 		if (!logged_in()) {
 			redirect_to("admin.php");
