@@ -10,7 +10,7 @@ if (isset($_POST['edit'])) {
 	global $connection;
 	
 	// validations
-	$required_fields = array("Bib_IU_Barcode", "Bib_Collection", "Bib_Title", "Bib_Genre", "Bib_Subject", "Per_ID", "Bibident_Current_Location");
+	/*$required_fields = array("Bib_IU_Barcode", "Bib_Collection", "Bib_Title", "Bib_Genre", "Bib_Subject", "Per_ID", "Bibident_Current_Location");
 	validate_presences($required_fields);
 
 	$fields_with_max_lengths = array("Bib_Media_Type" => 20);
@@ -19,7 +19,7 @@ if (isset($_POST['edit'])) {
 	if (!empty($errors)) {
         $_SESSION["errors"] = $errors;
         redirect_to("editmetadata.php");
-    }
+    }*/
 
 	$IU_Barcode = find_movie_by_id($_POST['Bib_IU_Barcode']); // find if movie exist in database
 	if (!$IU_Barcode) {
@@ -59,7 +59,7 @@ if (isset($_POST['edit'])) {
 	$Bib_Duration = mysql_prep($_POST["Bib_Duration"]);
 	$Bib_Language = mysql_prep($_POST["Bib_Language"]);
 	//Query for BIB_BASIC
-	$query_bib_basic = "UPDATE BIB_BASIC SET Bib_Collection = '{$Bib_Collection}' , Bib_Media_Type = '{$Bib_Media_Type}' , Bib_Series_Name = '{$Bib_Series_Name}' , Bib_Series_Part = '{$Bib_Series_Part}', Bib_Series_Production_No = '{$Bib_Series_Production_No}', Bib_Title = '{$Bib_Title}', Bib_Alternative_Title = '{$Bib_Alternative_Title}', Bib_Version_No = {$Bib_Version_No}, Bib_Reel_No = {$Bib_Reel_No}, Bib_Summary = '{$Bib_Summary}', Bib_Creator = '{$Bib_Creator}', Bib_Producer = '{$Bib_Producer}', Bib_Genre = '{$Bib_Genre}', Bib_Subject = '{$Bib_Subject}', Bib_Date_Created = '{$Bib_Date_Created}', Bib_Location = '{$Bib_Location}', Bib_Title_Note = '{$Bib_Title_Note}', Bib_Original_Medium = '{$Bib_Original_Medium}', Bib_Original_Gauge = '{$Bib_Original_Gauge}', Bib_Generation = '{$Bib_Generation}', Bib_Color = '{$Bib_Color}', Bib_Sound = '{$Bib_Sound}', Bib_Frame_Rate = {$Bib_Frame_Rate}, Bib_Aspect_Ratio = '{$Bib_Aspect_Ratio}', Bib_Duration = '{$Bib_Duration}', Bib_Language '{$Bib_Language}' ";
+	$query_bib_basic = "UPDATE BIB_BASIC SET Bib_Collection = '{$Bib_Collection}' , Bib_Media_Type = '{$Bib_Media_Type}' , Bib_Series_Name = '{$Bib_Series_Name}' , Bib_Series_Part = '{$Bib_Series_Part}', Bib_Series_Production_No = '{$Bib_Series_Production_No}', Bib_Title = '{$Bib_Title}', Bib_Alternative_Title = '{$Bib_Alternative_Title}', Bib_Version_No = {$Bib_Version_No}, Bib_Reel_No = {$Bib_Reel_No}, Bib_Summary = '{$Bib_Summary}', Bib_Creator = '{$Bib_Creator}', Bib_Producer = '{$Bib_Producer}', Bib_Genre = '{$Bib_Genre}', Bib_Subject = '{$Bib_Subject}', Bib_Date_Created = '{$Bib_Date_Created}', Bib_Location = '{$Bib_Location}', Bib_Title_Note = '{$Bib_Title_Note}', Bib_Original_Medium = '{$Bib_Original_Medium}', Bib_Original_Gauge = '{$Bib_Original_Gauge}', Bib_Generation = '{$Bib_Generation}', Bib_Color = '{$Bib_Color}', Bib_Sound = '{$Bib_Sound}', Bib_Frame_Rate = {$Bib_Frame_Rate}, Bib_Aspect_Ratio = '{$Bib_Aspect_Ratio}', Bib_Duration = '{$Bib_Duration}', Bib_Language = '{$Bib_Language}' ";
 	$query_bib_basic .= "WHERE Bib_IU_Barcode = '{$Bib_IU_Barcode}' ";
 	$query_bib_basic .= "LIMIT 1";
 	$result_bib_basic = mysqli_query($connection, $query_bib_basic);
@@ -126,7 +126,7 @@ if (isset($_POST['edit'])) {
 	$result_bib_cond = mysqli_query($connection, $query_bib_cond);
 	$bib_cond_row = mysqli_affected_rows($connection);
 	
-	if (($result_bib_basic && $bib_basic_row >= 1) && ($result_bib_ident && $bib_ident_row >= 1) && ($result_bib_tech && $bib_tech_row >= 1) && ($result_bib_cond && $bib_cond_row >= 1)) {
+	if (($result_bib_basic && $bib_basic_row >= 0)  && ($result_bib_ident && $bib_ident_row >= 0) && ($result_bib_tech && $bib_tech_row >= 0) && ($result_bib_cond && $bib_cond_row >= 0)) {
 		// Success
 		$_SESSION["message"] = "Metadata updated.";
 		redirect_to("ingest.php");
