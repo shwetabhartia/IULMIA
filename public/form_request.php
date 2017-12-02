@@ -10,22 +10,6 @@ $per_id_result = mysqli_query($connection, $per_id);
 while($row = mysqli_fetch_array($per_id_result)){
   $new_per_id = $row['Per_ID_int'] + 1;
 }
-// $new_per_id = $row['Per_ID_int'] + 1; //Per_ID
-
-// Per_ID varchar(15) not null,
-// Per_Last_Name varchar(25),
-// Per_First_Name varchar(25),
-// Per_Organization varchar(200),
-// Per_Area_Code int,
-// Per_Phone_No varchar(25),
-// Per_Street varchar(100),
-// Per_City varchar(25),
-// Per_State varchar(2),
-// Per_Zip_Code int,
-// Per_Region varchar(25),
-// Per_Country varchar(25),
-// Per_IUMember tinyint(1),
-// Per_IUusername varchar(30),
 
 $new_per_id = mysql_prep($new_per_id);
 $lname = mysql_prep($_POST['lastname']);
