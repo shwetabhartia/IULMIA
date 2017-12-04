@@ -91,7 +91,7 @@
 
 		$movie_title = explode(' ', $movie_title);
 
-		$query = 'SELECT BIB_BASIC.Bib_IU_Barcode, BIB_BASIC.Bib_Title, BIB_BASIC.Bib_Creator, Loan.Loan_Date, Loan.Bibident_Current_Loc FROM BIB_BASIC INNER JOIN Loan ON BIB_BASIC.Bib_IU_Barcode = Loan.Bib_IU_Barcode WHERE ';
+		$query = 'SELECT BIB_BASIC.Bib_IU_Barcode, BIB_BASIC.Bib_Title, BIB_BASIC.Bib_Creator, Loan.Loan_Date, Loan.Loan_Screen_Loc FROM BIB_BASIC INNER JOIN Loan ON BIB_BASIC.Bib_IU_Barcode = Loan.Bib_IU_Barcode WHERE ';
 		//SELECT BIB_BASIC.Bib_IU_Barcode, BIB_BASIC.Bib_Title, BIB_BASIC.Bib_Creator, Loan.Loan_Date, Loan.Bibident_Current_Loc FROM BIB_BASIC INNER JOIN Loan ON BIB_BASIC.Bib_IU_Barcode = Loan.Bib_IU_Barcode WHERE BIB_BASIC.Bib_Title LIKE "%anto%" AND Loan.Loan_Date IS NOT NULL;
 
 		$parts = array();

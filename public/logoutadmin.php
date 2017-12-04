@@ -1,7 +1,5 @@
 <?php require_once("../includes/session.php"); ?>
-<?php require_once("../includes/functions.php"); ?>
-
-<?php
+<?php require_once("../includes/functions.php");
 	// v1: simple logout
 	// session_start();
 	$_SESSION["admin_id"] = null;
@@ -17,6 +15,6 @@
 	// if (isset($_COOKIE[session_name()])) {
 	//   setcookie(session_name(), '', time()-42000, '/');
 	// }
-	// session_destroy(); 
+	// session_destroy();
 	// redirect_to("login.php");
 ?>

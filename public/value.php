@@ -1,8 +1,8 @@
-<?php require_once("../includes/data/db_config.php"); ?>
-<?php require_once("../includes/functions.php"); ?>
-<?php require_once("../includes/session.php"); ?>
-<?php confirm_logged_in(); ?>
-<?php include("../includes/templates/header-admin.php"); ?>
+<?php require_once("../includes/data/db_config.php");
+require_once("../includes/functions.php");
+require_once("../includes/session.php");
+confirm_logged_in();
+include("../includes/templates/header-admin.php"); ?>
 
 <div id="main">
 	<table>
@@ -49,8 +49,11 @@
             $output = "<h2 style=\"color:#990000;\">VALUE</h2></br><ol start = '$offset'>";
   					while($movie = mysqli_fetch_array($pageresults)) {
   						$output .= "<li style=\"text-align:left;\"><h3>";
+							$output .= "<a href=\"moviepage_admin.php?movieid=";
+  						$output .= urlencode($movie["Bib_IU_Barcode"]);
+  						$output .= "\">";
   						$output .= $movie["Bib_Title"];
-  						$output .= "</h3>";
+  						$output .= "</h3></a>";
   						$output .= "Creator:";
   						$output .= $movie["Bib_Creator"];
   						$output .=  "<br>";

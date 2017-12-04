@@ -1,11 +1,8 @@
 <?php require_once("../includes/session.php"); ?>
 <?php require_once("../includes/data/db_config.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
-<?php require_once("../includes/validation_functions.php"); ?>
-
-<?php
+<?php require_once("../includes/validation_functions.php"); 
 $username = "";
-
 if (isset($_POST['submit'])) {
   // Process the form
 
@@ -15,12 +12,10 @@ if (isset($_POST['submit'])) {
 
   if (empty($errors)) {
     // Attempt Login
-
 		$username = $_POST["username"];
 		$password = $_POST["password"];
 
 		$found_admin = attempt_login($username, $password);
-
     if ($found_admin) {
       // Success
 			// Mark user as logged in
@@ -36,7 +31,6 @@ if (isset($_POST['submit'])) {
   // This is probably a GET request
 
 } // end: if (isset($_POST['submit']))
-
 ?>
 
 <?php include("../includes/templates/header.php"); ?>

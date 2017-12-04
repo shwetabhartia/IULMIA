@@ -161,9 +161,7 @@ body {
   resize: vertical;
 }
 
-#phoneno{
-  width:75%;
-  float:right;
+
 }
 /*Form-request page*/
 
@@ -171,6 +169,7 @@ body {
   max-width: 500px;
 	margin: auto;
   padding: 80px;
+  padding-bottom: 30px;
   text-align: center;
 }
 

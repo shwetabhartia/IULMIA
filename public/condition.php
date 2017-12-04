@@ -50,8 +50,12 @@
             $output = "<h2 style=\"color:#990000;\">CONDITION</h2></br><ol start = '$offset'>";
   					while($movie = mysqli_fetch_array($pageresults)) {
   						$output .= "<li style=\"text-align:left;\"><h3>";
+              $output .= "<a href=\"moviepage_admin.php?movieid=";
+  						$output .= urlencode($movie["Bib_IU_Barcode"]);
+  						$output .= "\">";
   						$output .= $movie["Bib_Title"];
   						$output .= "</h3>";
+              $output .= "</a>";
   						$output .= "Creator:";
   						$output .= $movie["Bib_Creator"];
   						$output .=  "<br>";
