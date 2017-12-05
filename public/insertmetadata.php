@@ -5,7 +5,7 @@ require_once("../includes/functions.php");
 confirm_logged_in();
 require_once("../includes/validation_functions.php");
 
-    if (isset($_POST['submit'])) {
+if (isset($_POST['submit'])) {
 
     // validations
     $required_fields = array("Bib_IU_Barcode", "Bib_Collection", "Bib_Title", "Bib_Genre", "Bib_Subject", "Per_ID", "Bibident_Current_Location");

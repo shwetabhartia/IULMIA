@@ -45,11 +45,13 @@ if (isset($_POST['submit'])) {
 				<div id="page">
 					<?php echo message(); ?>
 					<?php echo form_errors($errors); ?>
-					<h2>Admin Login</h2>
-					<form action="admin.php" method="post">
-						<p>Username: <input type="text" name="username" value="<?php echo htmlentities($username); ?>" /></p>
-						<p>Password: <input type="password" name="password" value="" /></p>
-						<button type="submit" name="submit" id="submit-icon"><img src="../public/images/SubmitN.png"/></button>
+					<form action="admin.php" method="post" style="position:relative; display:inline-block; padding:20px; width: 65%; margin:20px; border:2px solid #ccc;">
+						<h2 style="text-align:center;">Admin Login</h2>
+						<div class = "form-container">
+							<input type="text" id="lname" name="username" placeholder="Username" required/>
+							<input type="password" id="lname" name="password" placeholder="Enter Password" required /></p>
+							<button type="submit" name="submit" id="submit-icon"><img src="../public/images/SubmitN.png"/></button>
+						</div>
 					</form>
 				</div>
 			</td>

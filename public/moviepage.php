@@ -1,6 +1,6 @@
+<?php session_start(); ?>
 <?php require_once("../includes/data/db_config.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
-<? session_start(); ?>
 <?php include("../includes/templates/header.php"); ?>
 
 <div id="main">

@@ -6,13 +6,13 @@
 <div id="main">
 	<table>
 		<tr>
-			<td width="40%"><div id="navigation" style="padding-left: 43%; padding-bottom: 95%">
+			<td width="20%"><div id="navigation" style="padding-left: 43%; padding-bottom: 95%">
 				<br>
 				<br>
 				<br>
 				<a href="index.php"><img src="../public/images/NewSearchFilter_N.png" alt="New SF" width="100%"></a>
 			</div></td>
-			<td width="60%"><div id="page">
+			<td width="80%"><div id="page">
 				<?php
 					global $connection; 
 					$results_per_page = 3;

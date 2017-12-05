@@ -41,7 +41,10 @@ if(mysqli_num_rows($check_film_result) >= 1){
     </br>
     </br>
     However, this film has currently been checked out. You can alternatively search for another film or try again later.</p>
-    <a href="index.php"><img src="../public/images/NewSearchN.png" alt="New Search" width="40%"></a>
+    <a href="movies.php"><img src="../public/images/NewSearchN.png" alt="New Search" width="120" height="30"></a>
+    </br>
+    </br>
+    </br>
   </div>';
 }
 //echo $new_per_id;
@@ -58,7 +61,10 @@ else{
       </br>
       </br>
       Your request has been submitted and an email confirming dates available for viewing will be sent to you shortly.</p>
-      <a href="movies.php"><img src="../public/images/NewSearchN.png" alt="New Search" width="40%"></a>
+      <a href="movies.php"><img src="../public/images/NewSearchN.png" alt="New Search" width="120" height="30"></a>
+      </br>
+      </br>
+      </br>
     </div>';
   }
   else{
@@ -71,7 +77,10 @@ else{
       </br>
       </br>
       However, your request could not be processed. Try again!</p>
-      <a href="movies.php"><img src="../public/images/NewSearchN.png" alt="New Search" width="40%"></a>
+      <a href="index.php"><img src="../public/images/NewSearchN.png" alt="New Search" width="120" height="30"></a>
+      </br>
+      </br>
+      </br>
     </div>';
   }
 }?>
