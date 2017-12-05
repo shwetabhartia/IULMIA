@@ -41,7 +41,7 @@ if(mysqli_num_rows($check_film_result) >= 1){
     </br>
     </br>
     However, this film has currently been checked out. You can alternatively search for another film or try again later.</p>
-    <a href="movies.php"><img src="../public/images/NewSearchN.png" alt="New Search" width="40%"></a>
+    <a href="index.php"><img src="../public/images/NewSearchN.png" alt="New Search" width="40%"></a>
   </div>';
 }
 //echo $new_per_id;

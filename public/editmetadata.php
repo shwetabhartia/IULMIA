@@ -126,7 +126,7 @@ if (isset($_POST['edit'])) {
 	$result_bib_cond = mysqli_query($connection, $query_bib_cond);
 	$bib_cond_row = mysqli_affected_rows($connection);
 	
-	if (($result_bib_basic && $bib_basic_row >= 0)  && ($result_bib_ident && $bib_ident_row >= 0) && ($result_bib_tech && $bib_tech_row >= 0) && ($result_bib_cond && $bib_cond_row >= 0)) {
+	if (($result_bib_basic && $bib_basic_row == 1)  || ($result_bib_ident && $bib_ident_row == 1) || ($result_bib_tech && $bib_tech_row == 1) || ($result_bib_cond && $bib_cond_row == 1)) {
 		// Success
 		$_SESSION["message"] = "Metadata updated.";
 		redirect_to("ingest.php");

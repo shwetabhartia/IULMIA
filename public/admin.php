@@ -1,9 +1,7 @@
 <?php require_once("../includes/session.php"); ?>
 <?php require_once("../includes/data/db_config.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
-<?php require_once("../includes/validation_functions.php"); ?>
-
-<?php
+<?php require_once("../includes/validation_functions.php"); 
 $username = "";
 
 if (isset($_POST['submit'])) {
