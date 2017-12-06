@@ -5,7 +5,7 @@ $authenticated = $_SESSION['CAS'];
 //send user to CAS login if not authenticated
 if (!$authenticated) {
   $_SESSION['CAS'] = true;
-  header("Location: https://cas.iu.edu/cas/login?cassvc=IU&casurl=https://localhost/IULMIA/public/cas_request.php");
+  header("Location: https://cas.iu.edu/cas/login?cassvc=IU&casurl=http://localhost/IULMIA/public/cas_request.php");
   exit;
 }
 if ($authenticated) {
@@ -14,7 +14,7 @@ if ($authenticated) {
 	//set up validation URL to ask CAS if ticket is good
 	$_url = 'https://cas.iu.edu/cas/validate';
 	$cassvc = 'IU';  //search kb.indiana.edu for "cas application code" to determine code to use here in place of "appCode"
-	$casurl = 'https://localhost/IULMIA/public/cas_request.php'; //same base URLsent
+	$casurl = 'http://localhost/IULMIA/public/cas_request.php'; //same base URLsent
 	$params = "cassvc=$cassvc&casticket=$_GET[casticket]&casurl=$casurl";
 	$urlNew = "$_url?$params";
 	//CAS sending response on 2 lines.  First line contains "yes" or "no".  If "yes", second line contains username (otherwise, it is empty).
@@ -40,7 +40,7 @@ if ($authenticated) {
   else
   {
      $_SESSION['CAS'] = true;
-     header("Location: https://cas.iu.edu/cas/login?cassvc=IU&casurl=https://localhost/IULMIA/public/cas_request.php");
+     header("Location: https://cas.iu.edu/cas/login?cassvc=IU&casurl=http://localhost/IULMIA/public/cas_request.php");
      exit;
   }
 }

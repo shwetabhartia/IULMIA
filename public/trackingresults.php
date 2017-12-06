@@ -75,7 +75,7 @@
               if($number_of_results > 3){
                 // display the links to the pages
                 for ($page=1;$page<=$number_of_pages;$page++) {
-                  echo '<a href="search.php?page=' . $page . '">' . $page . '</a> ';
+                  echo '<a href="trackingresults.php?page=' . $page . '">' . $page . '</a> ';
                 }
               }
           }
