@@ -83,7 +83,7 @@ For every record available, leave the SEARCH BAR empty and click on the magnifyi
 * Insert valid information into the type fields for each attribute.   
 * Once completed click **SUBMIT** at the bottom of the metadata list.   
 
-![alt tag](https://github.com/shwetabhartia/IULMIA/blob/master/public/images/Figure-01.png)
+![alt tag](https://github.com/shwetabhartia/IULMIA/blob/master/public/images/NewRecord-1.jpg)
 Figure 01
 
 ### Updating Records: 
@@ -95,7 +95,7 @@ Figure 01
 * Reinsert valid information into the type fields for each attribute including the revised value.   
 * Once completed click **SUBMIT** at the bottom of the metadata list.   
 
-![alt tag](https://github.com/shwetabhartia/IULMIA/blob/master/public/images/Figure-02.png)
+![alt tag](https://github.com/shwetabhartia/IULMIA/blob/master/public/images/ReviseRecord-1.jpg)
 Figure 02. 
 
 ### Remove Metadata: 
