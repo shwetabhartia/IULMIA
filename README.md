@@ -54,14 +54,28 @@ cd ~
 mkdir Sites 
 cd Sites
 ```
-* Type into Terminal - git clone https://github.com/shwetabhartia/IULMIA.git 
+* Type into Terminal
+```
+git clone https://github.com/shwetabhartia/IULMIA.git
+``` 
 Now you have created the folder that will contain all your web-application code. 
 * Install MAMP by double-clicking the download from the link mentioned above. 
 * Follow the instructions on the installation screens. 
 * Launch the MAMP server application. Check the options that say 'Apache Server' and 'MySQL Server'.  
 *  To change the Document Root follow these steps - http://ruifeio.com/2014/08/08/mamp-how-to-change-the-root-directory-on-apache-server/  
-Our Document Root will be the Sites folder where the web application lives. 
-*  Once these changes are made, we can open the browser and type in 'localhost/IULMIA/public' and this will take us to the search/filter page. To go to the admin page, type in 'localhost/IULMIA/public/admin.php'. 
+Our Document Root will be the Sites folder where the web application lives.
+* Open mysql console. To open type below command in the terminal.
+```
+mysql -uroot -proot
+```
+* Copy the create_table.sql script and execute in mysql console. Then copy insert_table.sql and insert_table2.sql script into the console.
+create_table.sql, insert_table.sql and insert_table2.sql is in IULMIA/includes/data/ directory.
+* Change the mysql password in db_config.php file with your mysql password.
+db_config file is in IULMIA/includes/data/ directory. 
+```
+define("DB_PASS", "ShwetaBhartia"); --> define("DB_PASS", "YOUR_PASSWORD_HERE"); 
+``` 
+*  Once these changes are made, open the browser and type in 'localhost/IULMIA/public' and this will take us to the search/filter page. To go to the admin page, type in 'localhost/IULMIA/public/admin.php'. 
 
 ## Running the tests from ADMIN 
 
